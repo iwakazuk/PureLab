@@ -5,18 +5,19 @@
     android:id = "@+id/bottom_navigation_menu">
         <item
             android:id="@+id/navi_home"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/home_image"
             android:title="ホーム"/>
         <item
             android:id="@+id/navi_search"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/search_image"
             android:title="検索"/>
         <item
             android:id="@+id/navi_favorite"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/favorite_image"
             android:title="お気に入り"/>
         <item
-            android:id="@+id/navi_maypage"
-            android:icon="@drawable/ic_launcher_background"
+            android:id="@+id/navi_mypage"
+            android:icon="@drawable/user_image"
             android:title="マイページ"/>
+
 </menu>
