@@ -9,4 +9,35 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string-array name="list_animal">
+        <item>洗顔料</item>
+        <item>クレンジング</item>
+        <item>化粧水</item>
+        <item>パック・フェイスマスク</item>
+        <item>目元・口元スペシャルケア</item>
+        <item>その他スキンケア</item>
+        <item>日焼け・UVケア・サンオイル</item>
+        <item>口紅・グロス・リップライナー</item>
+        <item>チーク</item>
+        <item>ファンデーション</item>
+        <item>化粧下地・コンシーラー</item>
+        <item>フェイスパウダー</item>
+        <item>その他メイクアップ</item>
+        <item>ヘアケア・スタイリング</item>
+        <item>ボディケア・オーラルケア</item>
+        <item>その他</item>
+        <item>乳液・クリーム</item>
+        <item>保湿ジェル</item>
+        <item>フェイスオイル</item>
+        <item>保湿ミスト・スプレー</item>
+        <item>ナイトケアクリーム</item>
+        <item>美容液</item>
+        <item>オールインワン</item>
+        <item>ピーリング・ゴマージュ</item>
+        <item>リップクリーム</item>
+        <item>デオドラント・制汗剤</item>
+
+
+    </string-array>
 </resources>
