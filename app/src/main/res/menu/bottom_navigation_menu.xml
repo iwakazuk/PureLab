@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.purelab.app.MainActivity"
+    android:id = "@+id/bottom_navigation_menu">
+        <item
+            android:id="@+id/navi_home"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="ホーム"/>
+        <item
+            android:id="@+id/navi_search"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="検索"/>
+        <item
+            android:id="@+id/navi_favorite"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="お気に入り"/>
+        <item
+            android:id="@+id/navi_maypage"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="マイページ"/>
+</menu>
