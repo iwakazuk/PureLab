@@ -10,7 +10,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <string-array name="list_animal">
+    <string-array name="list_category">
         <item>洗顔料</item>
         <item>クレンジング</item>
         <item>化粧水</item>
