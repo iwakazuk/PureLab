@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "747390248617",
+    "firebase_url": "https://purelab-a8c92-default-rtdb.firebaseio.com",
     "project_id": "purelab-a8c92",
     "storage_bucket": "purelab-a8c92.appspot.com"
   },
@@ -9,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:747390248617:android:0dad49148bd90ab535abb8",
         "android_client_info": {
-          "package_name": "com.purelab"
+          "package_name": "com.PureLab"
         }
       },
       "oauth_client": [
