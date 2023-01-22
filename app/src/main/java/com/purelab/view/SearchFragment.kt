@@ -13,8 +13,8 @@ import com.purelab.R
 import com.purelab.app.ListViewAdapter
 import com.purelab.app.Data
 import com.purelab.app.ListData
-import kotlinx.android.synthetic.main.fragment_itemlist.*
-import kotlinx.android.synthetic.main.fragment_search.*
+//import kotlinx.android.synthetic.main.fragment_itemlist.*
+//import kotlinx.android.synthetic.main.fragment_search.*
 
 class SearchFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
