@@ -18,6 +18,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_search, container, false)
         // リストデータの作成
         val dataList = arrayListOf<ListData>()
         for (i in 0..25) {
@@ -27,8 +28,8 @@ class SearchFragment : Fragment() {
         }
         // アダプターをセット
         val adapter = context?.let { CategoryListAdapter(it, dataList) }
-        val list: ListView = view?.findViewById(R.id.list_view) ?: return null
+        val list: ListView = view.findViewById(R.id.list_view) ?: return null
         list.adapter = adapter
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        return view
     }
 }
