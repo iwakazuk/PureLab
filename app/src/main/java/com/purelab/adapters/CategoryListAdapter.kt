@@ -1,4 +1,4 @@
-package com.purelab.app
+package com.purelab.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,17 +9,29 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.purelab.R
 
-class ListViewAdapter(context: Context, list: ArrayList<ListData>) : ArrayAdapter<ListData>(context, 0, list) {
+class CategoryListAdapter(
+    context: Context,
+    list: ArrayList<ListData>
+) : ArrayAdapter<ListData>(context, 0, list) {
     private lateinit var data: ListData
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
+    override fun getView(
+        position: Int,
+        convertView: View?,
+        parent: ViewGroup
+    ): View {
         var view  = convertView
         if (view == null) {
             // 一行分のレイアウトを生成
-            view  = LayoutInflater.from(context).inflate(R.layout.category_view, parent, false)
+            view  = LayoutInflater.from(context).inflate(
+                R.layout.category_list,
+                parent,
+                false
+            )
         }
         // 一行分のデータを取得
         data = getItem(position) as ListData
-        view?.findViewById<TextView>(R.id.title)?.apply { text = data.title }
+        view?.findViewById<TextView>(R.id.category_title)?.apply { text = data.title }
         return view!!
     }
 }

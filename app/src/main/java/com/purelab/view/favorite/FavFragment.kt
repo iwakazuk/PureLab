@@ -1,4 +1,4 @@
-package com.purelab.view
+package com.purelab.view.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -7,18 +7,18 @@
     tools:ignore="InvalidNavigation">
 
     <fragment android:id="@+id/navi_home"
-        android:name="com.purelab.view.HomeFragment"
+        android:name="com.purelab.view.home.HomeFragment"
         android:label="Fragment1"/>
 
     <fragment android:id="@+id/navi_search"
-        android:name="com.purelab.view.SearchFragment"
+        android:name="com.purelab.view.search.SearchFragment"
         android:label="Fragment2"/>
 
     <fragment android:id="@+id/navi_favorite"
-        android:name="com.purelab.view.FavFragment"
+        android:name="com.purelab.view.favorite.FavFragment"
         android:label="Fragment3"/>
 
     <fragment android:id="@+id/navi_maypage"
-        android:name="com.purelab.view.MyPageFragment"
+        android:name="com.purelab.view.mypage.MyPageFragment"
         android:label="Fragment4"/>
 </navigation>
