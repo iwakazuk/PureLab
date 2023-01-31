@@ -1,0 +1,29 @@
+<?xml  version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="utils.Enum.Category.FACIAL_WASH">洗顔料</string>
+    <string name="utils.Enum.Category.CLEANSING">クレンジング</string>
+    <string name="utils.Enum.Category.LOTION">化粧水</string>
+    <string name="utils.Enum.Category.PACKS">パック・フェイスマスク</string>
+    <string name="utils.Enum.Category.SPECIAL_CARE">目元・口元スペシャルケア</string>
+    <string name="utils.Enum.Category.OTHER_SKIN_CARE">その他スキンケア</string>
+    <string name="utils.Enum.Category.TANNING">日焼け・UVケア・サンオイル</string>
+    <string name="utils.Enum.Category.LIPSTICK">口紅・グロス・リップライナー</string>
+    <string name="utils.Enum.Category.BLUSH">チーク</string>
+    <string name="utils.Enum.Category.FOUNDATION">ファンデーション</string>
+    <string name="utils.Enum.Category.MAKEUP_BASES">化粧下地・コンシーラー</string>
+    <string name="utils.Enum.Category.FACE_POWDERS">フェイスパウダー</string>
+    <string name="utils.Enum.Category.OTHER_MAKEUP">その他メイクアップ</string>
+    <string name="utils.Enum.Category.HAIR_CARE">ヘアケア・スタイリング</string>
+    <string name="utils.Enum.Category.BODY_CARE">ボディケア・オーラルケア</string>
+    <string name="utils.Enum.Category.OTHER">その他</string>
+    <string name="utils.Enum.Category.EMULSIONS_AND_CREAMS">乳液・クリーム</string>
+    <string name="utils.Enum.Category.MOISTURIZING_GELS">保湿ジェル</string>
+    <string name="utils.Enum.Category.FACE_OILS">フェイスオイル</string>
+    <string name="utils.Enum.Category.MOISTURIZING_MISTS">保湿ミスト・スプレー</string>
+    <string name="utils.Enum.Category.NIGHT_CARE_CREAM">ナイトケアクリーム</string>
+    <string name="utils.Enum.Category.SERUMS">美容液</string>
+    <string name="utils.Enum.Category.ALL_IN_ONES">オールインワン</string>
+    <string name="utils.Enum.Category.PEELINGS">ピーリング・ゴマージュ</string>
+    <string name="utils.Enum.Category.LIP_BALM">リップクリーム</string>
+    <string name="utils.Enum.Category.DEODORANTS">デオドラント・制汗剤</string>
+</resources>
