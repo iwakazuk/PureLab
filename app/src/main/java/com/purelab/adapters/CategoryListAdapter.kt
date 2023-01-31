@@ -11,33 +11,33 @@ import com.purelab.R
 
 class CategoryListAdapter(
     context: Context,
-    list: ArrayList<ListData>
-) : ArrayAdapter<ListData>(context, 0, list) {
-    private lateinit var data: ListData
+    data: List<String>
+) : ArrayAdapter<String>(context, 0, data) {
+    private lateinit var data: String
 
     override fun getView(
         position: Int,
         convertView: View?,
         parent: ViewGroup
     ): View {
-        var view  = convertView
+        var view = convertView
         if (view == null) {
             // 一行分のレイアウトを生成
-            view  = LayoutInflater.from(context).inflate(
+            view = LayoutInflater.from(context).inflate(
                 R.layout.category_list,
                 parent,
                 false
             )
         }
         // 一行分のデータを取得
-        data = getItem(position) as ListData
-        view?.findViewById<TextView>(R.id.category_title)?.apply { text = data.title }
+        data = getItem(position) as String
+        view?.findViewById<TextView>(R.id.category_title)?.apply { text = data }
         return view!!
     }
 }
 
-data class ListData(
-    var icon: ImageView? = null,
-    var title: String? = null,
-    var text: String? = null
-)
+//data class ListData(
+//    var icon: ImageView? = null,
+//    var title: String? = null,
+//    var text: String? = null
+//)
