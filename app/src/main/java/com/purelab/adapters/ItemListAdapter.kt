@@ -9,11 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.purelab.R
 
-class CategoryListAdapter(
+class ItemListAdapter(
     context: Context,
-    data: List<String>
-) : ArrayAdapter<String>(context, 0, data) {
-    private lateinit var data: String
+    data: List<ItemData>
+) : ArrayAdapter<ItemData>(context, 0, data) {
+    private lateinit var data: ItemData
 
     override fun getView(
         position: Int,
@@ -30,8 +30,16 @@ class CategoryListAdapter(
             )
         }
         // 一行分のデータを取得
-        data = getItem(position) as String
-        view?.findViewById<TextView>(R.id.category_title)?.apply { text = data }
+        data = getItem(position) as ItemData
+        view?.findViewById<TextView>(R.id.item_icon)?.apply { image = data.icon }
+        view?.findViewById<TextView>(R.id.item_title)?.apply { text = data.title }
+        view?.findViewById<TextView>(R.id.item_text)?.apply { text = data.text }
         return view!!
     }
 }
+
+data class ItemData(
+    var icon: ImageView? = null,
+    var title: String? = null,
+    var text: String? = null
+)
