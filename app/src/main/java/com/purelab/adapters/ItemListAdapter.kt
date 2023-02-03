@@ -1,6 +1,7 @@
 package com.purelab.adapters
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,22 +25,21 @@ class ItemListAdapter(
         if (view == null) {
             // 一行分のレイアウトを生成
             view = LayoutInflater.from(context).inflate(
-                R.layout.category_list,
+                R.layout.item_list,
                 parent,
                 false
             )
         }
         // 一行分のデータを取得
         data = getItem(position) as ItemData
-        view?.findViewById<TextView>(R.id.item_icon)?.apply { image = data.icon }
+        view?.findViewById<ImageView>(R.id.item_icon)?.apply { data.icon }
         view?.findViewById<TextView>(R.id.item_title)?.apply { text = data.title }
         view?.findViewById<TextView>(R.id.item_text)?.apply { text = data.text }
         return view!!
     }
 }
-
 data class ItemData(
-    var icon: ImageView? = null,
+    var icon: Drawable? = null,
     var title: String? = null,
     var text: String? = null
 )

@@ -18,7 +18,7 @@
         android:name="com.purelab.view.favorite.FavFragment"
         android:label="Fragment3"/>
 
-    <fragment android:id="@+id/navi_maypage"
-        android:name="com.purelab.view.mypage.MyPageFragment"
+    <fragment android:id="@+id/navi_mypage"
+        android:name="com.purelab.view.itemlist.ItemListFragment"
         android:label="Fragment4"/>
 </navigation>

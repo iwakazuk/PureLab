@@ -17,11 +17,11 @@ data class Item(
 
 fun mockItem(): Item = Item(
     item_id = "0001",
-    name = "a",
-    tagId = "1",
-    brandName = "a",
-    category = "a",
-    detail = "a"
+    name = "ああああ",
+    tagId = "ああああ",
+    brandName = "ああああ",
+    category = "ああああ",
+    detail = "ああああ"
 )
 
 fun Item.toMap(): Map<String, *> {
