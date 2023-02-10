@@ -7,6 +7,7 @@
     tools:context=".view.search.SearchFragment">
 
     <LinearLayout
+        android:id="@+id/fragment_item_list_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,13 +22,12 @@
             android:queryHint="検索"
             tools:ignore="MissingConstraints" />
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="left"
-            />
-
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/category_list"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

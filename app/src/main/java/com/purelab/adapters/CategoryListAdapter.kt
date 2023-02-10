@@ -4,34 +4,47 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
+import com.purelab.utils.Category
 
 class CategoryListAdapter(
-    context: Context,
-    data: List<String>
-) : ArrayAdapter<String>(context, 0, data) {
-    private lateinit var data: String
+    private val categoryListData: MutableList<String>
+) : RecyclerView.Adapter<CategoryListAdapter.CategoryListRecyclerViewHolder>() {
 
-    override fun getView(
-        position: Int,
-        convertView: View?,
-        parent: ViewGroup
-    ): View {
-        var view = convertView
-        if (view == null) {
-            // 一行分のレイアウトを生成
-            view = LayoutInflater.from(context).inflate(
-                R.layout.category_list,
-                parent,
-                false
-            )
+    // リスナを格納する変数を定義（インターフェースの型）
+    private lateinit var listener: OnItemClickListener
+
+    // クリックイベントリスナのインターフェースを定義
+    interface OnItemClickListener {
+        fun onItemClick(category: String)
+    }
+
+    // リスナをセット
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryListRecyclerViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.category_list, parent, false)
+        return CategoryListRecyclerViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: CategoryListRecyclerViewHolder, position: Int) {
+        val item = categoryListData[position]
+
+        holder.categoryName.text = item
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(item)
         }
-        // 一行分のデータを取得
-        data = getItem(position) as String
-        view?.findViewById<TextView>(R.id.category_title)?.apply { text = data }
-        return view!!
+    }
+
+    override fun getItemCount(): Int = categoryListData.size
+
+    class CategoryListRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var categoryName: TextView = itemView.findViewById(R.id.category_title)
     }
 }

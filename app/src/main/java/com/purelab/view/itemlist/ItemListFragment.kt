@@ -18,16 +18,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ItemListFragment : Fragment() {
-    private val IMAGE_URL = "https://raw.githubusercontent.com/DevTides/JetpackDogsApp/master/app/src/main/res/drawable/dog.png"
-    private val coroutineScope = CoroutineScope(Dispatchers.Main)
-
     private val itemRepository = ItemRepository()
     var list = listOf<Item>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
-            list =  itemRepository.getItem()
+            list = itemRepository.getItem()
         }
     }
 
@@ -42,7 +39,7 @@ class ItemListFragment : Fragment() {
 
         // リストデータの作成
         val itemList = listOf(mockItem())
-        val dataList:List<ItemData> = itemList.map {
+        val dataList: List<ItemData> = itemList.map {
             // TODO: URLから画像をひっぱってくるようにしたい
             val itemImage = context.getDrawable(R.drawable.favorite_image)
             ItemData(
@@ -57,18 +54,4 @@ class ItemListFragment : Fragment() {
         list.adapter = adapter
         return view
     }
-
-//    private fun getOriginalBitmap(): Bitmap =
-//        URL(IMAGE_URL).openStream().use {
-//            BitmapFactory.decodeStream(it)
-//        }
-//
-//    private fun applyFilter(bmp: Bitmap): Bitmap =
-//        Filter.apply(bmp)
-//
-//    private fun loadImage(view: View, bmp: Bitmap) {
-//        val imageView = view.findViewById<ImageView>(R.id.item_list_view)
-//        imageView.setImageBitmap(bmp)
-//        imageView.visibility = View.VISIBLE
-//    }
 }
