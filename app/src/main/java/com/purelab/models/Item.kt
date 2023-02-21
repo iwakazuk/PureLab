@@ -19,9 +19,9 @@ fun mockItem(): Item = Item(
     item_id = "0001",
     name = "ああああ",
     tagId = "ああああ",
-    brandName = "ああああ",
-    category = "ああああ",
-    detail = "ああああ"
+    brandName = "キュレル（Curel）",
+    category = "化粧水",
+    detail = "皮膚トラブルケア化粧水"
 )
 
 fun Item.toMap(): Map<String, *> {

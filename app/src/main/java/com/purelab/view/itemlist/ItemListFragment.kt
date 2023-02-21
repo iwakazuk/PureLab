@@ -47,7 +47,7 @@ class ItemListFragment : Fragment() {
             val itemImage = context.getDrawable(R.drawable.favorite_image)
             ItemData(
                 itemImage,
-                it.name,
+                it.brandName,
                 it.detail
             )
         }
