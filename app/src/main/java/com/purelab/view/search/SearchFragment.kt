@@ -56,11 +56,7 @@ class SearchFragment : Fragment() {
                     // TODO: API実装時画像データも渡せるようにする
 
                     // データを渡す処理
-                    setFragmentResult(
-                        "categoryData", bundleOf(
-                            "category" to category,
-                        )
-                    )
+                    setFragmentResult("categoryData", bundleOf("category" to category))
                     FragmentUtils.showFragment(
                         ItemListFragment(),
                         parentFragmentManager,
@@ -70,9 +66,6 @@ class SearchFragment : Fragment() {
                 }
             }
         )
-
-        setHasOptionsMenu(true)
-
         return view
     }
 }
