@@ -12,7 +12,11 @@
 
     <fragment android:id="@+id/navi_search"
         android:name="com.purelab.view.bottom.search.SearchFragment"
-        android:label="search"/>
+        android:label="search">
+        <action
+            android:id="@+id/nav_itemList"
+            app:destination="@id/item_list" />
+    </fragment>
 
     <fragment android:id="@+id/navi_favorite"
         android:name="com.purelab.view.bottom.favorite.FavFragment"

@@ -1,21 +1,21 @@
-package com.purelab.view.search
+package com.purelab.view.bottom.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.transition.platform.Hold
 import com.purelab.R
 import com.purelab.adapters.CategoryListAdapter
+import com.purelab.enums.NavComponent
 import com.purelab.utils.Category
-import com.purelab.utils.FragmentUtils
 import com.purelab.utils.toEnumString
-import com.purelab.view.itemlist.ItemListFragment
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -48,24 +48,22 @@ class SearchFragment : Fragment() {
         )
 
         // CellItem要素クリックイベント
-        adapter.setOnItemClickListener(
-            // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
-            // 再利用をしないため object式でインターフェースを実装
-            object : CategoryListAdapter.OnItemClickListener {
-                override fun onItemClick(category: String) {
-                    // TODO: API実装時画像データも渡せるようにする
-
-                    // データを渡す処理
-                    setFragmentResult("categoryData", bundleOf("category" to category))
-                    FragmentUtils.showFragment(
-                        ItemListFragment(),
-                        parentFragmentManager,
-                        R.id.nav_host_fragment
-                    )
-
-                }
-            }
-        )
+        adapter.setOnItemClickListener{ view, component ->
+            selectedComponent(view, component)
+        }
         return view
     }
+
+    private fun selectedComponent(view: View, component: NavComponent) {
+        exitTransition = Hold()
+        reenterTransition = null
+
+        val extras = FragmentNavigatorExtras(view to view.transitionName)
+        findNavController().navigate(component.navigationId, null, null, extras)
+    }
+
+    private val NavComponent.navigationId: Int
+        get() = when (this) {
+            NavComponent.BOTTOM_NAVIGATION -> R.id.nav_itemList
+        }
 }

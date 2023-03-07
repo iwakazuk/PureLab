@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.search.SearchFragment">
+    tools:context=".view.bottom.search.SearchFragment">
 
     <LinearLayout
-        android:id="@+id/fragment_item_list_layout"
+        android:id="@+id/layout_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

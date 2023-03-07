@@ -19,5 +19,4 @@
             android:id="@+id/navi_mypage"
             android:icon="@drawable/user_image"
             android:title="マイページ"/>
-
 </menu>

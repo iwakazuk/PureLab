@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.home.HomeFragment">
+    tools:context=".view.bottom.home.HomeFragment">
 
     <TextView
-        android:id="@+id/home"
+        android:id="@+id/layout_favorite"
         android:text="FavoriteFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
