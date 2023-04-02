@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.purelab.R
-import androidx.appcompat.app.AppCompatActivity
 
 class HomeFragment : Fragment() {
 
@@ -54,6 +53,9 @@ class HomeFragment : Fragment() {
             }
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+                if (motionLayout?.progress == 0.toFloat()) {
+                    return
+                }
                 when (currentId) {
                     R.id.move_left_to_right -> {
                         if (currentPosition > 0) {
