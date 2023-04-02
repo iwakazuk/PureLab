@@ -21,8 +21,4 @@
     <fragment android:id="@+id/navi_mypage"
         android:name="com.purelab.view.mypage.MyPageFragment"
         android:label="myPage"/>
-
-    <fragment android:id="@+id/item_list"
-        android:name="com.purelab.view.itemlist.ItemListFragment"
-        android:label="ItemList"/>
 </navigation>
