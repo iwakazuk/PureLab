@@ -5,7 +5,8 @@
     android:id="@+id/navSearch"
     app:startDestination="@id/navi_search">
 
-    <fragment android:id="@+id/navi_search"
+    <fragment
+        android:id="@+id/navi_search"
         android:name="com.purelab.view.search.SearchFragment"
         android:label="search">
         <action
@@ -13,7 +14,8 @@
             app:destination="@id/item_list" />
     </fragment>
 
-    <fragment android:id="@+id/item_list"
+    <fragment
+        android:id="@+id/item_list"
         android:name="com.purelab.view.itemlist.ItemListFragment"
-        android:label="ItemList"/>
+        android:label="ItemList" />
 </navigation>

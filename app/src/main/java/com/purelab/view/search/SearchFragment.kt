@@ -85,6 +85,7 @@ class SearchFragment : Fragment() {
 //                        ThemeInfoBottomSheetDialog().showIfNeeded(childFragmentManager)
                         true
                     }
+
                     else -> false
                 }
             }

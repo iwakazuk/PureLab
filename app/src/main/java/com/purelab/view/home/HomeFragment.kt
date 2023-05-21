@@ -66,6 +66,7 @@ class HomeFragment : Fragment() {
                         motionLayout?.progress = 0F
                         updateView(homeView)
                     }
+
                     R.id.move_right_to_left -> {
                         if (currentPosition < itemList.lastIndex) {
                             currentPosition++
