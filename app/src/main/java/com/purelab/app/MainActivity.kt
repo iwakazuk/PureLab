@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun AppBarLayout.visibility(isVisibility: Boolean) {
         updateLayoutParams<ViewGroup.LayoutParams> {
-            height = if (isVisibility) ViewGroup.LayoutParams.WRAP_CONTENT else 0
+//            height = if (isVisibility) ViewGroup.LayoutParams.WRAP_CONTENT else 0
         }
     }
 

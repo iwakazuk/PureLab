@@ -38,6 +38,7 @@ class ItemListAdapter(
         return view!!
     }
 }
+
 data class ItemData(
     var icon: Drawable? = null,
     var title: String? = null,

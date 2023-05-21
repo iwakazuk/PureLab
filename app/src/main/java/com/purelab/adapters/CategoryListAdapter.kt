@@ -26,7 +26,10 @@ class CategoryListAdapter(
         this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryListRecyclerViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CategoryListRecyclerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.category_list, parent, false)
         return CategoryListRecyclerViewHolder(view)

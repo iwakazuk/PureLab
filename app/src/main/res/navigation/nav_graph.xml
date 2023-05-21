@@ -6,19 +6,23 @@
     app:startDestination="@id/navi_home"
     tools:ignore="InvalidNavigation">
 
-    <fragment android:id="@+id/navi_home"
+    <fragment
+        android:id="@+id/navi_home"
         android:name="com.purelab.view.home.HomeFragment"
-        android:label="home"/>
+        android:label="home" />
 
-    <fragment android:id="@+id/navi_search"
+    <fragment
+        android:id="@+id/navi_search"
         android:name="com.purelab.view.search.SearchFragment"
-        android:label="search"/>
+        android:label="search" />
 
-    <fragment android:id="@+id/navi_favorite"
+    <fragment
+        android:id="@+id/navi_favorite"
         android:name="com.purelab.view.favorite.FavFragment"
-        android:label="favorite"/>
+        android:label="favorite" />
 
-    <fragment android:id="@+id/navi_mypage"
+    <fragment
+        android:id="@+id/navi_mypage"
         android:name="com.purelab.view.mypage.MyPageFragment"
-        android:label="myPage"/>
+        android:label="myPage" />
 </navigation>
