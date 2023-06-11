@@ -41,7 +41,8 @@
         <item>ピーリング・ゴマージュ</item>
         <item>リップクリーム</item>
         <item>デオドラント・制汗剤</item>
-
-
     </string-array>
+
+    <string name="title_favorites">Favorites</string>
+    <string name="title_gallery">Gallery</string>
 </resources>

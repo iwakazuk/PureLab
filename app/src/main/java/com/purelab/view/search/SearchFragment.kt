@@ -58,11 +58,11 @@ class SearchFragment : Fragment() {
 
                     // データを渡す処理
                     setFragmentResult("categoryData", bundleOf("category" to category))
-                    FragmentUtils.showFragment(
-                        ItemListFragment(),
-                        parentFragmentManager,
-                        R.id.nav_host_fragment
-                    )
+//                    FragmentUtils.showFragment(
+//                        ItemListFragment(),
+//                        parentFragmentManager,
+//                        R.id.nav_host_fragment
+//                    )
 
                 }
             }

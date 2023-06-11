@@ -1,158 +1,70 @@
 package com.purelab.app
 
-import android.graphics.Color
 import android.os.Bundle
-import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.isVisible
-import androidx.core.view.updateLayoutParams
-import androidx.core.view.updatePadding
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.navigation.NavigationBarView
 import com.purelab.R
 import com.purelab.databinding.ActivityMainBinding
-import com.purelab.models.mockItem
-import com.purelab.repository.ItemRepository
-import dev.chrisbanes.insetter.applyInsetter
-import kotlinx.coroutines.launch
+import com.purelab.adapters.ActivityFragmentStateAdapter
+import com.purelab.util.Event
+import com.purelab.viewmodel.NavControllerViewModel
+import androidx.lifecycle.Observer
 
 class MainActivity : AppCompatActivity() {
 
-//    @Inject
-//    lateinit var configRepository: ConfigRepository
-//
-//    @Inject
-//    lateinit var appUpdateManager: AppUpdateManager
-
-    private val hideAppBarDestinationIds = setOf(
-        R.id.navi_home,
-        R.id.navi_search,
-        R.id.navi_favorite,
-        R.id.navi_mypage
-    )
-
-    private val rootNavigationDestinationIds = setOf(
-        R.id.navi_home,
-        R.id.navi_search,
-        R.id.navi_favorite,
-        R.id.navi_mypage
-    )
-
-    private lateinit var binding: ActivityMainBinding
+    private val navControllerViewModel: NavControllerViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // TODO: スプラッシュ画面
-        // installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val dataBinding: ActivityMainBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        val viewPager2 = dataBinding.viewPager
+        val bottomNavigationView = dataBinding.bottomNav
 
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.TRANSPARENT
-        binding.appbar.applyInsetter {
-            type(
-                statusBars = true,
-            ) {
-                padding(
-                    top = true
-                )
-            }
-        }
+        // Cancel ViewPager swipe
+        viewPager2.isUserInputEnabled = false
 
-        val navController = binding.navHostFragment.getFragment<NavHostFragment>().navController
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        // Set viewpager adapter
+        viewPager2.adapter = ActivityFragmentStateAdapter(this, navControllerViewModel)
 
-        binding.requireNavigationView.setupWithNavController(navController)
-        binding.requireNavigationView.setOnItemReselectedListener { }
+        // Listen bottom navigation tabs change
+        bottomNavigationView.setOnNavigationItemSelectedListener {
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
-            binding.appbar.visibility(!isHideAppBar)
+            when (it.itemId) {
+                R.id.nav_graph_home -> {
+                    viewPager2.setCurrentItem(0, false)
+                    return@setOnNavigationItemSelectedListener true
 
-            val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
-            binding.requireNavigationView.isVisible = isRootDestination
-            updateInsets(!isRootDestination)
-
-//            val isDarkStatusBarDestination = darkStatusBarDestinationIds.contains(destination.id)
-//            val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
-//            windowInsetController.isAppearanceLightStatusBars =
-//                !isDarkStatusBarDestination && !isDarkTheme
-        }
-
-        // todo:データ取得用
-        val repository = ItemRepository()
-        lifecycleScope.launch {
-            repository.add(mockItem())
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        checkUpdate()
-    }
-
-    override fun onSupportNavigateUp() = checkNotNull(
-        supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
-    ).findNavController().navigateUp()
-
-    private fun updateInsets(isApplyInsets: Boolean) {
-        binding.rootLayout.applyInsetter {
-            if (isApplyInsets) {
-                type(
-                    displayCutout = true,
-                    statusBars = true,
-                    navigationBars = true,
-                    captionBar = true
-                ) {
-                    padding(horizontal = true)
                 }
-            } else {
-                binding.rootLayout.updatePadding(left = 0, right = 0)
+                R.id.nav_graph_dashboard -> {
+                    viewPager2.setCurrentItem(1, false)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.nav_graph_notification -> {
+                    viewPager2.setCurrentItem(2, false)
+                    return@setOnNavigationItemSelectedListener true
+                }
             }
+
+            false
+
         }
+
+        navControllerViewModel.currentNavController.observe(this, Observer { it ->
+
+            it?.let { event: Event<NavController> ->
+                event.getContentIfNotHandled()?.let { navController ->
+                    val appBarConfig = AppBarConfiguration(navController.graph)
+                    dataBinding.toolbar.setupWithNavController(navController, appBarConfig)
+                }
+            }
+        })
+
     }
-
-    private fun checkUpdate() {
-//        appUpdateManager.requestUpdateFlow()
-//            .onEach { appUpdate ->
-//                when (appUpdate) {
-//                    is AppUpdateResult.Available -> {
-//                        binding.requireNavigationView.getOrCreateBadge(R.id.navSettings)
-//                    }
-//                    else -> {
-//                        binding.requireNavigationView.removeBadge(R.id.navSettings)
-//                    }
-//                }
-//            }
-//            .catch {}
-//            .launchWhenStartedIn(lifecycleScope)
-    }
-
-    private fun AppBarLayout.visibility(isVisibility: Boolean) {
-        updateLayoutParams<ViewGroup.LayoutParams> {
-//            height = if (isVisibility) ViewGroup.LayoutParams.WRAP_CONTENT else 0
-        }
-    }
-
-//    private val ShapeTheme.themeRes: Int
-//        get() {
-//            return when (this) {
-//                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_DayNight_Rounded
-//                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_DayNight_Cut
-//            }
-//        }
-
-    private val ActivityMainBinding.requireNavigationView: NavigationBarView
-        get() = bottomNav as NavigationBarView
 }
