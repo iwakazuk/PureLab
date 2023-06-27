@@ -5,9 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorHome1"
-        android:padding="8dp">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.motion.widget.MotionLayout
             android:id="@+id/motionLayout"
