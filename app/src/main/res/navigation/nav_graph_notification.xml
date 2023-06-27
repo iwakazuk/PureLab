@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/notificationFragment1"
         android:name="com.purelab.fragment.blankfragment.NotificationFragment1"
-        android:label="NotificationFragment1"
+        android:label="MyPage"
         tools:layout="@layout/fragment_notification1">
         <action
             android:id="@+id/action_notificationFragment1_to_notificationFragment2"

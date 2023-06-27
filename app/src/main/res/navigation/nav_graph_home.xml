@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/homeFragment1"
         android:name="com.purelab.fragment.blankfragment.HomeFragment1"
-        android:label="HomeFragment1"
+        android:label="PureLab"
         tools:layout="@layout/fragment_home1">
         <action
             android:id="@+id/action_homeFragment1_to_homeFragment2"

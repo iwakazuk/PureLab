@@ -40,6 +40,10 @@
                 android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:itemIconTint="#FFB4B4"
+                app:itemRippleColor="#FFB4B4"
+                app:itemTextColor="#FFB4B4"
+                app:labelVisibilityMode="selected"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:menu="@menu/menu_bottom_nav" />
 

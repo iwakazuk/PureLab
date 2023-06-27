@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/dashboardFragment1"
         android:name="com.purelab.fragment.blankfragment.DashboardFragment1"
-        android:label="DashboardFragment1"
+        android:label="Search"
         tools:layout="@layout/fragment_dashboard1">
         <action
             android:id="@+id/action_dashboardFragment1_to_dashboardFragment2"
