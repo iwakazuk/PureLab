@@ -2,7 +2,7 @@ package com.purelab.utils
 
 import android.content.Context
 
-public enum class Category(val rowValue: String) {
+enum class Category(val rowValue: String) {
     /** 洗顔料 */
     FACIAL_WASH("FACIAL_WASH"),
 

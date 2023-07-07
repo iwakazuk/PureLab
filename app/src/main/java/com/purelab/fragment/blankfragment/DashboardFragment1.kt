@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -80,10 +82,16 @@ class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() 
         adapter.setOnItemClickListener(
             // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
             // 再利用をしないため object式でインターフェースを実装
+
             object : CategoryListAdapter.OnItemClickListener {
                 override fun onItemClick(category: String) {
-                    findNavController().navigate(R.id.action_dashboardFragment1_to_dashboardFragment2)
-
+                    setFragmentResult(
+                        "request_key",
+                        bundleOf("category" to category)
+                    )
+                    findNavController().navigate(
+                        R.id.action_dashboardFragment1_to_dashboardFragment2
+                    )
                 }
             }
         )

@@ -44,7 +44,7 @@
         app:graphResName="nav_graph_gallery"
         app:moduleName="gallery">
         <argument
-            android:name="count"
+            android:name="category"
             android:defaultValue="0"
             app:argType="integer" />
     </include-dynamic>

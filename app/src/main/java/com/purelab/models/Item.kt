@@ -10,6 +10,7 @@ data class Item(
     val category: String? = null,
     val detail: String? = null,
 ) : Serializable {
+
     companion object {
         private const val serialVersionUID: Long = 1L
     }
@@ -17,11 +18,11 @@ data class Item(
 
 fun mockItem(): Item = Item(
     item_id = "0001",
-    name = "ああああ",
+    name = "キュレル 化粧水 III",
     tagId = "ああああ",
     brandName = "キュレル（Curel）",
     category = "化粧水",
-    detail = "皮膚トラブルケア化粧水"
+    detail = "皮膚トラブルケア化粧水です"
 )
 
 fun Item.toMap(): Map<String, *> {

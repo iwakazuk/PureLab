@@ -11,8 +11,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.purelab.R
-import com.purelab.adapters.ItemData
-import com.purelab.adapters.ItemListAdapter
 import com.purelab.models.Item
 import com.purelab.models.mockItem
 import com.purelab.repository.ItemRepository
@@ -41,19 +39,19 @@ class ItemListFragment : Fragment() {
 
         // リストデータの作成
         val itemList = listOf(mockItem())
-        val dataList: List<ItemData> = itemList.map {
-            // TODO: URLから画像をひっぱってくるようにしたい
-            val itemImage = context.getDrawable(R.drawable.favorite_image)
-            ItemData(
-                itemImage,
-                it.brandName,
-                it.detail
-            )
-        }
-        // アダプターをセット
-        val adapter = ItemListAdapter(context, dataList)
-        val list: ListView = view.findViewById(R.id.item_list_view) ?: return null
-        list.adapter = adapter
+//        val dataList: List<ItemData> = itemList.map {
+//            // TODO: URLから画像をひっぱってくるようにしたい
+//            val itemImage = context.getDrawable(R.drawable.favorite_image)
+//            ItemData(
+//                itemImage,
+//                it.brandName,
+//                it.detail
+//            )
+//        }
+//        // アダプターをセット
+//        val adapter = ItemListAdapter(context, dataList)
+//        val list: ListView = view.findViewById(R.id.item_list_view) ?: return null
+//        list.adapter = adapter
         return view
     }
 

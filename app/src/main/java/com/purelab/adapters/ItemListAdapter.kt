@@ -8,39 +8,56 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
+import com.purelab.models.Item
 
 class ItemListAdapter(
-    context: Context,
-    data: List<ItemData>
-) : ArrayAdapter<ItemData>(context, 0, data) {
-    private lateinit var data: ItemData
+    private val data: List<Item>
+) : RecyclerView.Adapter<ItemListAdapter.ItemListRecyclerViewHolder>() {
+    // リスナを格納する変数を定義（インターフェースの型）
+    private lateinit var listener: OnItemClickListener
 
-    override fun getView(
-        position: Int,
-        convertView: View?,
-        parent: ViewGroup
-    ): View {
-        var view = convertView
-        if (view == null) {
-            // 一行分のレイアウトを生成
-            view = LayoutInflater.from(context).inflate(
-                R.layout.item_list,
-                parent,
-                false
-            )
+    // クリックイベントリスナのインターフェースを定義
+    interface OnItemClickListener {
+        fun onItemClick(itemId: String?)
+    }
+
+    // リスナをセット
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ItemListRecyclerViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.item_list, parent, false)
+        return ItemListRecyclerViewHolder(view)
+    }
+
+    override fun onBindViewHolder(
+        holder: ItemListRecyclerViewHolder,
+        position: Int
+    ) {
+        val item = data[position]
+        // holder.icon.text = item.item_id
+        holder.name.text = item.name
+        holder.brand.text = item.brandName
+        holder.detail.text = item.detail
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(item.item_id)
         }
-        // 一行分のデータを取得
-        data = getItem(position) as ItemData
-        view?.findViewById<ImageView>(R.id.item_icon)?.apply { data.icon }
-        view?.findViewById<TextView>(R.id.item_title)?.apply { text = data.title }
-        view?.findViewById<TextView>(R.id.item_text)?.apply { text = data.text }
-        return view!!
+    }
+
+    override fun getItemCount(): Int = data.size
+
+    class ItemListRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//        var icon: TextView = itemView.findViewById(R.id.item_icon)
+        var name: TextView = itemView.findViewById(R.id.item_name)
+        var brand: TextView = itemView.findViewById(R.id.item_brand)
+        var detail: TextView = itemView.findViewById(R.id.item_text)
     }
 }
-
-data class ItemData(
-    var icon: Drawable? = null,
-    var title: String? = null,
-    var text: String? = null
-)

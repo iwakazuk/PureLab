@@ -29,5 +29,4 @@
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/category_list"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
