@@ -100,6 +100,5 @@ class HomeFragment : Fragment() {
         } else {
             "Item\n${itemList[currentPosition - 1]}"
         }
-
     }
 }

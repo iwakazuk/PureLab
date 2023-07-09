@@ -1,13 +1,11 @@
 package com.purelab.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.utils.Category
 
 class CategoryListAdapter(
     private val categoryListData: MutableList<String>
@@ -31,7 +29,7 @@ class CategoryListAdapter(
         viewType: Int
     ): CategoryListRecyclerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.category_list, parent, false)
+        val view = inflater.inflate(R.layout.category_cell, parent, false)
         return CategoryListRecyclerViewHolder(view)
     }
 

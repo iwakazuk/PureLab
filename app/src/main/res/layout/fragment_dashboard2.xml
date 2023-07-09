@@ -18,13 +18,13 @@
             android:paddingTop="20dp"
             android:textSize="15sp"
             android:textStyle="bold"
-            tools:text="Category" />
+            android:text="Category" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/item_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/item_list" />
+            tools:listitem="@layout/item_cell" />
     </LinearLayout>
 </layout>

@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.card.MaterialCardView
 import com.purelab.R
 import com.purelab.databinding.FragmentHome1Binding
 
@@ -28,7 +29,7 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val homeView: View =
-            inflater.inflate(R.layout.fragment_home, container, false) ?: return null
+            inflater.inflate(R.layout.fragment_home1, container, false) ?: return null
         setupMotion(homeView)
         return homeView
     }
@@ -90,68 +91,23 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
     }
 
     private fun updateView(homeView: View) {
-        val centerTextView: TextView = homeView.findViewById(R.id.centerTextView)
-        val rightTextView: TextView = homeView.findViewById(R.id.rightTextView)
-        val leftTextView: TextView = homeView.findViewById(R.id.leftTextView)
-
-        centerTextView.text = "Item\n${itemList[currentPosition]}"
-
-        rightTextView.text = if (currentPosition == itemList.lastIndex) {
-            "Item\n${itemList.first()}"
-        } else {
-            "Item\n${itemList[currentPosition + 1]}"
-        }
-
-        leftTextView.text = if (currentPosition == 0) {
-            "Item\n${itemList.last()}"
-        } else {
-            "Item\n${itemList[currentPosition - 1]}"
-        }
+        val centerTextView: MaterialCardView = homeView.findViewById(R.id.centerView)
+        val rightTextView: MaterialCardView = homeView.findViewById(R.id.rightView)
+        val leftTextView: MaterialCardView = homeView.findViewById(R.id.leftView)
+//
+//        centerTextView.text = "Item\n${itemList[currentPosition]}"
+//
+//        rightTextView.text = if (currentPosition == itemList.lastIndex) {
+//            "Item\n${itemList.first()}"
+//        } else {
+//            "Item\n${itemList[currentPosition + 1]}"
+//        }
+//
+//        leftTextView.text = if (currentPosition == 0) {
+//            "Item\n${itemList.last()}"
+//        } else {
+//            "Item\n${itemList[currentPosition - 1]}"
+//        }
 
     }
-//    private var count = 0
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        val binding = dataBinding!!
-//
-//        binding.tvCount.text = "Count: $count"
-//
-//        binding.btnIncrease.setOnClickListener {
-//            binding.tvCount.text = "Count: ${++count}"
-//        }
-//
-//        binding.btnNextPage.setOnClickListener {
-//            val bundle = bundleOf("count" to count)
-//            findNavController().navigate(R.id.action_homeFragment1_to_homeFragment2, bundle)
-//        }
-//
-//        binding.btnGallery.setOnClickListener {
-//            val bundle = bundleOf("count" to count)
-//
-//            findNavController().navigate(
-//                R.id.nav_graph_gallery,
-//                bundle
-//            )
-//        }
-//
-//         🔥 Listen savedStateHandle liveData, any type can be put in a Bundle is supported
-//        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Int>("count")
-//            ?.observe(
-//                viewLifecycleOwner, Observer { result: Int ->
-//                    // Do something with the result.
-//                    count = result
-//                    binding.tvCount.text = "Count: $count"
-//
-//                })
-//
-//
-//        // TODO Not Working
-//        setFragmentResultListener("count") { key, bundle ->
-//            count = bundle.getInt("count")
-//        }
-//
-//    }
-
 }

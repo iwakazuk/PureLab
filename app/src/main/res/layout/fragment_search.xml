@@ -27,6 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/category_list"/>
+            tools:listitem="@layout/category_cell"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
