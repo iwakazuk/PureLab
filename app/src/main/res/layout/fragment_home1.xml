@@ -3,42 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment_layout"
+    <LinearLayout
+        android:id="@+id/fragment_home_item_card_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.constraintlayout.motion.widget.MotionLayout
-            android:id="@+id/motionLayout"
+        <TextView
+            android:id="@+id/section_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/motion_list"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="60dp"
+            android:background="@color/white_smoke"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="新着商品" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/leftView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp"
-                tools:listitem="@layout/item_card">
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/rightView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp"
-                tools:listitem="@layout/item_card">
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/centerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp"
-                tools:listitem="@layout/item_card">
-            </com.google.android.material.card.MaterialCardView>
-
-        </androidx.constraintlayout.motion.widget.MotionLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_card_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_card" />
+    </LinearLayout>
 </layout>
