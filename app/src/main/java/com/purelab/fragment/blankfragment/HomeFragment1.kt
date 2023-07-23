@@ -4,19 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
 import com.purelab.R
-import com.purelab.adapters.CategoryListAdapter
 import com.purelab.adapters.ItemCardListAdapter
 import com.purelab.databinding.FragmentHome1Binding
 import com.purelab.models.Item
@@ -33,19 +27,32 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-
         val binding = dataBinding!!
-        itemList = listOf(mockItem(), mockItem(), mockItem(), mockItem(), mockItem(), mockItem())
+
+        itemList = listOf(
+            mockItem(),
+            mockItem(),
+            mockItem(),
+            mockItem(),
+            mockItem(),
+            mockItem()
+        )
 
         // アダプターをセット
-        val bookListRecyclerView: RecyclerView = binding.itemCardListView
+        setAdapter(binding.newItemCardListView)
+        setAdapter(binding.recommendItemCardListView)
+
+        return binding.root
+    }
+
+    private fun setAdapter(recyclerView: RecyclerView) {
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         val adapter = ItemCardListAdapter(itemList)
 
-        bookListRecyclerView.layoutManager = linearLayoutManager
-        bookListRecyclerView.adapter = adapter
-        bookListRecyclerView.addItemDecoration(
+        recyclerView.layoutManager = linearLayoutManager
+        recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireActivity(),
                 linearLayoutManager.orientation
@@ -64,11 +71,10 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
                         bundleOf("itemId" to itemId)
                     )
                     findNavController().navigate(
-                        R.id.action_dashboardFragment2_to_dashboardFragment3
+                        R.id.action_homeFragment1_to_homeFragment2
                     )
                 }
             }
         )
-        return binding.root
     }
 }
