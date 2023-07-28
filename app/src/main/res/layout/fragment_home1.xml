@@ -1,131 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment_layout"
+    <LinearLayout
+        android:id="@+id/fragment_home_item_card_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.constraintlayout.motion.widget.MotionLayout
-            android:id="@+id/motionLayout"
+        <TextView
+            android:id="@+id/section_title_new_item"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/motion_list"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="60dp"
+            android:background="@color/white_smoke"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="新着商品" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/leftView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/new_item_card_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_card" />
 
-                <TextView
-                    android:id="@+id/leftTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:textColor="?attr/colorOnSurface" />
+        <TextView
+            android:id="@+id/section_title_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white_smoke"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="おすすめ" />
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/rightView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp">
-
-                <TextView
-                    android:id="@+id/rightTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:textColor="?attr/colorOnSurface" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/centerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardElevation="4dp">
-
-                <TextView
-                    android:id="@+id/centerTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:textColor="?attr/colorOnSurface" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </androidx.constraintlayout.motion.widget.MotionLayout>
-
-<!--        <com.google.android.material.textview.MaterialTextView-->
-<!--            android:id="@+id/tvTitle"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Home Fragment1"-->
-<!--            android:textColor="#fff"-->
-<!--            android:textSize="32sp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.3" />-->
-
-<!--        <com.google.android.material.textview.MaterialTextView-->
-<!--            android:id="@+id/tvCount"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="32dp"-->
-<!--            android:text="Count 0"-->
-<!--            android:textColor="#fff"-->
-<!--            android:textSize="18sp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />-->
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btnIncrease"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="32dp"-->
-<!--            android:text="Increase"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tvCount" />-->
-
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btnNextPage"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Next Page"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />-->
-
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/btnGallery"-->
-<!--            style="@style/Widget.AppCompat.Button.Colored"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Gallery"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/btnNextPage" />-->
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommend_item_card_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_card" />
+    </LinearLayout>
 </layout>

@@ -30,7 +30,6 @@ class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() 
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val context = context ?: return null
         val binding = dataBinding!!
 
         setFragmentResultListener("request_key") { _, bundle ->

@@ -2,75 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
-    android:layout_height="300dp"
+    android:layout_width="180dp"
+    android:layout_height="220dp"
     android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
     android:paddingStart="10dp"
     android:paddingTop="10dp"
     android:paddingEnd="16dp"
-    android:layout_marginTop="150dp"
-    android:orientation="vertical"
     android:paddingBottom="10dp">
 
     <FrameLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        >
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center">
+
         <ImageView
-            android:id="@+id/home_item_icon"
+            android:id="@+id/item_card_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/home_image"
-            />
+            android:src="@drawable/home_image" />
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/item_title"
+            android:id="@+id/item_card_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="@color/sub_title"
-            app:autoSizeMaxTextSize="15sp"
-            app:autoSizeMinTextSize="8sp"
-            android:text="商品名" />
+            android:gravity="center"
+            android:text="商品名"
+            android:textStyle="bold"
+            android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/item_Category"
+            android:id="@+id/item_card_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:gravity="center"
+            android:text="カテゴリ"
             android:textColor="@color/sub_title"
-            app:autoSizeMaxTextSize="15sp"
-            app:autoSizeMinTextSize="8sp"
-            android:text="カテゴリ" />
+            android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/item_brandName"
+            android:id="@+id/item_card_brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:gravity="center"
+            android:text="ブランド名"
             android:textColor="@color/sub_title"
-            app:autoSizeMaxTextSize="15sp"
-            app:autoSizeMinTextSize="8sp"
-            android:text="ブランド名" />
+            android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/item_text"
+            android:id="@+id/item_card_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="15sp"
-            app:autoSizeMaxTextSize="15sp"
-            app:autoSizeMinTextSize="8sp"
             tools:text="商品詳細" />
     </LinearLayout>
-
 </LinearLayout>

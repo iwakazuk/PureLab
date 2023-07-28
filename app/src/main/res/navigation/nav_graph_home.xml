@@ -13,7 +13,14 @@
         tools:layout="@layout/fragment_home1">
         <action
             android:id="@+id/action_homeFragment1_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+            app:destination="@id/dashboardFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment3"
+        android:name="com.purelab.fragment.blankfragment.DashboardFragment3"
+        android:label="DashboardFragment3"
+        tools:layout="@layout/fragment_dashboard3">
     </fragment>
 
     <fragment
