@@ -1,11 +1,11 @@
-package com.purelab.view.mypage
+package com.purelab.fragment.blankfragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.purelab.R
 import com.purelab.databinding.FragmentNotification2Binding
-import com.purelab.view.BaseDataBindingFragment
+import com.purelab.fragment.blankfragment.BaseDataBindingFragment
 
 class NotificationFragment2 : BaseDataBindingFragment<FragmentNotification2Binding>() {
 

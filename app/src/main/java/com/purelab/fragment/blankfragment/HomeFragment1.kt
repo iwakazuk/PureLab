@@ -1,4 +1,4 @@
-package com.purelab.view.home
+package com.purelab.fragment.blankfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemCardListAdapter
 import com.purelab.databinding.FragmentHome1Binding
-import com.purelab.view.BaseDataBindingFragment
 import com.purelab.models.Item
 import com.purelab.models.mockItem
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/notificationFragment1"
-        android:name="com.purelab.view.mypage.NotificationFragment1"
+        android:name="com.purelab.fragment.blankfragment.NotificationFragment1"
         android:label="MyPage"
         tools:layout="@layout/fragment_notification1">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/notificationFragment2"
-        android:name="com.purelab.view.mypage.NotificationFragment2"
+        android:name="com.purelab.fragment.blankfragment.NotificationFragment2"
         android:label="NotificationFragment2"
         tools:layout="@layout/fragment_notification3">
         <action
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/notificationFragment3"
-        android:name="com.purelab.view.mypage.NotificationFragment3"
+        android:name="com.purelab.fragment.blankfragment.NotificationFragment3"
         android:label="NotificationFragment3"
         tools:layout="@layout/fragment_notification3">
         <action

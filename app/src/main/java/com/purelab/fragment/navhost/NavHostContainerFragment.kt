@@ -1,4 +1,4 @@
-package com.purelab.view
+package com.purelab.fragment.navhost
 
 import android.os.Bundle
 import android.view.LayoutInflater
