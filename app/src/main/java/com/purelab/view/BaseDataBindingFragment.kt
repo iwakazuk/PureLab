@@ -1,4 +1,4 @@
-package com.purelab.fragment.blankfragment
+package com.purelab.view
 
 import android.content.Context
 import android.os.Bundle

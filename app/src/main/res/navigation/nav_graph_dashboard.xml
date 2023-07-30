@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment1"
-        android:name="com.purelab.fragment.blankfragment.DashboardFragment1"
+        android:name="com.purelab.view.search.DashboardFragment1"
         android:label="Search"
         tools:layout="@layout/fragment_dashboard1">
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment2"
-        android:name="com.purelab.fragment.blankfragment.DashboardFragment2"
+        android:name="com.purelab.view.search.DashboardFragment2"
         android:label="DashboardFragment2"
         tools:layout="@layout/fragment_dashboard2">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment3"
-        android:name="com.purelab.fragment.blankfragment.DashboardFragment3"
+        android:name="com.purelab.view.search.DashboardFragment3"
         android:label="DashboardFragment3"
         tools:layout="@layout/fragment_dashboard3">
         <action

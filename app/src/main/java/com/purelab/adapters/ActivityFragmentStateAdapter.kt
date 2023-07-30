@@ -6,13 +6,11 @@ import androidx.fragment.app.commitNow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter.FragmentTransactionCallback.OnPostEventListener
-import com.purelab.R
-import com.purelab.fragment.navhost.DashboardNavHostFragment
-import com.purelab.fragment.navhost.HomeNavHostFragment
-import com.purelab.fragment.navhost.NotificationHostFragment
+import com.purelab.view.search.DashboardNavHostFragment
+import com.purelab.view.home.HomeNavHostFragment
+import com.purelab.view.mypage.NotificationHostFragment
 import com.purelab.viewmodel.NavControllerViewModel
 
 

@@ -1,4 +1,4 @@
-package com.purelab.fragment.blankfragment
+package com.purelab.view.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,20 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.CategoryListAdapter
-import com.purelab.databinding.FragmentDashboard1Binding
-import com.purelab.utils.Category
-import com.purelab.utils.toEnumString
+import com.purelab.adapters.ItemListAdapter
+import com.purelab.databinding.FragmentDashboard2Binding
+import com.purelab.view.BaseDataBindingFragment
+import com.purelab.models.mockItem
 
-// (SearchFragment)
-class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() {
+class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() {
 
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard1
+    override fun getLayoutRes(): Int = R.layout.fragment_dashboard2
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,19 +27,19 @@ class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() 
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val context = context ?: return null
         val binding = dataBinding!!
 
-        // リストデータの作成
-        val categoryList = Category.values()
-        val dataList = categoryList.map {
-            it.toEnumString(context)
-        }.toMutableList()
+        setFragmentResultListener("request_key") { _, bundle ->
+            val category = bundle.getString("category")
+            binding.categoryTitle.text = category
+        }
+
+        val itemList = listOf(mockItem())
 
         // アダプターをセット
-        val bookListRecyclerView:RecyclerView = binding.listView
+        val bookListRecyclerView: RecyclerView = binding.itemListView
         val linearLayoutManager = LinearLayoutManager(requireActivity())
-        val adapter = CategoryListAdapter(dataList)
+        val adapter = ItemListAdapter(itemList)
 
         bookListRecyclerView.layoutManager = linearLayoutManager
         bookListRecyclerView.adapter = adapter
@@ -52,21 +52,19 @@ class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() 
 
         // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
-            // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
-            // 再利用をしないため object式でインターフェースを実装
-
-            object : CategoryListAdapter.OnItemClickListener {
-                override fun onItemClick(category: String) {
+            object : ItemListAdapter.OnItemClickListener {
+                override fun onItemClick(itemId: String?) {
                     setFragmentResult(
                         "request_key",
-                        bundleOf("category" to category)
+                        bundleOf("item_id" to itemId)
                     )
                     findNavController().navigate(
-                        R.id.action_dashboardFragment1_to_dashboardFragment2
+                        R.id.action_dashboardFragment2_to_dashboardFragment3
                     )
                 }
             }
         )
+
         return binding.root
     }
 }
