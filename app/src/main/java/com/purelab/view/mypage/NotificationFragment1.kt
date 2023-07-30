@@ -1,4 +1,4 @@
-package com.purelab.fragment.blankfragment
+package com.purelab.view.mypage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentNotification1Binding
+import com.purelab.view.BaseDataBindingFragment
 import com.purelab.models.mockItem
 
 class NotificationFragment1 : BaseDataBindingFragment<FragmentNotification1Binding>() {

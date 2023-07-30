@@ -1,12 +1,12 @@
-package com.purelab.fragment.blankfragment
+package com.purelab.view.home
 
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.purelab.R
 import com.purelab.databinding.FragmentHome2Binding
+import com.purelab.view.BaseDataBindingFragment
 
 class HomeFragment2 : BaseDataBindingFragment<FragmentHome2Binding>() {
 

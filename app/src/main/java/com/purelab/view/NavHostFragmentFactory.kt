@@ -1,10 +1,9 @@
-package com.purelab.fragment.factory
+package com.purelab.view
 
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.purelab.fragment.navhost.NavHostContainerFragment
 
 class NavHostFragmentFactory private constructor() : FragmentFactory() {
 

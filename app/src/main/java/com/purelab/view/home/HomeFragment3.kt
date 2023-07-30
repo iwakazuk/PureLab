@@ -1,15 +1,14 @@
-package com.purelab.fragment.blankfragment
+package com.purelab.view.home
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.purelab.R
-import com.purelab.databinding.FragmentDashboard3Binding
+import com.purelab.databinding.FragmentHome3Binding
+import com.purelab.view.BaseDataBindingFragment
 
-class DashboardFragment3 : BaseDataBindingFragment<FragmentDashboard3Binding>() {
-
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard3
-
+class HomeFragment3 : BaseDataBindingFragment<FragmentHome3Binding>() {
+    override fun getLayoutRes(): Int = R.layout.fragment_home3
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,8 +16,7 @@ class DashboardFragment3 : BaseDataBindingFragment<FragmentDashboard3Binding>() 
         val binding = dataBinding!!
 
         binding.btnGoToStart.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment3_to_dashboardFragment1)
+            findNavController().navigate(R.id.action_homeFragment3_to_homeFragment1)
         }
-
     }
 }
