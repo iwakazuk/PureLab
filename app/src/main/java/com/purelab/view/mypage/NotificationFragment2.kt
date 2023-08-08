@@ -19,7 +19,5 @@ class NotificationFragment2 : BaseDataBindingFragment<FragmentNotification2Bindi
         binding.btnNextPage.setOnClickListener {
             findNavController().navigate(R.id.action_notificationFragment2_to_notificationFragment3)
         }
-
     }
-
 }

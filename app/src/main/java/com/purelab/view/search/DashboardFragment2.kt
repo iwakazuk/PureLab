@@ -25,7 +25,7 @@ class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() 
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = dataBinding!!
 

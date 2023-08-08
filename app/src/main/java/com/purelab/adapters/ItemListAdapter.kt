@@ -9,7 +9,7 @@ import com.purelab.R
 import com.purelab.models.Item
 
 class ItemListAdapter(
-    private val data: List<Item>
+    private var data: List<Item>
 ) : RecyclerView.Adapter<ItemListAdapter.ItemListRecyclerViewHolder>() {
     // リスナを格納する変数を定義（インターフェースの型）
     private lateinit var listener: OnItemClickListener
@@ -41,7 +41,7 @@ class ItemListAdapter(
         // holder.icon.text = item.item_id
         holder.name.text = item.name
         holder.brand.text = item.brandName
-        holder.detail.text = item.detail
+//        holder.detail.text = item.detail
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(item.item_id)
@@ -54,6 +54,11 @@ class ItemListAdapter(
 //        var icon: TextView = itemView.findViewById(R.id.item_cell_icon)
         var name: TextView = itemView.findViewById(R.id.item_cell_name)
         var brand: TextView = itemView.findViewById(R.id.item_cell_brand)
-        var detail: TextView = itemView.findViewById(R.id.item_cell_detail)
+//        var detail: TextView = itemView.findViewById(R.id.item_cell_detail)
+    }
+
+    fun updateData(newData: List<Item>) {
+        this.data = newData
+        notifyDataSetChanged()
     }
 }

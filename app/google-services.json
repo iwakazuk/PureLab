@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "747390248617",
-    "firebase_url": "https://purelab-a8c92-default-rtdb.firebaseio.com",
-    "project_id": "purelab-a8c92",
-    "storage_bucket": "purelab-a8c92.appspot.com"
+    "project_number": "971076474094",
+    "project_id": "purelab-ab6c8",
+    "storage_bucket": "purelab-ab6c8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:747390248617:android:0dad49148bd90ab535abb8",
+        "mobilesdk_app_id": "1:971076474094:android:5ccd398e1f972faa5dcfff",
         "android_client_info": {
-          "package_name": "com.PureLab"
+          "package_name": "com.purelab"
         }
       },
       "oauth_client": [
         {
-          "client_id": "747390248617-r9ud53vno6tphs2vimvnsgjkm4u2e9b3.apps.googleusercontent.com",
+          "client_id": "971076474094-is9gsk5pcguv5f0a3jnuf68o7rr8dlrd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCMjtTzIoyGvqUTvR_9lLU2own0D4jx5UM"
+          "current_key": "AIzaSyCQiAJf4_vuEqB2zOqyP0TFlJKcHswGrsU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "747390248617-r9ud53vno6tphs2vimvnsgjkm4u2e9b3.apps.googleusercontent.com",
+              "client_id": "971076474094-is9gsk5pcguv5f0a3jnuf68o7rr8dlrd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

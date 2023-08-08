@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="72dp"
+    android:layout_height="90dp"
     android:orientation="horizontal"
     android:paddingHorizontal="10dp"
     android:paddingVertical="10dp">
@@ -11,8 +11,9 @@
 
     <ImageView
         android:id="@+id/item_cell_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
         android:src="@drawable/home_image" />
 
     <LinearLayout
@@ -22,37 +23,23 @@
         android:paddingStart="10dp"
         android:paddingTop="4dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/item_cell_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="商品名"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/item_cell_brand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:text="ブランド名"
-                android:textColor="@color/sub_title"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/item_cell_detail"
+            android:id="@+id/item_cell_brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="商品詳細"
+            android:paddingStart="10dp"
+            android:text="ブランド名"
+            android:textColor="@color/sub_title"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/item_cell_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="商品名"
             android:textSize="15sp"
-            app:autoSizeMaxTextSize="15sp"
-            app:autoSizeMinTextSize="8sp" />
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
