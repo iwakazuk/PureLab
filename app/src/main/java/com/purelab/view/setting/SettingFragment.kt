@@ -16,7 +16,7 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
         val binding = dataBinding!!
 
         binding.btnGoToStart.setOnClickListener {
-            findNavController().navigate(R.id.action_setting_to_notificationFragment1)
+            findNavController().navigate(R.id.action_setting_to_mypage)
         }
     }
 }

@@ -3,33 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_notification"
-    app:startDestination="@id/notificationFragment1">
+    app:startDestination="@id/myPageFragment">
 
     <fragment
-        android:id="@+id/notificationFragment1"
-        android:name="com.purelab.view.mypage.NotificationFragment1"
+        android:id="@+id/myPageFragment"
+        android:name="com.purelab.view.mypage.MyPageFragment"
         android:label="MyPage"
-        tools:layout="@layout/fragment_notification1">
+        tools:layout="@layout/fragment_mypage">
         <action
-            android:id="@+id/action_notificationFragment1_to_notificationFragment2"
-            app:destination="@id/notificationFragment2" />
+            android:id="@+id/action_mypage_to_favorite"
+            app:destination="@id/favoriteFragment" />
 
         <action
-            android:id="@+id/action_notificationFragment1_to_setting"
+            android:id="@+id/action_mypage_to_setting"
             app:destination="@id/settingFragment3" />
 
         <action
-            android:id="@+id/action_notificationFragment1_to_nav_graph_favorites"
+            android:id="@+id/action_mypage_to_nav_graph_favorites"
             app:destination="@id/nav_graph_favorites" />
     </fragment>
 
     <fragment
-        android:id="@+id/notificationFragment2"
-        android:name="com.purelab.view.favorite.NotificationFragment2"
+        android:id="@+id/favoriteFragment"
+        android:name="com.purelab.view.favorite.FavoriteFragment"
         android:label="お気に入り"
         tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_notificationFragment1_to_setting"
+            android:id="@+id/action_mypage_to_setting"
             app:destination="@id/settingFragment3" />
     </fragment>
 
@@ -39,9 +39,9 @@
         android:label="個人設定"
         tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_setting_to_notificationFragment1"
-            app:destination="@id/notificationFragment1"
-            app:popUpTo="@id/notificationFragment1"
+            android:id="@+id/action_setting_to_mypage"
+            app:destination="@id/myPageFragment"
+            app:popUpTo="@id/myPageFragment"
             app:popUpToInclusive="true" />
     </fragment>
 

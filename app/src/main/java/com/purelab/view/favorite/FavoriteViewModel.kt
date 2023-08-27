@@ -1,4 +1,4 @@
-package com.purelab.view.mypage
+package com.purelab.view.favorite
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -9,7 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.purelab.models.Item
 import com.purelab.models.mockItem
 
-class MyPageViewModel : ViewModel() {
+class FavoriteViewModel : ViewModel() {
     private var newResult = MutableLiveData<List<Item>>()
     val data: LiveData<List<Item>> = newResult
 

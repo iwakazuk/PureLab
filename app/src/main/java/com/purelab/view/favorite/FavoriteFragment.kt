@@ -13,20 +13,19 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
-import com.purelab.databinding.FragmentNotification2Binding
+import com.purelab.databinding.FragmentFavoriteBinding
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.view.mypage.MyPageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-class NotificationFragment2 : BaseDataBindingFragment<FragmentNotification2Binding>() {
+class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
-    override fun getLayoutRes(): Int = R.layout.fragment_notification2
-    private val mypageVm: MyPageViewModel by viewModels()
+    override fun getLayoutRes(): Int = R.layout.fragment_favorite
+    private val mypageVm: FavoriteViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

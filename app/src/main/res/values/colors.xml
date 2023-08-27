@@ -18,8 +18,8 @@
     <color name="colorDashboard3">#4FC3F7</color>
 
     <!-- Notification Fragments -->
-    <color name="colorNotification1">#43A047</color>
-    <color name="colorNotification2">#66BB6A</color>
+    <color name="colorMyPage">#43A047</color>
+    <color name="colorFavorite">#66BB6A</color>
     <color name="colorSetting">#81C784</color>
 
     <color name="purple_200">#FFBB86FC</color>
