@@ -13,14 +13,14 @@
     <color name="colorHome3">#FFD54F</color>
 
     <!-- Dashboard Fragments -->
-    <color name="colorDashboard1">#039BE5</color>
+    <color name="colorSearch">#039BE5</color>
     <color name="colorDashboard2">#29B6F6</color>
     <color name="colorDashboard3">#4FC3F7</color>
 
     <!-- Notification Fragments -->
     <color name="colorNotification1">#43A047</color>
     <color name="colorNotification2">#66BB6A</color>
-    <color name="colorNotification3">#81C784</color>
+    <color name="colorSetting">#81C784</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

@@ -15,27 +15,31 @@
             app:destination="@id/notificationFragment2" />
 
         <action
+            android:id="@+id/action_notificationFragment1_to_setting"
+            app:destination="@id/settingFragment3" />
+
+        <action
             android:id="@+id/action_notificationFragment1_to_nav_graph_favorites"
             app:destination="@id/nav_graph_favorites" />
     </fragment>
 
     <fragment
         android:id="@+id/notificationFragment2"
-        android:name="com.purelab.view.mypage.NotificationFragment2"
-        android:label="NotificationFragment2"
-        tools:layout="@layout/fragment_notification3">
+        android:name="com.purelab.view.favorite.NotificationFragment2"
+        android:label="お気に入り"
+        tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_notificationFragment2_to_notificationFragment3"
-            app:destination="@id/notificationFragment3" />
+            android:id="@+id/action_notificationFragment1_to_setting"
+            app:destination="@id/settingFragment3" />
     </fragment>
 
     <fragment
-        android:id="@+id/notificationFragment3"
-        android:name="com.purelab.view.mypage.NotificationFragment3"
-        android:label="NotificationFragment3"
-        tools:layout="@layout/fragment_notification3">
+        android:id="@+id/settingFragment3"
+        android:name="com.purelab.view.setting.SettingFragment"
+        android:label="個人設定"
+        tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_notificationFragment3_to_notificationFragment1"
+            android:id="@+id/action_setting_to_notificationFragment1"
             app:destination="@id/notificationFragment1"
             app:popUpTo="@id/notificationFragment1"
             app:popUpToInclusive="true" />

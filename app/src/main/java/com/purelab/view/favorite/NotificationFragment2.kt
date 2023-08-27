@@ -1,4 +1,4 @@
-package com.purelab.view.search
+package com.purelab.view.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,20 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
-import com.purelab.databinding.FragmentDashboard2Binding
+import com.purelab.databinding.FragmentNotification2Binding
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.models.mockItem
+import com.purelab.view.mypage.MyPageViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
-class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() {
+class NotificationFragment2 : BaseDataBindingFragment<FragmentNotification2Binding>() {
+    private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard2
+    override fun getLayoutRes(): Int = R.layout.fragment_notification2
+    private val mypageVm: MyPageViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,21 +36,14 @@ class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() 
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = dataBinding!!
 
-        setFragmentResultListener("request_key") { _, bundle ->
-            val category = bundle.getString("category")
-            binding.categoryTitle.text = category
-        }
-
-        val itemList = listOf(mockItem())
-
         // アダプターをセット
-        val bookListRecyclerView: RecyclerView = binding.itemListView
         val linearLayoutManager = LinearLayoutManager(requireActivity())
-        val adapter = ItemListAdapter(itemList)
+        val adapter = ItemListAdapter(emptyList())
 
-        bookListRecyclerView.layoutManager = linearLayoutManager
-        bookListRecyclerView.adapter = adapter
-        bookListRecyclerView.addItemDecoration(
+        val recyclerView = binding.mypageItemListView
+        recyclerView.layoutManager = linearLayoutManager
+        recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireActivity(),
                 linearLayoutManager.orientation
@@ -65,6 +65,25 @@ class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() 
             }
         )
 
+        // ViewModelのdataを観察
+        mypageVm.data.observe(viewLifecycleOwner, Observer { data ->
+            // アダプターをセット
+            adapter.updateData(data)
+        })
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        coroutineScope.launch {
+            // 必要に応じてデータを取得
+            mypageVm.fetchData()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        coroutineScope.cancel()
     }
 }

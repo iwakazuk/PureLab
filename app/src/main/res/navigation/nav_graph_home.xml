@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment3"
-        android:name="com.purelab.view.search.DashboardFragment3"
+        android:name="com.purelab.view.itemdetail.DashboardFragment3"
         android:label="DashboardFragment3"
         tools:layout="@layout/fragment_dashboard3">
     </fragment>

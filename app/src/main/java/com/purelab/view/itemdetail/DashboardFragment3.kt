@@ -1,4 +1,4 @@
-package com.purelab.view.search
+package com.purelab.view.itemdetail
 
 import android.os.Bundle
 import android.view.View
@@ -18,7 +18,7 @@ class DashboardFragment3 : BaseDataBindingFragment<FragmentDashboard3Binding>() 
         val binding = dataBinding!!
 
         binding.btnGoToStart.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment3_to_dashboardFragment1)
+            findNavController().navigate(R.id.action_dashboardFragment3_to_searchFragment)
         }
 
     }

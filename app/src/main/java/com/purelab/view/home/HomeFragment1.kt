@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +22,7 @@ import com.purelab.models.mockItem
 class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_home1
-    private var itemList: List<Item> = emptyList()
+    private val homeVm: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,25 +30,32 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        val binding = dataBinding!!
-
-        itemList = listOf(
-            mockItem(),
-            mockItem(),
-            mockItem(),
-            mockItem(),
-            mockItem(),
-            mockItem()
-        )
-
-        // アダプターをセット
-        setAdapter(binding.newItemCardListView)
-        setAdapter(binding.recommendItemCardListView)
-
-        return binding.root
+        return inflater.inflate(R.layout.fragment_home1, container, false)
     }
 
-    private fun setAdapter(recyclerView: RecyclerView) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val binding = dataBinding!!
+
+        // ViewModelのdataを観察
+        homeVm.data.observe(viewLifecycleOwner, Observer { data ->
+            // アダプターをセット
+            setAdapter(binding.newItemCardListView, data)
+            setAdapter(binding.recommendItemCardListView, data)
+        })
+
+        // 必要に応じてデータを取得
+        homeVm.fetchData()
+    }
+
+    private fun setAdapter(
+        recyclerView: RecyclerView,
+        itemList: List<Item>
+    ) {
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         val adapter = ItemCardListAdapter(itemList)

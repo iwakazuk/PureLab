@@ -22,7 +22,6 @@ class HomeNavHostFragment : BaseDataBindingFragment<FragmentNavhostHomeBinding>(
 
     private val nestedNavHostFragmentId = R.id.nestedHomeNavHostFragment
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

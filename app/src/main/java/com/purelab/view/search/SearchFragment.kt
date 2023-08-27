@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.CategoryListAdapter
-import com.purelab.databinding.FragmentDashboard1Binding
+import com.purelab.databinding.FragmentSearchBinding
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.utils.Category
 import com.purelab.utils.toEnumString
 
 // (SearchFragment)
-class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() {
+class SearchFragment : BaseDataBindingFragment<FragmentSearchBinding>() {
 
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard1
+    override fun getLayoutRes(): Int = R.layout.fragment_search
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +63,7 @@ class DashboardFragment1 : BaseDataBindingFragment<FragmentDashboard1Binding>() 
                         bundleOf("category" to category)
                     )
                     findNavController().navigate(
-                        R.id.action_dashboardFragment1_to_dashboardFragment2
+                        R.id.action_searchFragment_to_dashboardFragment2
                     )
                 }
             }
