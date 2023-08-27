@@ -63,7 +63,7 @@ class SearchFragment : BaseDataBindingFragment<FragmentSearchBinding>() {
                         bundleOf("category" to category)
                     )
                     findNavController().navigate(
-                        R.id.action_searchFragment_to_dashboardFragment2
+                        R.id.action_search_to_itemlist
                     )
                 }
             }

@@ -12,17 +12,17 @@
         android:label="Search"
         tools:layout="@layout/fragment_search">
         <action
-            android:id="@+id/action_searchFragment_to_dashboardFragment2"
-            app:destination="@id/dashboardFragment2" />
+            android:id="@+id/action_search_to_itemlist"
+            app:destination="@id/itemListFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/dashboardFragment2"
-        android:name="com.purelab.view.itemlist.DashboardFragment2"
-        android:label="DashboardFragment2"
-        tools:layout="@layout/fragment_dashboard2">
+        android:id="@+id/itemListFragment"
+        android:name="com.purelab.view.itemlist.ItemListFragment"
+        android:label="itemListFragment"
+        tools:layout="@layout/fragment_itemlist">
         <action
-            android:id="@+id/action_dashboardFragment2_to_dashboardFragment3"
+            android:id="@+id/action_itemList_to_dashboardFragment3"
             app:destination="@id/dashboardFragment3" />
     </fragment>
     <fragment

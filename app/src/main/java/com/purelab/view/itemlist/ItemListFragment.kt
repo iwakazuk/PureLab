@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
-import com.purelab.databinding.FragmentDashboard2Binding
+import com.purelab.databinding.FragmentItemlistBinding
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.models.mockItem
 
-class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() {
+class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard2
+    override fun getLayoutRes(): Int = R.layout.fragment_itemlist
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,7 +59,7 @@ class DashboardFragment2 : BaseDataBindingFragment<FragmentDashboard2Binding>() 
                         bundleOf("item_id" to itemId)
                     )
                     findNavController().navigate(
-                        R.id.action_dashboardFragment2_to_dashboardFragment3
+                        R.id.action_itemList_to_dashboardFragment3
                     )
                 }
             }
