@@ -1,5 +1,6 @@
 <?xml  version='1.0' encoding='utf-8'?>
 <resources>
+    <!--Category-->
     <string name="utils.Enum.Category.FACIAL_WASH">洗顔料</string>
     <string name="utils.Enum.Category.CLEANSING">クレンジング</string>
     <string name="utils.Enum.Category.LOTION">化粧水</string>
@@ -26,4 +27,16 @@
     <string name="utils.Enum.Category.PEELINGS">ピーリング・ゴマージュ</string>
     <string name="utils.Enum.Category.LIP_BALM">リップクリーム</string>
     <string name="utils.Enum.Category.DEODORANTS">デオドラント・制汗剤</string>
+
+    <!--Sex-->
+    <string name="utils.Enum.Sex.MAN">男性</string>
+    <string name="utils.Enum.Sex.WOMAN">女性</string>
+    <string name="utils.Enum.Sex.OTHER">設定しない</string>
+
+    <!--SkinType-->
+    <string name="utils.Enum.SkinType.SRY_SKIN">乾燥肌</string>
+    <string name="utils.Enum.SkinType.OILY_SKIN">脂性肌（オイリー肌）</string>
+    <string name="utils.Enum.SkinType.INNER_DRY">混合肌（インナードライ）</string>
+    <string name="utils.Enum.SkinType.NORMAL_SKIN">普通肌</string>
+    <string name="utils.Enum.SkinType.OTHER">設定しない</string>
 </resources>

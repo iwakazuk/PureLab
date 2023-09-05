@@ -39,14 +39,14 @@ class ItemCardListAdapter(
         position: Int
     ) {
         val item = data[position]
-        // holder.icon.text = item.item_id
+        // holder.icon.text = item.itemId
         holder.name.text = item.name
         holder.category.text = item.category
         holder.brand.text = item.brandName
         holder.detail.text = item.detail
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(item.item_id)
+            listener.onItemClick(item.itemId)
         }
     }
 

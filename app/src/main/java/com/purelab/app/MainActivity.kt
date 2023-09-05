@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.purelab.R
-import com.purelab.databinding.ActivityMainBinding
 import com.purelab.adapters.ActivityFragmentStateAdapter
+import com.purelab.databinding.ActivityMainBinding
 import com.purelab.util.Event
 import com.purelab.viewmodel.NavControllerViewModel
-import androidx.lifecycle.Observer
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,10 +42,12 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
 
                 }
+
                 R.id.nav_graph_dashboard -> {
                     viewPager2.setCurrentItem(1, false)
                     return@setOnNavigationItemSelectedListener true
                 }
+
                 R.id.nav_graph_notification -> {
                     viewPager2.setCurrentItem(2, false)
                     return@setOnNavigationItemSelectedListener true
@@ -65,6 +67,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-
     }
 }

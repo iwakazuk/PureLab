@@ -75,7 +75,7 @@ class FavoriteViewModel : ViewModel() {
         val tagId = data?.get("tagId") as String?
 
         return Item(
-            item_id = id,
+            itemId = id,
             name = name,
             tagId = tagId,
             brandName = brandName,

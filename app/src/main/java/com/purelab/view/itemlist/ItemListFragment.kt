@@ -56,7 +56,7 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
                 override fun onItemClick(itemId: String?) {
                     setFragmentResult(
                         "request_key",
-                        bundleOf("item_id" to itemId)
+                        bundleOf("itemId" to itemId)
                     )
                     findNavController().navigate(
                         R.id.action_itemList_to_dashboardFragment3

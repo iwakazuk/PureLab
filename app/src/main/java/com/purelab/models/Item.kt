@@ -3,7 +3,7 @@ package com.purelab.models
 import java.io.Serializable
 
 data class Item(
-    var item_id: String? = null,
+    var itemId: String? = null,
     val name: String? = null,
     val tagId: String? = null,
     val brandName: String? = null,
@@ -17,7 +17,7 @@ data class Item(
 }
 
 fun mockItem(): Item = Item(
-    item_id = "0001",
+    itemId = "0001",
     name = "キュレル 化粧水 III",
     tagId = "ああああ",
     brandName = "キュレル（Curel）",
@@ -27,7 +27,7 @@ fun mockItem(): Item = Item(
 
 fun Item.toMap(): Map<String, *> {
     return hashMapOf(
-        "item_id" to this.item_id,
+        "itemId" to this.itemId,
         "name" to this.name,
         "tagId" to this.tagId,
         "brandName" to this.brandName,
@@ -37,11 +37,11 @@ fun Item.toMap(): Map<String, *> {
 }
 
 fun Map<String, Any>.toItem(): Item {
-    val item_id = this["item_id"] as String
+    val itemId = this["itemId"] as String
     val name = this["name"] as String
     val tagId = this["tagId"] as String
     val brandName = this["brandName"] as String
     val category = this["category"] as String
     val detail = this["detail"] as String
-    return Item(item_id, name, tagId, brandName, category, detail)
+    return Item(itemId, name, tagId, brandName, category, detail)
 }

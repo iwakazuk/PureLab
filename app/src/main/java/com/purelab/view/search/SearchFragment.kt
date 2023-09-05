@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.CategoryListAdapter
 import com.purelab.databinding.FragmentSearchBinding
+import com.purelab.enums.Category
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.utils.Category
 import com.purelab.utils.toEnumString
 
 // (SearchFragment)
