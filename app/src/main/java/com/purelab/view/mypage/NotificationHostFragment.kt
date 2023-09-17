@@ -26,7 +26,6 @@ class NotificationHostFragment : BaseDataBindingFragment<FragmentNavhostNotifica
         val nestedNavHostFragment =
             childFragmentManager.findFragmentById(nestedNavHostFragmentId) as? NavHostFragment
         navController = nestedNavHostFragment?.navController
-
     }
 
     override fun onResume() {

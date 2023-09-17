@@ -3,6 +3,8 @@ package com.purelab.enums.user
 enum class SkinType(
     val rowValue: String
 ) {
+    /** 未設定 */
+    NOT_SETTING("NOT_SETTING"),
     /** 乾燥肌 */
     SRY_SKIN("SRY_SKIN"),
     /** 脂性肌（オイリー肌） */

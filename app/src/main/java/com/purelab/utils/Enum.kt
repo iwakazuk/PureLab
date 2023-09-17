@@ -22,3 +22,15 @@ fun Enum<*>.toEnumString(context: Context, suffix: String? = null): String {
         resources.getString(resId)
     }
 }
+
+fun <T : Enum<T>> getEnumIndex(value: T?, enumValues: Array<T>): Int {
+    return enumValues.indexOf(value)
+}
+
+fun <T : Enum<T>> getEnumIndex(
+    value: String?,
+    enumValues: Array<T>,
+    context: Context
+): Int {
+    return enumValues.indexOf(enumValues.first { it.toEnumString(context) == value })
+}

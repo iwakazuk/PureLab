@@ -117,6 +117,14 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="設定を保存"
+                android:textSize="12sp" />
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

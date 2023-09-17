@@ -29,14 +29,16 @@
     <string name="utils.Enum.Category.DEODORANTS">デオドラント・制汗剤</string>
 
     <!--Sex-->
+    <string name="utils.Enum.Sex.NOT_SETTING">未設定</string>
     <string name="utils.Enum.Sex.MAN">男性</string>
     <string name="utils.Enum.Sex.WOMAN">女性</string>
-    <string name="utils.Enum.Sex.OTHER">設定しない</string>
+    <string name="utils.Enum.Sex.OTHER">その他</string>
 
     <!--SkinType-->
+    <string name="utils.Enum.SkinType.NOT_SETTING">未設定</string>
     <string name="utils.Enum.SkinType.SRY_SKIN">乾燥肌</string>
     <string name="utils.Enum.SkinType.OILY_SKIN">脂性肌（オイリー肌）</string>
     <string name="utils.Enum.SkinType.INNER_DRY">混合肌（インナードライ）</string>
     <string name="utils.Enum.SkinType.NORMAL_SKIN">普通肌</string>
-    <string name="utils.Enum.SkinType.OTHER">設定しない</string>
+    <string name="utils.Enum.SkinType.OTHER">その他</string>
 </resources>
