@@ -11,10 +11,6 @@ class MyPageViewModel(
 
     fun loadUser(userId: String): User? {
         val realm = Realm.getDefaultInstance()
-        try {
-            return realm.where(User::class.java).equalTo("userId", userId).findFirst()
-        } finally {
-            realm.close()
-        }
+        return realm.where(User::class.java).equalTo("userId", userId).findFirst()
     }
 }

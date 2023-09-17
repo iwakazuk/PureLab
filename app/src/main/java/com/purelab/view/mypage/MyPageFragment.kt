@@ -28,18 +28,12 @@ class MyPageFragment : BaseDataBindingFragment<FragmentMypageBinding>() {
         }
 
         binding.buttonSetting.setOnClickListener {
-            vm.onCleared()
             findNavController().navigate(R.id.action_mypage_to_setting)
         }
 
         // ユーザーデータをビューにセットする
-        binding.userName.text = vm.loadUser("userSetting")?.userName
+        binding.userName.text = vm.loadUser("userSetting")?.userName ?: "未設定"
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        vm.onCleared()
     }
 }

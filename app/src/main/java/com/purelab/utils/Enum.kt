@@ -32,5 +32,9 @@ fun <T : Enum<T>> getEnumIndex(
     enumValues: Array<T>,
     context: Context
 ): Int {
-    return enumValues.indexOf(enumValues.first { it.toEnumString(context) == value })
+    return enumValues.indexOf(
+        enumValues.firstOrNull  {
+            it.toEnumString(context) == value
+        } ?: enumValues[0]
+    )
 }
