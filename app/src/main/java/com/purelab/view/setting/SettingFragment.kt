@@ -17,6 +17,7 @@ import com.purelab.databinding.FragmentSettingBinding
 import com.purelab.enums.user.Sex
 import com.purelab.enums.user.SkinType
 import com.purelab.models.User
+import com.purelab.utils.CustomSnackbar
 import com.purelab.utils.getEnumIndex
 import com.purelab.utils.hideKeyboard
 import com.purelab.utils.toEnumString
@@ -32,6 +33,7 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentSettingBinding.inflate(inflater, container, false)
 
         val context = context ?: return binding.root
@@ -74,11 +76,7 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
             vm.saveUser(user)
 
             // 保存完了のsnackbarを表示
-            val snackbar = Snackbar.make(view, "ユーザー情報を保存しました", Snackbar.LENGTH_SHORT)
-            val params = snackbar.view.layoutParams as CoordinatorLayout.LayoutParams
-            params.bottomMargin = 200
-            snackbar.view.layoutParams = params
-            snackbar.show()
+            CustomSnackbar.showSnackBar(view, "ユーザー情報を保存しました")
         }
     }
 
