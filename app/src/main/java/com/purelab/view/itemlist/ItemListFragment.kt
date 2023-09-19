@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,10 +17,12 @@ import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentItemlistBinding
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.models.mockItem
+import com.purelab.view.favorite.FavoriteViewModel
 
 class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_itemlist
+    private val vm: ItemListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +33,11 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
         val binding = dataBinding!!
 
         setFragmentResultListener("request_key") { _, bundle ->
-            val category = bundle.getString("category")
+            val category = bundle.getString("category") ?: return@setFragmentResultListener
+            vm.setCategory(category)
+        }
+
+        vm.category.observe(viewLifecycleOwner) { category ->
             binding.categoryTitle.text = category
         }
 
@@ -59,7 +66,7 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
                         bundleOf("itemId" to itemId)
                     )
                     findNavController().navigate(
-                        R.id.action_itemList_to_dashboardFragment3
+                        R.id.action_itemList_to_itemDetail
                     )
                 }
             }

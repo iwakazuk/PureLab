@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.purelab.view.search.SearchFragment"
-        android:label="Search"
+        android:label="検索"
         tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_search_to_itemlist"
@@ -19,19 +19,19 @@
     <fragment
         android:id="@+id/itemListFragment"
         android:name="com.purelab.view.itemlist.ItemListFragment"
-        android:label="itemListFragment"
+        android:label="商品一覧"
         tools:layout="@layout/fragment_itemlist">
         <action
-            android:id="@+id/action_itemList_to_dashboardFragment3"
-            app:destination="@id/dashboardFragment3" />
+            android:id="@+id/action_itemList_to_itemDetail"
+            app:destination="@id/itemDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/dashboardFragment3"
-        android:name="com.purelab.view.itemdetail.DashboardFragment3"
-        android:label="DashboardFragment3"
-        tools:layout="@layout/fragment_dashboard3">
+        android:id="@+id/itemDetailFragment"
+        android:name="com.purelab.view.itemdetail.ItemDetailFragment"
+        android:label="商品詳細"
+        tools:layout="@layout/fragment_itemdetail">
         <action
-            android:id="@+id/action_dashboardFragment3_to_searchFragment"
+            android:id="@+id/action_itemDetailFragment_to_searchFragment"
             app:destination="@id/searchFragment"
             app:popUpTo="@id/searchFragment"
             app:popUpToInclusive="true" />

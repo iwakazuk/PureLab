@@ -13,14 +13,14 @@
         tools:layout="@layout/fragment_home1">
         <action
             android:id="@+id/action_homeFragment1_to_homeFragment2"
-            app:destination="@id/dashboardFragment3" />
+            app:destination="@id/itemDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/dashboardFragment3"
-        android:name="com.purelab.view.itemdetail.DashboardFragment3"
-        android:label="DashboardFragment3"
-        tools:layout="@layout/fragment_dashboard3">
+        android:id="@+id/itemDetailFragment"
+        android:name="com.purelab.view.itemdetail.ItemDetailFragment"
+        android:label="ItemDetailFragment"
+        tools:layout="@layout/fragment_itemdetail">
     </fragment>
 
     <fragment

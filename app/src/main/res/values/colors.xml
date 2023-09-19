@@ -15,7 +15,7 @@
     <!-- Dashboard Fragments -->
     <color name="colorSearch">#039BE5</color>
     <color name="colorItemList">#29B6F6</color>
-    <color name="colorDashboard3">#4FC3F7</color>
+    <color name="colorItemDetail">#4FC3F7</color>
 
     <!-- Notification Fragments -->
     <color name="colorMyPage">#43A047</color>

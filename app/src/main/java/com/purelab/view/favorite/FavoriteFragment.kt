@@ -58,7 +58,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
                         bundleOf("itemId" to itemId)
                     )
                     findNavController().navigate(
-                        R.id.action_itemList_to_dashboardFragment3
+                        R.id.action_itemList_to_itemDetail
                     )
                 }
             }

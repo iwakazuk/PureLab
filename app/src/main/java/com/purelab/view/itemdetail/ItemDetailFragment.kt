@@ -3,22 +3,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.ItemListAdapter
-import com.purelab.databinding.FragmentDashboard3Binding
+import com.purelab.databinding.FragmentItemdetailBinding
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.models.mockItem
 
-class DashboardFragment3 : BaseDataBindingFragment<FragmentDashboard3Binding>() {
+class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
 
-    override fun getLayoutRes(): Int = R.layout.fragment_dashboard3
+    override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
 
     override fun onCreateView(
         inflater: LayoutInflater,
