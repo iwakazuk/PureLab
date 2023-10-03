@@ -1,7 +1,10 @@
 package com.purelab.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
+@Parcelize
 data class Item(
     var itemId: String? = null,
     val name: String? = null,
@@ -9,7 +12,7 @@ data class Item(
     val brandName: String? = null,
     val category: String? = null,
     val detail: String? = null,
-) : Serializable {
+) : Parcelable {
 
     companion object {
         private const val serialVersionUID: Long = 1L

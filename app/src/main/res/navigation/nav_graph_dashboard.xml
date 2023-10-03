@@ -5,7 +5,6 @@
     android:id="@+id/nav_graph_dashboard"
     app:startDestination="@id/searchFragment">
 
-
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.purelab.view.search.SearchFragment"
@@ -21,20 +20,22 @@
         android:name="com.purelab.view.itemlist.ItemListFragment"
         android:label="商品一覧"
         tools:layout="@layout/fragment_itemlist">
+
         <action
             android:id="@+id/action_itemList_to_itemDetail"
-            app:destination="@id/itemDetailFragment" />
+            app:destination="@id/itemDetailFragment">
+            <argument
+                android:name="item"
+                app:argType="com.purelab.models.Item"
+                app:nullable="true" />
+        </action>
     </fragment>
+
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.purelab.view.itemdetail.ItemDetailFragment"
         android:label="商品詳細"
         tools:layout="@layout/fragment_itemdetail">
-        <action
-            android:id="@+id/action_itemDetailFragment_to_searchFragment"
-            app:destination="@id/searchFragment"
-            app:popUpTo="@id/searchFragment"
-            app:popUpToInclusive="true" />
     </fragment>
 
     <!-- gallery dynamic feature module-->

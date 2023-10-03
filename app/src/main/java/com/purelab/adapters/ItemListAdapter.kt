@@ -16,7 +16,7 @@ class ItemListAdapter(
 
     // クリックイベントリスナのインターフェースを定義
     interface OnItemClickListener {
-        fun onItemClick(itemId: String?)
+        fun onItemClick(item: Item?)
     }
 
     // リスナをセット
@@ -44,7 +44,7 @@ class ItemListAdapter(
 //        holder.detail.text = item.detail
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(item.itemId)
+            listener.onItemClick(item)
         }
     }
 

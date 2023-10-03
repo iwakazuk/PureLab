@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentItemlistBinding
-import com.purelab.view.BaseDataBindingFragment
+import com.purelab.models.Item
 import com.purelab.models.mockItem
-import com.purelab.view.favorite.FavoriteViewModel
+import com.purelab.view.BaseDataBindingFragment
 
 class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
@@ -57,21 +55,16 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
             )
         )
 
-        // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
             object : ItemListAdapter.OnItemClickListener {
-                override fun onItemClick(itemId: String?) {
-                    setFragmentResult(
-                        "request_key",
-                        bundleOf("itemId" to itemId)
-                    )
-                    findNavController().navigate(
-                        R.id.action_itemList_to_itemDetail
-                    )
+                override fun onItemClick(item: Item?) {
+                    item?.let {
+                        val action = ItemListFragmentDirections.actionItemListToItemDetail(it)
+                        findNavController().navigate(action)
+                    }
                 }
             }
         )
-
         return binding.root
     }
 }

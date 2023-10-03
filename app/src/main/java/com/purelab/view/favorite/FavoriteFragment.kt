@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentFavoriteBinding
+import com.purelab.models.Item
 import com.purelab.view.BaseDataBindingFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,10 +53,10 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
             object : ItemListAdapter.OnItemClickListener {
-                override fun onItemClick(itemId: String?) {
+                override fun onItemClick(item: Item?) {
                     setFragmentResult(
                         "request_key",
-                        bundleOf("itemId" to itemId)
+                        bundleOf("item" to item)
                     )
                     findNavController().navigate(
                         R.id.action_itemList_to_itemDetail
