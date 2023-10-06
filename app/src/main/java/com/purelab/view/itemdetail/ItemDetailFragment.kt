@@ -61,6 +61,7 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
         binding.itemDetailFavorite.setOnClickListener {
 
             if (vm.isFavorited.value == true) {
+                vm.deleteFavorite()
                 // 登録解除のsnackbarを表示
                 CustomSnackbar.showSnackBar(view, "お気に入り登録を解除しました")
             } else {

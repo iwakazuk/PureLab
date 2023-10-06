@@ -53,6 +53,27 @@ class ItemDetailViewModel : ViewModel() {
         })
     }
 
+    /** データを削除 */
+    fun deleteFavorite() {
+        val currentItemId = item.value?.itemId ?: return
+        val realm = Realm.getDefaultInstance()
+
+        // トランザクションを開始
+        realm.beginTransaction()
+
+        // `itemId`に一致するオブジェクトをクエリで取得
+        val favoriteToDelete = realm.where(Favorite::class.java).equalTo("itemId", currentItemId).findFirst()
+
+        // オブジェクトを削除
+        favoriteToDelete?.deleteFromRealm()
+
+        // トランザクションをコミット
+        realm.commitTransaction()
+
+        // Realmインスタンスを閉じる
+        realm.close()
+    }
+
     /** インスタンスを閉じる */
     override fun onCleared() {
         super.onCleared()
