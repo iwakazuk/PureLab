@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/myPageFragment"
         android:name="com.purelab.view.mypage.MyPageFragment"
-        android:label="MyPage"
+        android:label="マイページ"
         tools:layout="@layout/fragment_mypage">
         <action
             android:id="@+id/action_mypage_to_favorite"
@@ -16,33 +16,32 @@
 
         <action
             android:id="@+id/action_mypage_to_setting"
-            app:destination="@id/settingFragment3" />
+            app:destination="@id/settingFragment" />
 
         <action
-            android:id="@+id/action_mypage_to_nav_graph_favorites"
-            app:destination="@id/nav_graph_favorites" />
+            android:id="@+id/action_mypage_to_admin"
+            app:destination="@id/adminFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.purelab.view.favorite.FavoriteFragment"
         android:label="お気に入り"
-        tools:layout="@layout/fragment_setting">
-        <action
-            android:id="@+id/action_mypage_to_setting"
-            app:destination="@id/settingFragment3" />
+        tools:layout="@layout/fragment_favorite">
     </fragment>
 
     <fragment
-        android:id="@+id/settingFragment3"
+        android:id="@+id/settingFragment"
         android:name="com.purelab.view.setting.SettingFragment"
         android:label="個人設定"
         tools:layout="@layout/fragment_setting">
-        <action
-            android:id="@+id/action_setting_to_mypage"
-            app:destination="@id/myPageFragment"
-            app:popUpTo="@id/myPageFragment"
-            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.purelab.view.admin.AdminFragment"
+        android:label="商品追加"
+        tools:layout="@layout/fragment_admin">
     </fragment>
 
 

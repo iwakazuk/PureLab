@@ -31,6 +31,10 @@ class MyPageFragment : BaseDataBindingFragment<FragmentMypageBinding>() {
             findNavController().navigate(R.id.action_mypage_to_setting)
         }
 
+        binding.buttonAdmin.setOnClickListener {
+            findNavController().navigate(R.id.action_mypage_to_admin)
+        }
+
         // ユーザーデータをビューにセットする
         binding.userName.text = vm.loadUser("userSetting")?.userName ?: "未設定"
 

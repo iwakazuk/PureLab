@@ -63,5 +63,20 @@
                 android:layout_weight="1"
                 android:text="個人設定" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp">
+
+            <Button
+                android:id="@+id/buttonAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="商品を追加" />
+
+        </LinearLayout>
     </LinearLayout>
 </layout>
