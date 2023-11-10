@@ -33,11 +33,24 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAdminBinding.inflate(inflater, container, false)
 
+        // エラーメッセージをバインド
+        vm.firestoreRepository.errorMessage.observe(viewLifecycleOwner) { message ->
+            message?.let {
+                // エラーメッセージがnullでない場合にダイアログを表示
+                context?.let { it1 ->
+                    AlertDialog.Builder(it1)
+                        .setMessage(it)
+                        .setPositiveButton("OK", null)
+                        .show()
+                }
+
+                // エラーメッセージをnullにリセットして、同じエラーのダイアログが再表示されるのを防ぐ
+                vm.firestoreRepository.errorMessage.value = null
+            }
+        }
+
         // 全データのロード
-        vm.loadItems()
-        vm.loadBrands()
-        vm.loadCategories()
-        vm.loadIngredients()
+        vm.loadData()
 
         // キーボードの設定
         settingKeyBord(binding.adminName)
@@ -155,7 +168,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
     }
 
 
-    /** ブランド追加セクションの保存ボタンのクリックリスナーを設定 */
+    /** カテゴリ追加セクションの保存ボタンのクリックリスナーを設定 */
     private fun setupCategorySaveButton(binding: AdminInputSectionBinding) {
         binding.saveButton.setOnClickListener { v ->
             val name: String = binding.inputField.text.toString()
@@ -172,7 +185,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
     }
 
 
-    /** ブランド追加セクションの保存ボタンのクリックリスナーを設定 */
+    /** 成分追加セクションの保存ボタンのクリックリスナーを設定 */
     private fun setupIngredientSaveButton(binding: AdminInputSectionBinding) {
         binding.saveButton.setOnClickListener { v ->
             val name: String = binding.inputField.text.toString()
