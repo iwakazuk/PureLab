@@ -36,9 +36,9 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
 
         vm.item.observe(viewLifecycleOwner) { data ->
             binding.itemDetailCategory.text = data.category
-            binding.itemDetailBrand.text = data.brandName
+            binding.itemDetailBrand.text = data.brand
             binding.itemDetailName.text = data.name
-            binding.itemDetailText.text = data.detail
+            binding.itemDetailText.text = data.description
         }
 
         // お気に入り登録/解除ボタンの変更を監視
