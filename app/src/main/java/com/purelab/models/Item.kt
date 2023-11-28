@@ -2,49 +2,36 @@ package com.purelab.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
 data class Item(
-    var itemId: String? = null,
+    val id: String? = null,
     val name: String? = null,
-    val tagId: String? = null,
-    val brandName: String? = null,
+    val brand: String? = null,
     val category: String? = null,
-    val detail: String? = null,
+    val description: String? = null,
+    val ingredients: List<String?>? = null,
 ) : Parcelable {
-
     companion object {
         private const val serialVersionUID: Long = 1L
     }
 }
 
 fun mockItem(): Item = Item(
-    itemId = "0001",
+    id = "0001",
     name = "キュレル 化粧水 III",
-    tagId = "ああああ",
-    brandName = "キュレル（Curel）",
+    brand = "キュレル（Curel）",
     category = "化粧水",
-    detail = "皮膚トラブルケア化粧水です"
+    description = "皮膚トラブルケア化粧水です",
+    ingredients = listOf("ヒト型セラミド", "ナイアシンアミド")
 )
 
 fun Item.toMap(): Map<String, *> {
     return hashMapOf(
-        "itemId" to this.itemId,
         "name" to this.name,
-        "tagId" to this.tagId,
-        "brandName" to this.brandName,
+        "brandName" to this.brand,
         "category" to this.category,
-        "detail" to this.detail,
+        "description" to this.description,
+        "ingredients" to this.ingredients,
     )
-}
-
-fun Map<String, Any>.toItem(): Item {
-    val itemId = this["itemId"] as String
-    val name = this["name"] as String
-    val tagId = this["tagId"] as String
-    val brandName = this["brandName"] as String
-    val category = this["category"] as String
-    val detail = this["detail"] as String
-    return Item(itemId, name, tagId, brandName, category, detail)
 }

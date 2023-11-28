@@ -40,7 +40,7 @@ class ItemListAdapter(
         val item = data[position]
         // holder.icon.text = item.itemId
         holder.name.text = item.name
-        holder.brand.text = item.brandName
+        holder.brand.text = item.brand
 //        holder.detail.text = item.detail
 
         holder.itemView.setOnClickListener {

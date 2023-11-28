@@ -67,20 +67,18 @@ class FavoriteViewModel : ViewModel() {
     private fun mapDocumentToItemList(document: DocumentSnapshot): Item {
         val data = document.data
 
-        val brandName = data?.get("brandName") as String?
+        val brand = data?.get("brandName") as String?
         val category = data?.get("category") as String?
         val detail = data?.get("detail") as String?
         val id = data?.get("id") as String?
         val name = data?.get("name") as String?
-        val tagId = data?.get("tagId") as String?
 
         return Item(
-            itemId = id,
+            id = id,
             name = name,
-            tagId = tagId,
-            brandName = brandName,
+            brand = brand,
             category = category,
-            detail = detail
+            description = detail
         )
     }
 }

@@ -7,25 +7,18 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.purelab.models.Item
 import com.purelab.models.mockItem
+import com.purelab.repository.FirestoreRepository
 
 class HomeViewModel : ViewModel() {
-    private val newResult = MutableLiveData<List<Item>>()
-    val data: LiveData<List<Item> > = newResult
+    private val firestoreRepository = FirestoreRepository(FirebaseFirestore.getInstance())
 
-    fun fetchData() {
-        val db = FirebaseFirestore.getInstance()
-        db.collection("items")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val myData = mapDocumentToItemList(document)
-                    newResult.value = myData
-                }
-            }
-            .addOnFailureListener { exception ->
-                // エラー処理を書きます。
-                println(exception)
-            }
+    private val newResult = MutableLiveData<List<Item>>()
+    val data: LiveData<List<Item>> = newResult
+
+    fun fetchNewItems() {
+        firestoreRepository.fetchNewItems {
+            newResult.value = it
+        }
     }
 
     private fun mapDocumentToItemList(document: DocumentSnapshot): List<Item> {

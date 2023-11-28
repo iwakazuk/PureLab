@@ -15,9 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemCardListAdapter
 import com.purelab.databinding.FragmentHome1Binding
-import com.purelab.view.BaseDataBindingFragment
 import com.purelab.models.Item
-import com.purelab.models.mockItem
+import com.purelab.view.BaseDataBindingFragment
 
 class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
 
@@ -48,8 +47,8 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
             setAdapter(binding.recommendItemCardListView, data)
         })
 
-        // 必要に応じてデータを取得
-        homeVm.fetchData()
+        // 最新アイテムを取得
+        homeVm.fetchNewItems()
     }
 
     private fun setAdapter(

@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.FirebaseFirestore
 import com.purelab.models.Favorite
 import com.purelab.models.Item
 import io.realm.Realm
@@ -24,7 +23,7 @@ class ItemDetailViewModel : ViewModel() {
 
     /** 新しいデータを取得 */
     fun loadFavorite() {
-        val currentItemId = item.value?.itemId ?: return
+        val currentItemId = item.value?.id ?: return
 
         realm.executeTransactionAsync { bgRealm ->
             val favoritesList = bgRealm.where(Favorite::class.java)
@@ -43,7 +42,7 @@ class ItemDetailViewModel : ViewModel() {
 
     /** 新しいデータを追加 */
     fun saveFavorite() {
-        val currentItemId = item.value?.itemId ?: return
+        val currentItemId = item.value?.id ?: return
         realm.executeTransactionAsync ({ bgRealm ->
             val newFavorite = Favorite(currentItemId)
             bgRealm.copyToRealmOrUpdate(newFavorite)
@@ -55,7 +54,7 @@ class ItemDetailViewModel : ViewModel() {
 
     /** データを削除 */
     fun deleteFavorite() {
-        val currentItemId = item.value?.itemId ?: return
+        val currentItemId = item.value?.id ?: return
         val realm = Realm.getDefaultInstance()
 
         // トランザクションを開始

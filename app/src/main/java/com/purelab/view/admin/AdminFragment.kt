@@ -79,7 +79,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
     private fun setItemSection() {
         // ブランドのピッカーを設定
         vm.brands.observe(viewLifecycleOwner) { brandMap ->
-            val brandList = brandMap.map { it.second }
+            val brandList = brandMap.map { it.name }
             val adapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, brandList)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.adminBrand.adapter = adapter
@@ -87,7 +87,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
 
         // カテゴリのピッカーを設定
         vm.categories.observe(viewLifecycleOwner) { categoryMap ->
-            val categoryList = categoryMap.map { it.second }
+            val categoryList = categoryMap.map { it.name }
             val adapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, categoryList)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.adminCategory.adapter = adapter
@@ -204,7 +204,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
     /** 成分選択ボタンの設定 */
     private fun setIngredientButton() {
         binding.adminIngredients.setOnClickListener { v ->
-            val ingredients = vm.ingredients.value?.map { it.second }?.toTypedArray() ?: arrayOf()
+            val ingredients = vm.ingredients.value?.map { it.name }?.toTypedArray() ?: arrayOf()
             val checkedItems = BooleanArray(ingredients.size) // 初期状態ではすべての項目を未選択に設定
 
             AlertDialog.Builder(requireContext())
@@ -216,7 +216,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
                     val selectedIngredients =
                         ingredients.filterIndexed { index, _ -> checkedItems[index] }
                     val selectedIngredientsPair = vm.ingredients.value?.mapNotNull {
-                        if (selectedIngredients.contains(it.second)) {
+                        if (selectedIngredients.contains(it.name)) {
                             it
                         } else {
                             null

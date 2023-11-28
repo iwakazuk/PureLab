@@ -42,11 +42,11 @@ class ItemCardListAdapter(
         // holder.icon.text = item.itemId
         holder.name.text = item.name
         holder.category.text = item.category
-        holder.brand.text = item.brandName
-        holder.detail.text = item.detail
+        holder.brand.text = item.brand
+        holder.detail.text = item.description
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(item.itemId)
+            listener.onItemClick(item.id)
         }
     }
 
