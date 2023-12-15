@@ -17,7 +17,6 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
 class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
-    private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
     private lateinit var binding: FragmentItemdetailBinding
     private val vm: ItemDetailViewModel by viewModels()

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +18,6 @@ import com.purelab.models.Item
 import com.purelab.view.BaseDataBindingFragment
 
 class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
-
     override fun getLayoutRes(): Int = R.layout.fragment_home1
     private val homeVm: HomeViewModel by viewModels()
 
@@ -29,7 +27,25 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_home1, container, false)
+        val binding = dataBinding!!
+
+        // ViewModelのdataを観察
+        homeVm.newResult.observe(viewLifecycleOwner) { data ->
+            // アダプターをセット
+            setAdapter(binding.newItemCardListView, data)
+            setAdapter(binding.recommendItemCardListView, data)
+        }
+
+        // プルリフレッシュのリスナーを設定
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            homeVm.fetchNewItems()
+        }
+
+        homeVm.isLoaded.observe(viewLifecycleOwner) { isRefreshing ->
+            binding.swipeRefreshLayout.isRefreshing = isRefreshing
+        }
+
+        return binding.root
     }
 
     override fun onViewCreated(
@@ -37,15 +53,6 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
-
-        val binding = dataBinding!!
-
-        // ViewModelのdataを観察
-        homeVm.data.observe(viewLifecycleOwner, Observer { data ->
-            // アダプターをセット
-            setAdapter(binding.newItemCardListView, data)
-            setAdapter(binding.recommendItemCardListView, data)
-        })
 
         // 最新アイテムを取得
         homeVm.fetchNewItems()
@@ -72,7 +79,6 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         adapter.setOnItemClickListener(
             // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
             // 再利用をしないため object式でインターフェースを実装
-
             object : ItemCardListAdapter.OnItemClickListener {
                 override fun onItemClick(itemId: String?) {
                     setFragmentResult(

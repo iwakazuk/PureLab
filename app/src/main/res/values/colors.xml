@@ -7,27 +7,6 @@
     <color name="icons">#212121</color>
     <color name="divider">#BDBDBD</color>
 
-    <!-- Home Fragments -->
-    <color name="colorHome1">#FFB300</color>
-    <color name="colorHome2">#FFCA28</color>
-    <color name="colorHome3">#FFD54F</color>
-
-    <!-- Dashboard Fragments -->
-    <color name="colorSearch">#039BE5</color>
-    <color name="colorItemList">#29B6F6</color>
-    <color name="colorItemDetail">#4FC3F7</color>
-
-    <!-- Notification Fragments -->
-    <color name="colorMyPage">#43A047</color>
-    <color name="colorFavorite">#66BB6A</color>
-    <color name="colorSetting">#81C784</color>
-
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="base_pink">#FFB4B4</color>

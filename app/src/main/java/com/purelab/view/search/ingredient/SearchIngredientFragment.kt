@@ -1,4 +1,4 @@
-package com.purelab.view.search
+package com.purelab.view.search.ingredient
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.CategoryListAdapter
-import com.purelab.databinding.FragmentSearchBinding
+import com.purelab.databinding.FragmentSearchIngredientBinding
 import com.purelab.enums.Category
-import com.purelab.view.BaseDataBindingFragment
 import com.purelab.utils.toEnumString
+import com.purelab.view.BaseDataBindingFragment
 
 // (SearchFragment)
-class SearchFragment : BaseDataBindingFragment<FragmentSearchBinding>() {
+class SearchIngredientFragment : BaseDataBindingFragment<FragmentSearchIngredientBinding>() {
 
-    override fun getLayoutRes(): Int = R.layout.fragment_search
+    override fun getLayoutRes(): Int = R.layout.fragment_search_ingredient
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +38,7 @@ class SearchFragment : BaseDataBindingFragment<FragmentSearchBinding>() {
         }.toMutableList()
 
         // アダプターをセット
-        val bookListRecyclerView:RecyclerView = binding.listView
+        val bookListRecyclerView: RecyclerView = binding.listView
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         val adapter = CategoryListAdapter(dataList)
 
@@ -69,5 +69,12 @@ class SearchFragment : BaseDataBindingFragment<FragmentSearchBinding>() {
             }
         )
         return binding.root
+    }
+
+    companion object {
+        // フラグメントの新しいインスタンスを生成するファクトリーメソッド
+        fun newInstance(): SearchIngredientFragment {
+            return SearchIngredientFragment()
+        }
     }
 }

@@ -40,10 +40,10 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                 querySnapshot.documents.forEach { document ->
                     val itemId = document.id
                     val itemName = document.getString("name") ?: ""
-                    val brandId = document.getString("brandsId") ?: ""
-                    val categoryId = document.getString("categoriesId") ?: ""
+                    val brandId = document.getString("brandId") ?: ""
+                    val categoryId = document.getString("categoryId") ?: ""
                     val ingredientIds =
-                        document.get("ingredientsId") as? List<String> ?: emptyList()
+                        document.get("ingredientIds") as? List<String> ?: emptyList()
 
                     loadBrandName(brandId) { brandName ->
                         loadCategoryName(categoryId) { categoryName ->

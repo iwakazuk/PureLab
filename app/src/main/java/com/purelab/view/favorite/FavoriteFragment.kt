@@ -66,10 +66,10 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         )
 
         // ViewModelのdataを観察
-        mypageVm.data.observe(viewLifecycleOwner, Observer { data ->
+        mypageVm.data.observe(viewLifecycleOwner) { data ->
             // アダプターをセット
             adapter.updateData(data)
-        })
+        }
 
         return binding.root
     }

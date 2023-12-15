@@ -127,10 +127,10 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             if (name.isEmpty()) {
                 CustomSnackbar.showSnackBar(v, "商品名を入力してください")
                 return@setOnClickListener
-            } else if (brandingID == null) {
+            } else if (brandingID == "") {
                 CustomSnackbar.showSnackBar(v, "ブランド名を入力してください")
                 return@setOnClickListener
-            } else if (categoryID == null) {
+            } else if (categoryID == "") {
                 CustomSnackbar.showSnackBar(v, "カテゴリを選択してください")
                 return@setOnClickListener
             } else if (ingredientIDs.isEmpty()) {
