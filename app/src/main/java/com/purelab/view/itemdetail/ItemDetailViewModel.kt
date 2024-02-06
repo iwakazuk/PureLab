@@ -1,14 +1,20 @@
 package com.purelab.view.itemdetail
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.purelab.models.Favorite
 import com.purelab.models.Item
+import com.purelab.repository.RealmRepository
 import io.realm.Realm
 
-class ItemDetailViewModel : ViewModel() {
+class ItemDetailViewModel(
+    application: Application,
+    private val realmRepository: RealmRepository
+) : AndroidViewModel(application) {
     /** アイテムID */
     var itemId: String = ""
 
@@ -25,31 +31,19 @@ class ItemDetailViewModel : ViewModel() {
     fun loadFavorite() {
         val currentItemId = item.value?.id ?: return
 
-        realm.executeTransactionAsync { bgRealm ->
-            val favoritesList = bgRealm.where(Favorite::class.java)
-                .equalTo("itemId", currentItemId)
-                .findAll()
-                .let { bgRealm.copyFromRealm(it) }
+        val favorites: List<Favorite>? = realmRepository.getFavorites()
+        val matchingFavorite = favorites?.firstOrNull { it.itemId == currentItemId }
 
-            val matchingFavorite = favoritesList.firstOrNull { it.itemId == currentItemId }
-
-            matchingFavorite?.let {
-                favoriteLiveData.postValue(it)
-                _isFavorited.postValue(true)
-            }
+        matchingFavorite?.let {
+            favoriteLiveData.postValue(it)
+            _isFavorited.postValue(true)
         }
     }
 
     /** 新しいデータを追加 */
     fun saveFavorite() {
         val currentItemId = item.value?.id ?: return
-        realm.executeTransactionAsync ({ bgRealm ->
-            val newFavorite = Favorite(currentItemId)
-            bgRealm.copyToRealmOrUpdate(newFavorite)
-        }, { error ->
-            // エラー処理
-            Log.e("ItemDetailViewModel", "Realm transaction failed", error)
-        })
+        realmRepository.saveFavorite(Favorite("favorite" ,currentItemId))
     }
 
     /** データを削除 */

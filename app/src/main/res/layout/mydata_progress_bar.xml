@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:orientation="vertical"
+    android:layout_marginVertical="5dp"
+    android:paddingHorizontal="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/mydata_title"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="成分名"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- 横線のゲージ（プログレスバー） -->
+    <ProgressBar
+        android:id="@+id/mydata_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:paddingHorizontal="30dp"
+        android:progressDrawable="@drawable/custom_progress_bar" />
+
+    </LinearLayout>
+</LinearLayout>

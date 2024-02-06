@@ -4,22 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.purelab.R
+import com.purelab.app.ViewModelFactory
 import com.purelab.databinding.FragmentItemdetailBinding
 import com.purelab.models.Item
+import com.purelab.repository.RealmRepository
 import com.purelab.utils.CustomSnackbar
 import com.purelab.view.BaseDataBindingFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.launch
 
 class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
     private lateinit var binding: FragmentItemdetailBinding
-    private val vm: ItemDetailViewModel by viewModels()
+    private val viewModelFactory: ViewModelFactory by lazy {
+        ViewModelFactory(
+            requireActivity().application,
+            RealmRepository()
+        )
+    }
+
+    private val vm: ItemDetailViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,

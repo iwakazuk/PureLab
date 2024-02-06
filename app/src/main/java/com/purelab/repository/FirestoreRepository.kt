@@ -31,6 +31,48 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
         )
     }
 
+    fun fetchNewItemsById(id: List<String>, result: (List<Item>?) -> Unit) {
+        val itemsCollection = db.collection(COLLECTION_NEW)
+        itemsCollection.get()
+            .addOnSuccessListener { querySnapshot ->
+                val items = mutableListOf<Item>()
+                querySnapshot.documents.forEach { document ->
+                    if (!id.contains(document.id)) {
+                        return@forEach
+                    }
+                    val itemId = document.id
+                    val itemName = document.getString("name") ?: ""
+                    val brandId = document.getString("brandId") ?: ""
+                    val categoryId = document.getString("categoryId") ?: ""
+                    val ingredientIds =
+                        document.get("ingredientIds") as? List<String> ?: emptyList()
+
+                    loadBrandName(brandId) { brandName ->
+                        loadCategoryName(categoryId) { categoryName ->
+                            loadIngredientNames(ingredientIds) { ingredientNames ->
+                                val item = Item(
+                                    id = itemId,
+                                    name = itemName,
+                                    brand = brandName,
+                                    category = categoryName,
+                                    ingredients = ingredientNames
+                                )
+                                items.add(item)
+
+                                if (items.size == querySnapshot.size()) {
+                                    result(items)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                errorMessage.value = exception.localizedMessage
+                result(null)
+            }
+    }
+
     fun fetchNewItems(result: (List<Item>?) -> Unit) {
         val itemsCollection = db.collection(COLLECTION_NEW)
         itemsCollection.get()

@@ -20,6 +20,25 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/section_title_mydata"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/white_smoke"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:text="マイデータ"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mydata_ingredient_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/mydata_progress_bar" />
+
+                <TextView
                     android:id="@+id/section_title_new_item"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
@@ -33,8 +52,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/new_item_card_list_view"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:background="@color/white_smoke"
+                    android:layout_height="240dp"
+                    android:background="@color/card_background"
                     app:layoutManager="LinearLayoutManager"
                     tools:listitem="@layout/item_card" />
 
@@ -52,7 +71,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recommend_item_card_list_view"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
+                    android:layout_height="240dp"
+                    android:background="@color/card_background"
                     app:layoutManager="LinearLayoutManager"
                     tools:listitem="@layout/item_card" />
             </LinearLayout>

@@ -38,10 +38,8 @@ class ItemListAdapter(
         position: Int
     ) {
         val item = data[position]
-        // holder.icon.text = item.itemId
         holder.name.text = item.name
         holder.brand.text = item.brand
-//        holder.detail.text = item.detail
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(item)
@@ -51,10 +49,8 @@ class ItemListAdapter(
     override fun getItemCount(): Int = data.size
 
     class ItemListRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        var icon: TextView = itemView.findViewById(R.id.item_cell_icon)
         var name: TextView = itemView.findViewById(R.id.item_cell_name)
         var brand: TextView = itemView.findViewById(R.id.item_cell_brand)
-//        var detail: TextView = itemView.findViewById(R.id.item_cell_detail)
     }
 
     fun updateData(newData: List<Item>) {

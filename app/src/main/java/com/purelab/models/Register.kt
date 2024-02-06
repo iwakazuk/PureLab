@@ -3,8 +3,8 @@ package com.purelab.models
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class Favorite(
+open class Register(
     @PrimaryKey
-    var favoriteId: String = "",
+    var registerId: String = "",
     var itemId: String = ""
 ) : RealmObject()

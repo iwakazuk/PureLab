@@ -43,7 +43,6 @@ class ItemCardListAdapter(
         holder.name.text = item.name
         holder.category.text = item.category
         holder.brand.text = item.brand
-        holder.detail.text = item.description
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(item.id)
@@ -57,6 +56,5 @@ class ItemCardListAdapter(
         var name: TextView = itemView.findViewById(R.id.item_card_title)
         var category: TextView = itemView.findViewById(R.id.item_card_category)
         var brand: TextView = itemView.findViewById(R.id.item_card_brand)
-        var detail: TextView = itemView.findViewById(R.id.item_card_text)
     }
 }

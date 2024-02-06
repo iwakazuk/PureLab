@@ -1,6 +1,7 @@
 package com.purelab.models
 
 import android.os.Parcelable
+import com.google.firebase.firestore.DocumentSnapshot
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
