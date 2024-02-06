@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.purelab.R
 import com.purelab.app.ViewModelFactory
@@ -12,6 +15,12 @@ import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
 import com.purelab.utils.CustomSnackbar
 import com.purelab.view.BaseDataBindingFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import com.squareup.picasso.Picasso
+
 
 class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
@@ -42,6 +51,13 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             binding.itemDetailBrand.text = data.brand
             binding.itemDetailName.text = data.name
             binding.itemDetailText.text = data.description
+
+            val imageView: ImageView = binding.itemDetailIcon
+            val imageUrl = "https://www.cosme.com/upload/save_image/product/00/21/96/76/219676_1_800.jpg"
+            Picasso.get()
+                .load(imageUrl)
+                .into(imageView)
+
         }
 
         // お気に入り登録/解除ボタンの変更を監視
@@ -77,4 +93,5 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             vm.toggleFavorite()
         }
     }
-}
+    }
+
