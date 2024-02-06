@@ -7,13 +7,24 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.purelab.R
+import com.purelab.app.ViewModelFactory
 import com.purelab.databinding.FragmentMypageBinding
+import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
 
 class MyPageFragment : BaseDataBindingFragment<FragmentMypageBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_mypage
-    private val vm: MyPageViewModel by viewModels()
     private lateinit var binding: FragmentMypageBinding
+
+    private val viewModelFactory: ViewModelFactory by lazy {
+        ViewModelFactory(
+            requireActivity().application,
+            RealmRepository()
+        )
+    }
+
+    private val vm: MyPageViewModel by viewModels { viewModelFactory }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +47,7 @@ class MyPageFragment : BaseDataBindingFragment<FragmentMypageBinding>() {
         }
 
         // ユーザーデータをビューにセットする
-        binding.userName.text = vm.loadUser("userSetting")?.userName ?: "未設定"
+        binding.userName.text = vm.loadUser()?.userName ?: "未設定"
 
         return binding.root
     }

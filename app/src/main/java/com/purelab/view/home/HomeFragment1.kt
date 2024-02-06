@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemCardListAdapter
+import com.purelab.adapters.MyDataIngredientListAdapter
 import com.purelab.databinding.FragmentHome1Binding
 import com.purelab.models.Item
 import com.purelab.view.BaseDataBindingFragment
+
 
 class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_home1
@@ -44,6 +46,15 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
         homeVm.isLoaded.observe(viewLifecycleOwner) { isRefreshing ->
             binding.swipeRefreshLayout.isRefreshing = isRefreshing
         }
+
+        // リストデータの準備（例：0から100までのランダムな値）
+        val progressList = List(5) { (0..100).random() }
+
+        // RecyclerViewの設定
+        val recyclerView: RecyclerView = binding.mydataIngredientListView
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        val adapter = MyDataIngredientListAdapter(progressList)
+        recyclerView.adapter = adapter
 
         return binding.root
     }

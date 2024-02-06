@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import com.purelab.R
+import com.purelab.app.ViewModelFactory
 import com.purelab.databinding.FragmentItemdetailBinding
 import com.purelab.models.Item
+import com.purelab.repository.RealmRepository
 import com.purelab.utils.CustomSnackbar
 import com.purelab.view.BaseDataBindingFragment
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +25,14 @@ import com.squareup.picasso.Picasso
 class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
     private lateinit var binding: FragmentItemdetailBinding
-    private val vm: ItemDetailViewModel by viewModels()
+    private val viewModelFactory: ViewModelFactory by lazy {
+        ViewModelFactory(
+            requireActivity().application,
+            RealmRepository()
+        )
+    }
+
+    private val vm: ItemDetailViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,

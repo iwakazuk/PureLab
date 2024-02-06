@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +14,10 @@ import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentFavoriteBinding
 import com.purelab.models.Item
+import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
+import com.purelab.app.ViewModelFactory
+import com.purelab.view.mypage.MyPageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -26,7 +28,15 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     override fun getLayoutRes(): Int = R.layout.fragment_favorite
-    private val mypageVm: FavoriteViewModel by viewModels()
+
+    private val viewModelFactory: ViewModelFactory by lazy {
+        ViewModelFactory(
+            requireActivity().application,
+            RealmRepository()
+        )
+    }
+
+    private val favoriteVm: FavoriteViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,7 +76,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         )
 
         // ViewModelのdataを観察
-        mypageVm.data.observe(viewLifecycleOwner) { data ->
+        favoriteVm.data.observe(viewLifecycleOwner) { data ->
             // アダプターをセット
             adapter.updateData(data)
         }
@@ -78,7 +88,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         super.onResume()
         coroutineScope.launch {
             // 必要に応じてデータを取得
-            mypageVm.fetchData()
+            favoriteVm.loadFavorite()
         }
     }
 

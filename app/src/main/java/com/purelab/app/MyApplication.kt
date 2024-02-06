@@ -23,8 +23,8 @@ class MyApplication : Application() {
         }
 
         val config = RealmConfiguration.Builder()
-            .schemaVersion(2)  // 新しいバージョン番号を設定
-            .migration(myMigration) // 上で定義したマイグレーションオブジェクト
+            .schemaVersion(3)
+            .migration(myMigration)
             .build()
 
         Realm.setDefaultConfiguration(config)

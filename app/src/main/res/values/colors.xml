@@ -9,7 +9,13 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="base_pink">#FFB4B4</color>
-    <color name="white_smoke">#F5F5F5</color>
+    <color name="lavender_blush">#fff0f5</color>
+    <color name="card_background">#EDEDED</color>
+
     <color name="sub_title">#a9a9a9</color>
+    <color name="light_gray">#d3d3d3</color>
+    <color name="gains_boro">#dcdcdc</color>
+    <color name="white_smoke">#F5F5F5</color>
 </resources>

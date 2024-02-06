@@ -36,8 +36,8 @@ class SearchTabFragment : Fragment() {
         // タブのタイトル設定
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "カテゴリー検索"
-                1 -> "成分検索"
+                0 -> "カテゴリー"
+                1 -> "成分"
                 else -> null
             }
         }.attach()

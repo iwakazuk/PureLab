@@ -52,7 +52,7 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
         }
 
         // ここでデータをロードする
-        vm.loadUser("userSetting") // desiredUserIdには取得したいユーザーのIDを指定
+        vm.loadUser() // desiredUserIdには取得したいユーザーのIDを指定
 
         return binding.root
     }
