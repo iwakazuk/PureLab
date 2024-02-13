@@ -156,8 +156,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
         val list = listOf(
             mapOf<String, Any>(
                 "name" to "いつかの石けん",
-                "brandID" to 30022,
-                "categoryID" to 20001,
+                "brandID" to "30022",
+                "categoryID" to "20001",
                 "description" to
                         "「いつかの石けん」は、使ううちに毛穴が激変する酵素洗顔石けんです★" +
                         "「汚れを洗い流すこと」を徹底的に突き詰め、合成界面活性剤を使用しない天然成分にこだわっています。\n" +
@@ -208,7 +208,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
                     "40193",
                     "40391"
                 ),
-                " imageURL " to " https ://XXXXXXXX.XXXXXXXX"
+                "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
             ),
             mapOf<String, Any>(
                 "name" to "エッセンスイン　クレンジングフォーム",
@@ -2081,7 +2081,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "エッセンスインヘアミルク",
-                "brandId" to "3003320014",
+                "brandId" to "30033",
+                "categoryId" to "20014",
                 "description" to "\"パサつき、乾燥による広がり、ツヤ不足…そんな髪のお悩みを解決する、洗い流さないタイプのトリートメント。\n" +
                         "髪の芯まで浸透する美容液成分*1とうるおいをキープするミルクの2つの良さを1つに凝縮。\n" +
                         "ドライヤーの熱を味方に、擬似キューティクルを作り出すことで、サラサラつるんの指通りを実現します。\n" +
@@ -2115,7 +2116,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ReFa LOCK OIL",
-                "brandId" to "3007220014",
+                "brandId" to "30072",
+                "categoryId" to "20014",
                 "description" to "\"熱を味方に、しなやかにロックするツヤめくスタイルがつづく\n" +
                         "\n" +
                         "カールもストレートも、崩さずに保ちたい。\n" +
@@ -2149,7 +2151,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ザビューティ 髪のキメ美容ウォータートリートメント",
-                "brandId" to "3003020014",
+                "brandId" to "30030",
+                "categoryId" to "20014",
                 "description" to "\"洗い流さないタイプのウォータートリートメント。美容ウォーターがぐんぐん浸透。持続型ウォーターヴェールで、感動的なつるサラ髪※、1日続く。\n" +
                         "\n" +
                         "〇ダメージ補修&予防 *(*アイロン・ブラシの摩擦によるパサつき)\n" +
@@ -2175,7 +2178,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "AQ ブースティング トリートメント ヘアセラム ",
-                "brandId" to "3004120014",
+                "brandId" to "30041",
+                "categoryId" to "20014",
                 "description" to "\"髪へ「導入美容液」という、答え。皮膚科学研究の英知が生んだ新・ヘアセラムで、髪の芯まで浸透・補修。\n" +
                         "\n" +
                         "髪の芯まで浸透・補修し、毛先までなめらかにまとまる。\n" +
@@ -2201,7 +2205,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "トリートメントヘアウォーター",
-                "brandId" to "3003320014",
+                "brandId" to "30033",
+                "categoryId" to "20014",
                 "description" to "\"ひと吹きでまとまるサラツヤ髪へ。\n" +
                         "忙しい朝も夜の集中ケアにも使えるトリートメントミスト\n" +
                         "\n" +
@@ -2232,7 +2237,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ハトムギ化粧水",
-                "brandId" to "3005320015",
+                "brandId" to "30053",
+                "categoryId" to "20015",
                 "description" to "\"●19種のアミノ酸を含む天然保湿成分「ハトムギエキス」配合の化粧水です。\n" +
                         "●みずみずしく浸透力に優れた処方なので、重ねるほどぐんぐん肌になじみ、角質層を水分で満たします。\n" +
                         "●たっぷり重ねづけをしてもべたつかない、さっぱりした使用感です。\n" +
@@ -2253,7 +2259,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ディープモイスチャースプレー",
-                "brandId" to "3003520015",
+                "brandId" to "30035",
+                "categoryId" to "20015",
                 "description" to "\"肌荒れ・カサつきをくり返しがちな 乾燥性敏感肌に\n" +
                         "\n" +
                         "微細化したセラミド機能成分*が肌の奥(角層)まで浸透。ひと吹きで潤ったやわらかな肌に保ちます。\n" +
@@ -2285,7 +2292,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ボディ スムーザー AC",
-                "brandId" to "3005520015",
+                "brandId" to "30055",
+                "categoryId" to "20015",
                 "description" to "\"大人気の『ボディ スムーザー』から明るく心浮き立つ「アプリコットローズの香り」が登場。\n" +
                         "天然温泉水(角質柔軟成分)を含むスクラブが、固くざらついた古い角質をやわらかくして取り除き、全身をつるつる、すべすべのなめらかなお肌に整えます。\n" +
                         "うるおいに満ちた美肌に導く、”ローズ由来の美容成分”ガリカバラ花エキス・センチフォリアバラ花エキス・イザヨイバラエキス・発酵ローズハチミツ(グルコノバクター/ハチミツ発酵液)(すべて保湿成分)を配合。\n" +
@@ -2307,7 +2315,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "爽快洗口液オクチレモン",
-                "brandId" to "3003220015",
+                "brandId" to "30032",
+                "categoryId" to "20015",
                 "description" to "\"●うがいのあとに\n" +
                         "●10秒のうがいで速攻リフレッシュ\n" +
                         "●携帯に便利なスティックタイプ\"",
@@ -2327,7 +2336,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ボディミルク ブライトニング&エイジングケア",
-                "brandId" to "3006120015",
+                "brandId" to "30061",
+                "categoryId" to "20015",
                 "description" to "\"「保湿・ブライトニング・エイジングケア」3つの機能を1本で叶える無添加の薬用ボディミルク。\n" +
                         "乾燥しやすく、日々の摩擦によるダメージでバリア機能が低下しがちなボディを、ハリとうるおいに満ちた透明肌に導きます。\n" +
                         "なめらかにのびて肌になじみやすく、ベタつき感もありません。\n" +
@@ -2348,7 +2358,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "リポソーム アドバンスト リペアセラム",
-                "brandId" to "3004120017",
+                "brandId" to "30041",
+                "categoryId" to "20017",
                 "description" to "\"●生体組成成分リン脂質から成り、たまねぎ状に幾重にも重なる層の中に美容成分を贅沢に抱えた0.1ミクロン※1の超微細なマイクロカプセル「新・多重層バイオリポソーム」が、1滴に1兆個※2。つけた瞬間から、成りかわるように肌に溶け込み、カプセルそのものがダイレクトに肌を美しくすることで、潤いに満ちたハリ・ツヤあふれる若々しい印象に導く、新・リポソーム美容液です。\n" +
                         "●角層深くまで浸透し、ぴったりと密着。カプセルが少しずつほぐれるように、じっくりと長時間、潤いと美容成分を届けます。\n" +
                         "●乾燥小ジワを目立たなくし※3、乱れたキメも美しく整え、毛穴レスな、なめらかな肌へ。\n" +
@@ -2374,7 +2385,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "リポソーム アドバンスト リペアクリーム",
-                "brandId" to "3004120017",
+                "brandId" to "30041",
+                "categoryId" to "20017",
                 "description" to "\"睡眠中の美を科学　一夜で美肌へ。1兆個※1のナイトカプセルが肌をかけめぐり、濃密なハリ・ツヤ・弾力。睡眠不足でも、3時間多く眠ったような肌へ\n" +
                         "\n" +
                         "※1回の使用量1gとして算出(概算値)\n" +
@@ -2399,7 +2411,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "カプチュール トータル ル セラム",
-                "brandId" to "3005020017",
+                "brandId" to "30050",
+                "categoryId" to "20017",
                 "description" to "\"幹細胞研究(*1)20年以上のディオールから。\n" +
                         "肌にハリを与える美容液「カプチュール トータル ル セラム」誕生。\n" +
                         "進化したリポソーム、ダブル ベクター テクノロジーで、再生力の高い花・ロンゴザの発酵エキス(*2)を豊かに配合。たくましいハリのある肌へ導きます。\n" +
@@ -2433,7 +2446,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "レネルジー HPN クリーム",
-                "brandId" to "3007120017",
+                "brandId" to "30071",
+                "categoryId" to "20017",
                 "description" to "\"ゆるみ*1の兆しも現れも。\n" +
                         "いつでも上を向いていたいあなたへ\n" +
                         "300種のペプチドの恵みを。\n" +
@@ -2462,7 +2476,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "カネボウ クリーム イン デイ",
-                "brandId" to "3000420017",
+                "brandId" to "30004",
+                "categoryId" to "20017",
                 "description" to "\"朝仕込んで、日中ずっとうるおいで満たす。\n" +
                         "夕方までのきれいは、KANEBOの朝クリームで。\n" +
                         "\n" +
@@ -2494,7 +2509,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "セラム シールド",
-                "brandId" to "3000820019",
+                "brandId" to "30008",
+                "categoryId" to "20019",
                 "description" to "\"根深い渇きに高保湿膜。うるおい改善+シワ改善。バーム状密封美容液。\n" +
                         "(医薬部外品)\"",
                 "ingredientIDs" to listOf(
@@ -2513,7 +2529,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "薬用クリアバーム",
-                "brandId" to "3002320019",
+                "brandId" to "30023",
+                "categoryId" to "20019",
                 "description" to "\"有効成分で、メラニンの生成を抑え、「シミ・そばかす」を防ぐとともに、赤っぽくなりがちなニキビや肌あれを防ぎます。\n" +
                         "ひと肌でとろけてなめらかに広がり、べたつかず、みずみずしい美容クリームのような使い心地で、オールシーズン使えます。\n" +
                         "敏感肌の方でも毎日使える設計です。\n" +
@@ -2534,7 +2551,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "RMK Wトリートメントオイル",
-                "brandId" to "3000920019",
+                "brandId" to "30009",
+                "categoryId" to "20019",
                 "description" to "\"RMK のスキンケアアイコン\n" +
                         "乾燥やハリ不足など、トータルにアプローチする\n" +
                         "オイル層とうるおい層、Wの効果のトリートメントオイル\n" +
@@ -2557,7 +2575,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "薬用ナイトパック",
-                "brandId" to "3002320019",
+                "brandId" to "30023",
+                "categoryId" to "20019",
                 "description" to "\"○ 繰り返しがちな肌あれ・乾燥を防ぐ、夜の集中ケアパックです。\n" +
                         "○ やさしく肌に広がるクリーミーなバームのパックで、べたつかずに一晩中密封してうるおいが続き、翌朝なめらかな肌に整えます。\n" +
                         "○クリームのなめらかさとバームの密封力を実現したハイブリッドケア処方。\n" +
@@ -2579,7 +2598,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "アミノモイスト エイジングケア オイル ",
-                "brandId" to "3006620019",
+                "brandId" to "30066",
+                "categoryId" to "20019",
                 "description" to "\"乾燥やハリ不足が気になる肌に。ふっくら実感。濃密な1滴\n" +
                         "・浸透※1型アミノ酸系オイ※2を最高濃度で配合(シリーズ内比)\n" +
                         "・角質層のすみずみまで浸透。セラミドの働きを補いうるおいを与えてケア\n" +
@@ -2613,7 +2633,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "オイデルミン エッセンスローション",
-                "brandId" to "3001120022",
+                "brandId" to "30011",
+                "categoryId" to "20022",
                 "description" to "\"あなたの美しさを日々、更新。　生命感あふれるつややかな肌が続く。\n" +
                         "今まで発揮しきれていない、美の回復に着目。\n" +
                         "乾燥や環境変化に負けない、美しい肌サイクルを目指して、悪いものを取り除き、良いものを取り入れる習慣を。\n" +
@@ -2636,7 +2657,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "メラノフォーカスEV",
-                "brandId" to "3005620022",
+                "brandId" to "30056",
+                "categoryId" to "20022",
                 "description" to "\"シミができる肌特有のダメージ状態を徹底的に研究。　\n" +
                         "シミの原因に根本アプローチ*。　\n" +
                         "しっかり肌奥に届く2種の美白有効成分がメラニンの生成を抑え、シミ・そばかすを防ぎます。　\n" +
@@ -2661,7 +2683,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "アドバンス ナイト リペア SMR コンプレックス",
-                "brandId" to "3002820022",
+                "brandId" to "30028",
+                "categoryId" to "20022",
                 "description" to "\"肌のリズムに寄り添い、昼は環境要因による乾燥ダメージから肌を守り、夜間はうるおいを与えて、毎日、フレッシュでなめらかな肌へ導く美容液です。素早く肌になじみ、うるおいがすみずみ*1まで浸透。使うたびに、生命感あふれるように輝き、若々しい印象のすこやかな美しさへ。\n" +
                         "*1 角質層まで\n" +
                         "\n" +
@@ -2697,7 +2720,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "カネボウ ヴェイル オブ デイ",
-                "brandId" to "3000420022",
+                "brandId" to "30004",
+                "categoryId" to "20022",
                 "description" to "\"日中の肌の乾燥を防ぎながら、強力な紫外線から守る。\n" +
                         "肌に補水し続けるウォーターサプライUV美容液。\n" +
                         "水相成分約75%を含む美容液が厚みのあるみずみずしい水膜ヴェイルを形成。\n" +
@@ -2720,7 +2744,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "リードルショット100",
-                "brandId" to "3001420022",
+                "brandId" to "30014",
+                "categoryId" to "20022",
                 "description" to "\"毎日塗って変わる。\n" +
                         "よりなめらかな素肌へ。今日から美容針*活!\n" +
                         "肌表面の不要な角質を整えることでキメ細かいなめらかな素肌へ整えます。\n" +
@@ -2741,7 +2766,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "スペシャルジェルクリーム EX (ブライトニング)",
-                "brandId" to "3001520023",
+                "brandId" to "30015",
+                "categoryId" to "20023",
                 "description" to "\"じゅわ～っと浸透*、ふんわり密封。うるっと明るい透明美肌。濃密ジェルクリームがキメの奥までじゅわ～っと浸透。\n" +
                         "うるおって、明るく透明感のある肌へ。美白ケアのためのオールインワン。美白とは、メラニンの生成を抑え、シミ・そばかすを防ぐこと。\n" +
                         "*角層まで\n" +
@@ -2763,7 +2789,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ハトムギ保湿ジェル",
-                "brandId" to "3005320023",
+                "brandId" to "30053",
+                "categoryId" to "20023",
                 "description" to "\"香料や着色料など余計なものは一切使用しないシンプルな処方。 天然植物由来の保湿成分「ハトムギエキス」を配合し、べたつかないのにしっかり潤う保湿ジェルです。\n" +
                         "\n" +
                         "水分を限界までたっぷりと含んだ、とろけるように滑らかでみずみずしい感触のジェルが、肌にのせた瞬間すっと素早く浸透。※ 肌のすみずみまで水分補給しながら、肌の上にもしっかりとどまり、油分に頼らずにうるおいをキープします。\n" +
@@ -2793,7 +2820,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "アスタリフト オプミー ",
-                "brandId" to "3001620023",
+                "brandId" to "30016",
+                "categoryId" to "20023",
                 "description" to "\"時間はないけど、肌のお手入れの質は落とせないいつも「私」を大切にしたい全ての女性のためにオプミーは生まれました。\n" +
                         "\n" +
                         "忙しいときは、これだけで4つの役割。\n" +
@@ -2827,7 +2855,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "プレミアリフト",
-                "brandId" to "3000120023",
+                "brandId" to "30001",
+                "categoryId" to "20023",
                 "description" to "\"シワ改善有効成分配合。ハリ肌の土台*1に着目。\n" +
                         "ハリ、シワ対策に。潤い・ハリ巡る薬用オールインワン\n" +
                         "\n" +
@@ -2857,7 +2886,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "パーフェクトエッセンス",
-                "brandId" to "3006920023",
+                "brandId" to "30069",
+                "categoryId" to "20023",
                 "description" to "\"今あるシミ・シミ予備軍にも美白有効成分がダイレクトに発揮。\n" +
                         "化粧水・美容液・乳液1品3役の薬用美白パーフェクトエッセンスです。\n" +
                         "さらりとのび広がり、みずみずしくやさしい使い心地。\n" +
@@ -2878,7 +2908,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "エファクラ ピールケア セラム",
-                "brandId" to "3007020024",
+                "brandId" to "30070",
+                "categoryId" to "20024",
                 "description" to "\"肌トラブルに角質ケア。\n" +
                         "触りたくなるような肌質、毛穴レス印象肌へ\n" +
                         "\n" +
@@ -2915,7 +2946,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "リセットクリア N ",
-                "brandId" to "3006320024",
+                "brandId" to "30063",
+                "categoryId" to "20024",
                 "description" to "\"ひたして・うかせて・からめとる、ふきとり化粧液\n" +
                         "\n" +
                         "肌に積もる不要なものをとり去る、ふきとり化粧液。\n" +
@@ -2949,7 +2981,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ネクターデルミエール アクティベーターオイルウォーター",
-                "brandId" to "3006820024",
+                "brandId" to "30068",
+                "categoryId" to "20024",
                 "description" to "\"天然由来のAHA(*1)とPHA(*2)を配合した「角質ケアできるブースター」。\n" +
                         "つけてすぐなじむ水分と油分の黄金比率を採用したオイルウォーターが肌をなめらかにして、\n" +
                         "うるおいで満たし、きめを整え、毛穴を目立たなくし、くすみ(*3)までケアします。\n" +
@@ -2975,7 +3008,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "ビューティクリア ブラックスクラブウォッシュ",
-                "brandId" to "3004420024",
+                "brandId" to "30044",
+                "categoryId" to "20024",
                 "description" to "\"磨き上げスクラブ洗顔料 毛穴の中の汚れ&古い角質も除去 毛穴より小さく崩れるスクラブ配合\n" +
                         "\n" +
                         "磨き上げスクラブ洗顔 毛穴より小さく崩れるスクラブ(黒スクラブ・柚子スクラブ)※1・炭※2・泥※3配合で、毛穴の中の汚れ・角栓・古い角質・皮脂を吸着磨き上げ洗浄。\n" +
@@ -3003,7 +3037,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "フェイススクラブ",
-                "brandId" to "3000320024",
+                "brandId" to "30003",
+                "categoryId" to "20024",
                 "description" to "\"独自成分アパタイトをスクラブ粒子化。肌のざらつきや毛穴汚れの気になる方に。\n" +
                         "\n" +
                         "ハップアールの独自成分、スキンケア用アパタイト*1をスクラブ粒子化して、たっぷりと配合したフェイススクラブです。\n" +
@@ -3034,7 +3069,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "キス シュガー スクラブ",
-                "brandId" to "3007420025",
+                "brandId" to "30074",
+                "categoryId" to "20025",
                 "description" to "\"シュガースクラブでやさしく角質ケア\n" +
                         "洗い流さないリップスクラブ\n" +
                         "\n" +
@@ -3065,7 +3101,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "グラスティングメルティングバーム",
-                "brandId" to "3001020025",
+                "brandId" to "30010",
+                "categoryId" to "20025",
                 "description" to "\"なめらかで軽い塗り心地でもっちり潤う水膜リップバーム\n" +
                         "鮮やかで多彩なカラー構成で植物性保湿オイルが唇をしっとりもっちりと保湿してくれます。\n" +
                         "\n" +
@@ -3089,7 +3126,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "プランプリップケアスクラブ",
-                "brandId" to "3003420025",
+                "brandId" to "30034",
+                "categoryId" to "20025",
                 "description" to "\"塗るだけで手軽に「柔らか唇エステ」♪潤いケアと角質ケアが1本で簡単に出来るリップスクラブ。\n" +
                         "\n" +
                         "唇の上で溶けるお砂糖(※スクロース:スクラブ剤)のスクラブが古い角質をOFF!\n" +
@@ -3112,7 +3150,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "リップスリーピングマスク",
-                "brandId" to "3000520025",
+                "brandId" to "30005",
+                "categoryId" to "20025",
                 "description" to "\"寝ている間に唇の角質をケア\n" +
                         "翌朝、理想のリップコンディションに仕上げるリップスリーピングマスク\n" +
                         "\n" +
@@ -3145,7 +3184,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "タカミリップ",
-                "brandId" to "3004820025",
+                "brandId" to "30048",
+                "categoryId" to "20025",
                 "description" to "\"肌のお手入れは入念にしている女性でも忘れがちな唇のスキンケア。\n" +
                         "保湿や荒れ予防だけでなくエイジングケア※2 や透明感※3など美しさにもこだわった処方を追求。\n" +
                         "また、無防備で繊細な部位であることから、より丁寧なケアが必要だと考えた結果「1日10回※1の唇スキンケア習慣」を提唱。\n" +
@@ -3166,7 +3206,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "アロマボディシート",
-                "brandId" to "3002020026",
+                "brandId" to "30020",
+                "categoryId" to "20026",
                 "description" to "\"みずみずしい感触で、ひんやりリフレッシュできるアロマボディシート。大判で厚みのあるシートだから、1枚で全身すっきり。\n" +
                         "さらりとした肌が続きます。持ち運びに便利な15枚入り。\n" +
                         "シートサイズ:180mm×200mm\"",
@@ -3186,7 +3227,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "薬用ソフトストーンW",
-                "brandId" to "3005120026",
+                "brandId" to "30051",
+                "categoryId" to "20026",
                 "description" to "\"薬用ソフトストーンW(医薬部外品)\n" +
                         "\n" +
                         "●新処方 防臭効果とさらさら感がアップ。6年連続売上No.1(※)\n" +
@@ -3212,7 +3254,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "アンティ パースパイラント デオドラント ロールオン",
-                "brandId" to "3003620026",
+                "brandId" to "30036",
+                "categoryId" to "20026",
                 "description" to "\"2010年@cosmeベストコスメ大賞 ボディケア部門 第3位2009年@cosmeベストコスメ大賞 ボディケア部門 第3位2007年@cosmeベストコスメ大賞 ボディケア部門 第3位\n" +
                         "\n" +
                         "気になるニオイや脇汗、ベタつき。暑い夏でも驚くほどのサラサラ感は一度使うとやみつきに。\n" +
@@ -3238,7 +3281,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "薬用足指さらさらクリーム",
-                "brandId" to "3005120026",
+                "brandId" to "30051",
+                "categoryId" to "20026",
                 "description" to "\"販売名:DN薬用フットクリームFc(医薬部外品)\n" +
                         "\n" +
                         "●新処方、防臭効果とさらさら感アップ。足用制汗剤クリーム。\n" +
@@ -3265,7 +3309,8 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
             ),
             mapOf<String, Any>(
                 "name" to "パウダースプレー(無香性) ",
-                "brandId" to "3002620026",
+                "brandId" to "30026",
+                "categoryId" to "20026",
                 "description" to "\"○ニオイ菌を殺菌※1。ワキ・首筋・胸元・背中など、全身の汗のニオイや体臭をしっかり防ぐ\n" +
                         "○汗を抑える汗取りパッド効果　汗吸着パウダー/みょうばん(制汗成分)\n" +
                         "○シュッとひと吹きでさらさらの防臭ヴェールを形成\n" +
