@@ -33,9 +33,11 @@ class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
 
         // ViewModelのdataを観察
         homeVm.newResult.observe(viewLifecycleOwner) { data ->
-            // アダプターをセット
-            setAdapter(binding.newItemCardListView, data)
-            setAdapter(binding.recommendItemCardListView, data)
+            if (data != null) {
+                // アダプターをセット
+                setAdapter(binding.newItemCardListView, data)
+                setAdapter(binding.recommendItemCardListView, data)
+            }
         }
 
         // プルリフレッシュのリスナーを設定
