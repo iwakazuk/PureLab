@@ -16,6 +16,7 @@ import com.purelab.databinding.FragmentSearchCategoryBinding
 import com.purelab.enums.Category
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.utils.toEnumString
+import com.purelab.view.search.SearchTabFragmentDirections
 
 // (SearchFragment)
 class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBinding>() {
@@ -53,18 +54,10 @@ class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBin
 
         // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
-            // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
-            // 再利用をしないため object式でインターフェースを実装
-
             object : CategoryListAdapter.OnItemClickListener {
                 override fun onItemClick(category: String) {
-                    setFragmentResult(
-                        "request_key",
-                        bundleOf("category" to category)
-                    )
-                    findNavController().navigate(
-                        R.id.action_search_to_itemlist
-                    )
+                    val action = SearchTabFragmentDirections.actionSearchToItemlist(category)
+                    findNavController().navigate(action)
                 }
             }
         )

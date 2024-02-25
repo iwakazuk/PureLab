@@ -23,33 +23,6 @@
         tools:layout="@layout/fragment_itemdetail">
     </fragment>
 
-    <fragment
-        android:id="@+id/homeFragment2"
-        android:name="com.purelab.view.home.HomeFragment2"
-        android:label="HomeFragment2"
-        tools:layout="@layout/fragment_home2">
-        <argument
-            android:name="count"
-            android:defaultValue="0"
-            app:argType="integer" />
-        <action
-            android:id="@+id/action_homeFragment2_to_homeFragment3"
-            app:destination="@id/homeFragment3" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/homeFragment3"
-        android:name="com.purelab.view.home.HomeFragment3"
-        android:label="HomeFragment3"
-        tools:layout="@layout/fragment_home3">
-        <action
-            android:id="@+id/action_homeFragment3_to_homeFragment1"
-            app:destination="@id/homeFragment1"
-            app:popUpTo="@id/homeFragment1"
-            app:popUpToInclusive="true" />
-    </fragment>
-
-
     <!-- gallery dynamic feature module-->
     <include-dynamic
         android:id="@+id/nav_graph_gallery"
