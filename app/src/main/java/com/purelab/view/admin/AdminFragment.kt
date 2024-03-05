@@ -18,7 +18,6 @@ import com.purelab.R
 import com.purelab.databinding.AdminInputSectionBinding
 import com.purelab.databinding.FragmentAdminBinding
 import com.purelab.utils.CustomSnackbar
-import com.purelab.utils.sampleItemList
 import com.purelab.view.BaseDataBindingFragment
 
 class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
@@ -120,34 +119,32 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
     /** 商品追加セクションの保存ボタンのクリックリスナーを設定 */
     private fun setupItemSaveButton() {
         binding.saveButton.setOnClickListener { v ->
-//            val name: String = binding.adminName.text.toString()
-//            val brandingID = binding.adminBrand.textAlignment.toString()
-//            val categoryID = binding.adminCategory.textAlignment.toString()
-//            val ingredientIDs = listOf(vm.selectedIngredients.value)
-//
-//            if (name.isEmpty()) {
-//                CustomSnackbar.showSnackBar(v, "商品名を入力してください")
-//                return@setOnClickListener
-//            } else if (brandingID == "") {
-//                CustomSnackbar.showSnackBar(v, "ブランド名を入力してください")
-//                return@setOnClickListener
-//            } else if (categoryID == "") {
-//                CustomSnackbar.showSnackBar(v, "カテゴリを選択してください")
-//                return@setOnClickListener
-//            } else if (ingredientIDs.isEmpty()) {
-//                CustomSnackbar.showSnackBar(v, "成分を選択してください")
-//                return@setOnClickListener
-//            }
-//
-//            val product = hashMapOf(
-//                "name" to name,
-//                "brandID" to brandingID,
-//                "categoryID" to categoryID,
-//                "ingredientIDs" to ingredientIDs
-//            )
-//            vm.saveItem(product)
+            val name: String = binding.adminName.text.toString()
+            val brandingID = binding.adminBrand.textAlignment.toString()
+            val categoryID = binding.adminCategory.textAlignment.toString()
+            val ingredientIDs = listOf(vm.selectedIngredients.value)
 
-            vm.saveItems(sampleItemList())
+            if (name.isEmpty()) {
+                CustomSnackbar.showSnackBar(v, "商品名を入力してください")
+                return@setOnClickListener
+            } else if (brandingID == "") {
+                CustomSnackbar.showSnackBar(v, "ブランド名を入力してください")
+                return@setOnClickListener
+            } else if (categoryID == "") {
+                CustomSnackbar.showSnackBar(v, "カテゴリを選択してください")
+                return@setOnClickListener
+            } else if (ingredientIDs.isEmpty()) {
+                CustomSnackbar.showSnackBar(v, "成分を選択してください")
+                return@setOnClickListener
+            }
+
+            val product = hashMapOf(
+                "name" to name,
+                "brandID" to brandingID,
+                "categoryID" to categoryID,
+                "ingredientIDs" to ingredientIDs
+            )
+            vm.saveItem(product)
 
             // 保存完了のsnackbarを表示
             CustomSnackbar.showSnackBar(v, "商品を保存しました")
