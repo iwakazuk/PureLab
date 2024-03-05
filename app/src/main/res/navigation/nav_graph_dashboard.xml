@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_search_tab">
         <action
             android:id="@+id/action_search_to_itemlist"
-            app:destination="@id/itemListFragment" />
+            app:destination="@id/itemListFragment">
+            <argument
+                android:name="category"
+                app:argType="string"/>
+        </action>
     </fragment>
 
     <fragment
@@ -20,7 +24,6 @@
         android:name="com.purelab.view.itemlist.ItemListFragment"
         android:label="商品一覧"
         tools:layout="@layout/fragment_itemlist">
-
         <action
             android:id="@+id/action_itemList_to_itemDetail"
             app:destination="@id/itemDetailFragment">
@@ -36,17 +39,4 @@
         android:name="com.purelab.view.itemdetail.ItemDetailFragment"
         android:label="商品詳細"
         tools:layout="@layout/fragment_itemdetail" />
-
-    <!-- gallery dynamic feature module-->
-    <include-dynamic
-        android:id="@+id/nav_graph_gallery"
-        android:name="com.smarttoolfactory.gallery"
-        app:graphResName="nav_graph_gallery"
-        app:moduleName="gallery">
-        <argument
-            android:name="category"
-            android:defaultValue="0"
-            app:argType="integer" />
-    </include-dynamic>
-
 </navigation>

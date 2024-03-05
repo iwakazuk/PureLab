@@ -6,9 +6,8 @@ plugins {
     id 'realm-android'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
 }
-
-apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdk 33
@@ -78,10 +77,10 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     //Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-runtime-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-runtime-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
 
     // Leak Canary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
