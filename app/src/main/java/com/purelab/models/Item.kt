@@ -12,6 +12,7 @@ data class Item(
     val category: String? = null,
     val description: String? = null,
     val ingredients: List<String?>? = null,
+    val image: String? = null
 ) : Parcelable {
     companion object {
         private const val serialVersionUID: Long = 1L
@@ -24,7 +25,8 @@ fun mockItem(): Item = Item(
     brand = "キュレル（Curel）",
     category = "化粧水",
     description = "皮膚トラブルケア化粧水です",
-    ingredients = listOf("ヒト型セラミド", "ナイアシンアミド")
+    ingredients = listOf("ヒト型セラミド", "ナイアシンアミド"),
+    image = "https://www.cosme.com/upload/save_image/product/00/21/96/76/219676_1_800.jpg"
 )
 
 fun Item.toMap(): Map<String, *> {
@@ -34,5 +36,6 @@ fun Item.toMap(): Map<String, *> {
         "category" to this.category,
         "description" to this.description,
         "ingredients" to this.ingredients,
+        "image" to this.image,
     )
 }

@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.CategoryListAdapter
 import com.purelab.databinding.FragmentSearchCategoryBinding
-import com.purelab.enums.Category
+import com.purelab.models.Category
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.utils.toEnumString
 import com.purelab.view.search.SearchTabFragmentDirections
 
 // (SearchFragment)
 class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_search_category
+    private val vm: SearchCategoryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,20 +31,44 @@ class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBin
         val context = context ?: return null
         val binding = dataBinding!!
 
-        // リストデータの作成
-        val categoryList = Category.values()
-        val dataList = categoryList.map {
-            it.toEnumString(context)
-        }.toMutableList()
+        // ViewModelのdataを観察
+        vm.categories.observe(viewLifecycleOwner) { data ->
+            if (data != null) {
+                // アダプターをセット
+                setAdapter(binding.listView, data)
+            }
+        }
 
+        return binding.root
+    }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(view, savedInstanceState)
+        vm.fetchCategories()
+    }
+
+    companion object {
+        // フラグメントの新しいインスタンスを生成するファクトリーメソッド
+        fun newInstance(): SearchCategoryFragment {
+            return SearchCategoryFragment()
+        }
+    }
+
+    private fun setAdapter(
+        recyclerView: RecyclerView,
+        categories: List<Category>
+    ) {
+        val dataList: MutableList<String> = categories.mapNotNull { it.name }.toMutableList()
         // アダプターをセット
-        val bookListRecyclerView:RecyclerView = binding.listView
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         val adapter = CategoryListAdapter(dataList)
 
-        bookListRecyclerView.layoutManager = linearLayoutManager
-        bookListRecyclerView.adapter = adapter
-        bookListRecyclerView.addItemDecoration(
+        recyclerView.layoutManager = linearLayoutManager
+        recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireActivity(),
                 linearLayoutManager.orientation
@@ -61,13 +84,5 @@ class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBin
                 }
             }
         )
-        return binding.root
-    }
-
-    companion object {
-        // フラグメントの新しいインスタンスを生成するファクトリーメソッド
-        fun newInstance(): SearchCategoryFragment {
-            return SearchCategoryFragment()
-        }
     }
 }

@@ -53,7 +53,7 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             binding.itemDetailText.text = data.description
 
             val imageView: ImageView = binding.itemDetailIcon
-            val imageUrl = "https://www.cosme.com/upload/save_image/product/00/21/96/76/219676_1_800.jpg"
+            val imageUrl = data.image
             Picasso.get()
                 .load(imageUrl)
                 .into(imageView)
