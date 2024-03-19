@@ -1,4 +1,4 @@
-package com.purelab.adapters
+package com.purelab.view.home
 
 import android.view.LayoutInflater
 import android.view.View

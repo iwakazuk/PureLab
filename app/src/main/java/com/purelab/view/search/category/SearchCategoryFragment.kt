@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.CategoryListAdapter
 import com.purelab.databinding.FragmentSearchCategoryBinding
 import com.purelab.models.Category
 import com.purelab.view.BaseDataBindingFragment

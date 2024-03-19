@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.CategoryListAdapter
+import com.purelab.view.search.category.CategoryListAdapter
 import com.purelab.databinding.FragmentSearchIngredientBinding
 import com.purelab.enums.Category
 import com.purelab.utils.toEnumString

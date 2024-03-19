@@ -1,18 +1,15 @@
 package com.purelab.view.itemlist
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentItemlistBinding
 import com.purelab.models.Category
 import com.purelab.models.Item

@@ -1,4 +1,4 @@
-package com.purelab.adapters
+package com.purelab.view.search.category
 
 import android.view.LayoutInflater
 import android.view.View

@@ -11,13 +11,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.purelab.R
-import com.purelab.adapters.ItemListAdapter
+import com.purelab.view.itemlist.ItemListAdapter
 import com.purelab.databinding.FragmentFavoriteBinding
 import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.app.ViewModelFactory
-import com.purelab.view.mypage.MyPageViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

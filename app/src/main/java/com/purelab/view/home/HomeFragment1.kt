@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.adapters.ItemCardListAdapter
-import com.purelab.adapters.MyDataIngredientListAdapter
 import com.purelab.databinding.FragmentHome1Binding
 import com.purelab.models.Item
 import com.purelab.view.BaseDataBindingFragment
