@@ -12,6 +12,7 @@ import com.purelab.databinding.FragmentMypageBinding
 import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
 
+/** マイページ画面 */
 class MyPageFragment : BaseDataBindingFragment<FragmentMypageBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_mypage
     private lateinit var binding: FragmentMypageBinding

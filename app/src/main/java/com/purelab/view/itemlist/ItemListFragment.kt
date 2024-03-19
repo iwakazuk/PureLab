@@ -16,6 +16,7 @@ import com.purelab.models.Item
 import com.purelab.models.mockItem
 import com.purelab.view.BaseDataBindingFragment
 
+/** 商品一覧画面 */
 class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_itemlist

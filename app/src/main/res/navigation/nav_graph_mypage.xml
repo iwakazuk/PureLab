@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph_notification"
+    android:id="@+id/nav_graph_mypage"
     app:startDestination="@id/myPageFragment">
 
     <fragment
@@ -25,21 +25,21 @@
 
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.purelab.view.favorite.FavoriteFragment"
+        android:name="com.purelab.view.mypage.favorite.FavoriteFragment"
         android:label="お気に入り"
         tools:layout="@layout/fragment_favorite">
     </fragment>
 
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.purelab.view.setting.SettingFragment"
+        android:name="com.purelab.view.mypage.setting.SettingFragment"
         android:label="個人設定"
         tools:layout="@layout/fragment_setting">
     </fragment>
 
     <fragment
         android:id="@+id/adminFragment"
-        android:name="com.purelab.view.admin.AdminFragment"
+        android:name="com.purelab.view.mypage.admin.AdminFragment"
         android:label="商品追加"
         tools:layout="@layout/fragment_admin">
     </fragment>

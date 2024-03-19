@@ -1,4 +1,4 @@
-package com.purelab.view.setting
+package com.purelab.view.mypage.setting
 
 import android.graphics.Rect
 import android.os.Bundle

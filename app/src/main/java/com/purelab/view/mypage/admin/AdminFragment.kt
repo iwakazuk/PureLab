@@ -1,4 +1,4 @@
-package com.purelab.view.admin
+package com.purelab.view.mypage.admin
 
 import android.app.Activity
 import android.content.Context

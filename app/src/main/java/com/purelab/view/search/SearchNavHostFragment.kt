@@ -6,14 +6,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.purelab.R
-import com.purelab.databinding.FragmentNavhostDashboardBinding
+import com.purelab.databinding.FragmentNavhostSearchBinding
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.util.Event
 import com.purelab.viewmodel.NavControllerViewModel
 
 
-class DashboardNavHostFragment : BaseDataBindingFragment<FragmentNavhostDashboardBinding>() {
-    override fun getLayoutRes(): Int = R.layout.fragment_navhost_dashboard
+class SearchNavHostFragment : BaseDataBindingFragment<FragmentNavhostSearchBinding>() {
+    override fun getLayoutRes(): Int = R.layout.fragment_navhost_search
 
     private val navControllerViewModel by activityViewModels<NavControllerViewModel>()
 

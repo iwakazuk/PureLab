@@ -1,4 +1,4 @@
-package com.purelab.view.favorite
+package com.purelab.view.mypage.favorite
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

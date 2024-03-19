@@ -8,9 +8,9 @@ import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter.FragmentTransactionCallback.OnPostEventListener
-import com.purelab.view.search.DashboardNavHostFragment
+import com.purelab.view.search.SearchNavHostFragment
 import com.purelab.view.home.HomeNavHostFragment
-import com.purelab.view.mypage.NotificationHostFragment
+import com.purelab.view.mypage.MyPageNavHostFragment
 import com.purelab.viewmodel.NavControllerViewModel
 
 
@@ -64,8 +64,8 @@ class ActivityFragmentStateAdapter(
 
         return when (position) {
             0 -> HomeNavHostFragment()
-            1 -> DashboardNavHostFragment()
-            else -> NotificationHostFragment()
+            1 -> SearchNavHostFragment()
+            else -> MyPageNavHostFragment()
         }
     }
 }
