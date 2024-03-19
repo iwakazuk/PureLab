@@ -73,6 +73,49 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
             }
     }
 
+    fun fetchItemsByCategory(category: Category?, result: (List<Item>?) -> Unit) {
+        val itemsCollection = db.collection(COLLECTION_ITEMS)
+        itemsCollection.get()
+            .addOnSuccessListener { querySnapshot ->
+                val items = mutableListOf<Item>()
+                val documents = querySnapshot.documents.filter {
+                    val categoryId = it.getString("categoryId") ?: ""
+                    return@filter category?.id == categoryId
+                }
+
+                documents.forEach { document ->
+                    val itemId = document.id
+                    val itemName = document.getString("name") ?: ""
+                    val brandId = document.getString("brandId") ?: ""
+                    val ingredientIds =
+                        document.get("ingredientIds") as? List<String> ?: emptyList()
+
+
+                    loadBrandName(brandId) { brandName ->
+                        loadIngredientNames(ingredientIds) { ingredientNames ->
+                            val item = Item(
+                                id = itemId,
+                                name = itemName,
+                                brand = brandName,
+                                category = category?.name,
+                                ingredients = ingredientNames,
+                                image = document.getString("imageURL") ?: ""
+                            )
+                            items.add(item)
+
+                            if (items.size == documents.size) {
+                                result(items)
+                            }
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                errorMessage.value = exception.localizedMessage
+                result(null)
+            }
+    }
+
     fun fetchNewItems(result: (List<Item>?) -> Unit) {
         val itemsCollection = db.collection(COLLECTION_NEW)
         itemsCollection.get()

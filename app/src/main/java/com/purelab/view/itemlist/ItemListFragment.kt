@@ -28,6 +28,8 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
         // ViewModelへのカテゴリ設定
         vm.setCategory(category)
+
+        vm.fetchItems()
     }
 
     override fun onCreateView(
@@ -42,32 +44,33 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
             binding.categoryTitle.text = category.name
         }
 
-        val itemList = listOf(mockItem())
+        vm.items.observe(viewLifecycleOwner) { itemList ->
+            // アダプターをセット
+            val bookListRecyclerView: RecyclerView = binding.itemListView
+            val linearLayoutManager = LinearLayoutManager(requireActivity())
+            val adapter = ItemListAdapter(itemList)
 
-        // アダプターをセット
-        val bookListRecyclerView: RecyclerView = binding.itemListView
-        val linearLayoutManager = LinearLayoutManager(requireActivity())
-        val adapter = ItemListAdapter(itemList)
-
-        bookListRecyclerView.layoutManager = linearLayoutManager
-        bookListRecyclerView.adapter = adapter
-        bookListRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                requireActivity(),
-                linearLayoutManager.orientation
+            bookListRecyclerView.layoutManager = linearLayoutManager
+            bookListRecyclerView.adapter = adapter
+            bookListRecyclerView.addItemDecoration(
+                DividerItemDecoration(
+                    requireActivity(),
+                    linearLayoutManager.orientation
+                )
             )
-        )
 
-        adapter.setOnItemClickListener(
-            object : ItemListAdapter.OnItemClickListener {
-                override fun onItemClick(item: Item?) {
-                    item?.let {
-                        val action = ItemListFragmentDirections.actionItemListToItemDetail(it)
-                        findNavController().navigate(action)
+            adapter.setOnItemClickListener(
+                object : ItemListAdapter.OnItemClickListener {
+                    override fun onItemClick(item: Item?) {
+                        item?.let {
+                            val action = ItemListFragmentDirections.actionItemListToItemDetail(it)
+                            findNavController().navigate(action)
+                        }
                     }
                 }
-            }
-        )
+            )
+        }
+
         return binding.root
     }
 }
