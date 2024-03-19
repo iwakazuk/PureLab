@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
+import com.purelab.models.Category
 
 class CategoryListAdapter(
-    private val categoryListData: MutableList<String>
+    private val categoryListData: MutableList<Category>
 ) : RecyclerView.Adapter<CategoryListAdapter.CategoryListRecyclerViewHolder>() {
 
     // リスナを格納する変数を定義（インターフェースの型）
@@ -16,7 +17,7 @@ class CategoryListAdapter(
 
     // クリックイベントリスナのインターフェースを定義
     interface OnItemClickListener {
-        fun onItemClick(category: String)
+        fun onItemClick(category: Category)
     }
 
     // リスナをセット
@@ -34,12 +35,12 @@ class CategoryListAdapter(
     }
 
     override fun onBindViewHolder(holder: CategoryListRecyclerViewHolder, position: Int) {
-        val item = categoryListData[position]
+        val category = categoryListData[position]
 
-        holder.categoryName.text = item
+        holder.categoryName.text = category.name
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(item)
+            listener.onItemClick(category)
         }
     }
 

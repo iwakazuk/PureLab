@@ -1,10 +1,10 @@
 package com.purelab.view.itemlist
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.adapters.ItemListAdapter
 import com.purelab.databinding.FragmentItemlistBinding
+import com.purelab.models.Category
 import com.purelab.models.Item
 import com.purelab.models.mockItem
 import com.purelab.view.BaseDataBindingFragment
@@ -22,12 +23,10 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_itemlist
     private val vm: ItemListViewModel by viewModels()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Safe Argsを使用して引数を受け取る
-        val category: String = arguments?.getString("category") ?: "--"
+        val category: Category = arguments?.getParcelable("category") ?: Category()
 
         // ViewModelへのカテゴリ設定
         vm.setCategory(category)
@@ -42,7 +41,7 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
         val binding = dataBinding!!
 
         vm.category.observe(viewLifecycleOwner) { category ->
-            binding.categoryTitle.text = category
+            binding.categoryTitle.text = category.name
         }
 
         val itemList = listOf(mockItem())

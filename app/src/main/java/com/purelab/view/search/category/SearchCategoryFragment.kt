@@ -61,7 +61,7 @@ class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBin
         recyclerView: RecyclerView,
         categories: List<Category>
     ) {
-        val dataList: MutableList<String> = categories.mapNotNull { it.name }.toMutableList()
+        val dataList: MutableList<Category> = categories.toMutableList()
         // アダプターをセット
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         val adapter = CategoryListAdapter(dataList)
@@ -78,7 +78,7 @@ class SearchCategoryFragment : BaseDataBindingFragment<FragmentSearchCategoryBin
         // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
             object : CategoryListAdapter.OnItemClickListener {
-                override fun onItemClick(category: String) {
+                override fun onItemClick(category: Category) {
                     val action = SearchTabFragmentDirections.actionSearchToItemlist(category)
                     findNavController().navigate(action)
                 }

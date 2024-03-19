@@ -15,7 +15,8 @@
             app:destination="@id/itemListFragment">
             <argument
                 android:name="category"
-                app:argType="string"/>
+                app:argType="com.purelab.models.Category"
+                app:nullable="true" />
         </action>
     </fragment>
 
