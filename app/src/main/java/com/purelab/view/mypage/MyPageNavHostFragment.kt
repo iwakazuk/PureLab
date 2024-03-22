@@ -6,14 +6,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.purelab.R
+import com.purelab.databinding.FragmentNavhostMypageBinding
 import com.purelab.view.BaseDataBindingFragment
-import com.purelab.databinding.FragmentNavhostNotificationBinding
 import com.purelab.util.Event
 import com.purelab.viewmodel.NavControllerViewModel
 
 
-class NotificationHostFragment : BaseDataBindingFragment<FragmentNavhostNotificationBinding>() {
-    override fun getLayoutRes(): Int = R.layout.fragment_navhost_notification
+class MyPageNavHostFragment : BaseDataBindingFragment<FragmentNavhostMypageBinding>() {
+    override fun getLayoutRes(): Int = R.layout.fragment_navhost_mypage
 
     private val navControllerViewModel by activityViewModels<NavControllerViewModel>()
 

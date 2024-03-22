@@ -13,7 +13,6 @@ import com.purelab.adapters.ActivityFragmentStateAdapter
 import com.purelab.databinding.ActivityMainBinding
 import com.purelab.util.Event
 import com.purelab.viewmodel.NavControllerViewModel
-import io.realm.Realm
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,12 +43,12 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                R.id.nav_graph_dashboard -> {
+                R.id.nav_graph_search -> {
                     viewPager2.setCurrentItem(1, false)
                     return@setOnNavigationItemSelectedListener true
                 }
 
-                R.id.nav_graph_notification -> {
+                R.id.nav_graph_mypage -> {
                     viewPager2.setCurrentItem(2, false)
                     return@setOnNavigationItemSelectedListener true
                 }

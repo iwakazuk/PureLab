@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.purelab.repository.RealmRepository
-import com.purelab.view.favorite.FavoriteViewModel
+import com.purelab.view.mypage.favorite.FavoriteViewModel
 import com.purelab.view.itemdetail.ItemDetailViewModel
 import com.purelab.view.mypage.MyPageViewModel
 

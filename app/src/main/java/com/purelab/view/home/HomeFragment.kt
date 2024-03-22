@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.databinding.FragmentHome1Binding
+import com.purelab.databinding.FragmentHomeBinding
 import com.purelab.models.Item
 import com.purelab.view.BaseDataBindingFragment
 
-
-class HomeFragment1 : BaseDataBindingFragment<FragmentHome1Binding>() {
-    override fun getLayoutRes(): Int = R.layout.fragment_home1
+/** ホーム画面 */
+class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding>() {
+    override fun getLayoutRes(): Int = R.layout.fragment_home
     private val homeVm: HomeViewModel by viewModels()
 
     override fun onCreateView(

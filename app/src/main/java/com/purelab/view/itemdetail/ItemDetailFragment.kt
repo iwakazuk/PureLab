@@ -21,7 +21,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import com.squareup.picasso.Picasso
 
-
+/** 商品詳細画面 */
 class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_itemdetail
     private lateinit var binding: FragmentItemdetailBinding

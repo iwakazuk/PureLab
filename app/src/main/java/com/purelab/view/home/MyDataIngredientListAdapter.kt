@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 
+/** ホーム-マイデータ(成分バー用)アダプタ */
 class MyDataIngredientListAdapter(private val progressList: List<Int>) : RecyclerView.Adapter<MyDataIngredientListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

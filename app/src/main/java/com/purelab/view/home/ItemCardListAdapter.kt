@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.models.Item
 
+/** ホーム-新着商品カード用アダプタ */
 class ItemCardListAdapter(
     private val data: List<Item>
 ) : RecyclerView.Adapter<ItemCardListAdapter.ItemCardListRecyclerViewHolder>() {

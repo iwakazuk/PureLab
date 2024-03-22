@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/homeFragment1"
-        android:name="com.purelab.view.home.HomeFragment1"
+        android:name="com.purelab.view.home.HomeFragment"
         android:label="PureLab"
-        tools:layout="@layout/fragment_home1">
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment1_to_homeFragment2"
             app:destination="@id/itemDetailFragment" />
