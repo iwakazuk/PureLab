@@ -4,23 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
-import com.purelab.view.search.category.CategoryListAdapter
 import com.purelab.databinding.FragmentSearchIngredientBinding
-import com.purelab.enums.Category
-import com.purelab.utils.toEnumString
+import com.purelab.models.Ingredient
 import com.purelab.view.BaseDataBindingFragment
+import com.purelab.view.search.SearchTabFragmentDirections
 
 // (SearchFragment)
 class SearchIngredientFragment : BaseDataBindingFragment<FragmentSearchIngredientBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_search_ingredient
+    private val vm: SearchIngredientViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,20 +30,44 @@ class SearchIngredientFragment : BaseDataBindingFragment<FragmentSearchIngredien
         val context = context ?: return null
         val binding = dataBinding!!
 
-        // リストデータの作成
-        val categoryList = Category.values()
-        val dataList = categoryList.map {
-            it.toEnumString(context)
-        }.toMutableList()
+        // ViewModelのdataを観察
+        vm.ingredients.observe(viewLifecycleOwner) { data ->
+            if (data != null) {
+                // アダプターをセット
+                setAdapter(binding.listView, data)
+            }
+        }
 
+        return binding.root
+    }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(view, savedInstanceState)
+        vm.loadIngredients()
+    }
+
+    companion object {
+        // フラグメントの新しいインスタンスを生成するファクトリーメソッド
+        fun newInstance(): SearchIngredientFragment {
+            return SearchIngredientFragment()
+        }
+    }
+
+    private fun setAdapter(
+        recyclerView: RecyclerView,
+        ingredients: List<Ingredient>
+    ) {
+        val dataList: MutableList<Ingredient> = ingredients.toMutableList()
         // アダプターをセット
-        val bookListRecyclerView: RecyclerView = binding.listView
         val linearLayoutManager = LinearLayoutManager(requireActivity())
-        val adapter = CategoryListAdapter(dataList)
+        val adapter = IngredientListAdapter(dataList)
 
-        bookListRecyclerView.layoutManager = linearLayoutManager
-        bookListRecyclerView.adapter = adapter
-        bookListRecyclerView.addItemDecoration(
+        recyclerView.layoutManager = linearLayoutManager
+        recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireActivity(),
                 linearLayoutManager.orientation
@@ -53,28 +76,12 @@ class SearchIngredientFragment : BaseDataBindingFragment<FragmentSearchIngredien
 
         // CellItem要素クリックイベント
         adapter.setOnItemClickListener(
-            // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
-            // 再利用をしないため object式でインターフェースを実装
-
-            object : CategoryListAdapter.OnItemClickListener {
-                override fun onItemClick(category: String) {
-                    setFragmentResult(
-                        "request_key",
-                        bundleOf("category" to category)
-                    )
-                    findNavController().navigate(
-                        R.id.action_search_to_itemlist
-                    )
+            object : IngredientListAdapter.OnItemClickListener {
+                override fun onItemClick(ingredient: Ingredient) {
+                    val action = SearchTabFragmentDirections.actionSearchToItemlist2(ingredient)
+                    findNavController().navigate(action)
                 }
             }
         )
-        return binding.root
-    }
-
-    companion object {
-        // フラグメントの新しいインスタンスを生成するファクトリーメソッド
-        fun newInstance(): SearchIngredientFragment {
-            return SearchIngredientFragment()
-        }
     }
 }

@@ -18,6 +18,14 @@
                 app:argType="com.purelab.models.Category"
                 app:nullable="true" />
         </action>
+        <action
+            android:id="@+id/action_search_to_itemlist2"
+            app:destination="@id/itemListFragment">
+            <argument
+                android:name="ingredient"
+                app:argType="com.purelab.models.Ingredient"
+                app:nullable="true" />
+        </action>
     </fragment>
 
     <fragment
