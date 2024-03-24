@@ -1,12 +1,16 @@
 package com.purelab.view.itemlist
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.models.Item
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 
 class ItemListAdapter(
     private var data: List<Item>
@@ -40,6 +44,17 @@ class ItemListAdapter(
         val item = data[position]
         holder.name.text = item.name
         holder.brand.text = item.brand
+        holder.image.setImageResource(R.drawable.loading_image)
+
+        Picasso.get()
+            .load(item.image)
+            .error(R.drawable.home_image) // エラー時のデフォルト画像
+            .into(holder.image, object : Callback {
+                override fun onSuccess() {}
+                override fun onError(e: Exception?) {
+                    Log.e("PicassoError", "Failed to load image: " + item.image, e)
+                }
+            })
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(item)
@@ -51,6 +66,7 @@ class ItemListAdapter(
     class ItemListRecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView = itemView.findViewById(R.id.item_cell_name)
         var brand: TextView = itemView.findViewById(R.id.item_cell_brand)
+        var image: ImageView = itemView.findViewById(R.id.item_cell_icon)
     }
 
     fun updateData(newData: List<Item>) {

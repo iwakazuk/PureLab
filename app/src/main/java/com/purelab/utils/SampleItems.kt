@@ -15,7 +15,7 @@ fun sampleItemList() = listOf(
         "ingredientIDs" to listOf(
             "40458", "40135", "40187", "40321", "40064", "40436", "40385", "40086", "40444"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "カネボウ スクラビング マッド ウォッシュ",
@@ -35,7 +35,7 @@ fun sampleItemList() = listOf(
             "40370",
             "40016"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ディープクリア酵素洗顔",
@@ -56,7 +56,7 @@ fun sampleItemList() = listOf(
             "40193",
             "40391"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "エッセンスイン　クレンジングフォーム",
@@ -86,7 +86,7 @@ fun sampleItemList() = listOf(
             "40448",
             "40193"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ポア クリアリング ジェル ウォッシュ",
@@ -110,7 +110,7 @@ fun sampleItemList() = listOf(
             "40459",
             "40128"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "クラリファイイング ジェル ウォッシュ",
@@ -135,7 +135,7 @@ fun sampleItemList() = listOf(
             "40228",
             "40244"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "泥ジェル洗顔",
@@ -158,7 +158,7 @@ fun sampleItemList() = listOf(
             "40424",
             "40111"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ディープクリア洗顔パウダー ",
@@ -180,7 +180,7 @@ fun sampleItemList() = listOf(
             "40125",
             "40279"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ビューティクリア パウダーウォッシュN",
@@ -201,7 +201,7 @@ fun sampleItemList() = listOf(
             "40369",
             "40067"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "クレイ ブラン ハーバル フェイスウォッシュ ",
@@ -241,7 +241,7 @@ fun sampleItemList() = listOf(
             "40152",
             "40390"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "スキンクリア クレンズ オイル アロマタイプ",
@@ -266,7 +266,7 @@ fun sampleItemList() = listOf(
             "40329",
             "40061"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "スピーディーマスカラリムーバー",
@@ -289,7 +289,7 @@ fun sampleItemList() = listOf(
             "40115",
             "40100"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "マイルドクレンジングオイル 60ml",
@@ -315,7 +315,7 @@ fun sampleItemList() = listOf(
             "40377",
             "40180"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アルティム8∞ スブリム ビューティ クレンジング オイル",
@@ -355,7 +355,7 @@ fun sampleItemList() = listOf(
             "40403",
             "40191"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/1.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/1.jpg"
     ),
     mapOf<String, Any>(
         "name" to "うる落ち水クレンジングローション アイメイクアップリムーバー",
@@ -379,7 +379,7 @@ fun sampleItemList() = listOf(
             "40017",
             "40297"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ベーシッククリーム",
@@ -407,7 +407,7 @@ fun sampleItemList() = listOf(
             "40327",
             "40105"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ポアクリア オイル",
@@ -431,7 +431,7 @@ fun sampleItemList() = listOf(
             "40165",
             "40234"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "サンシビオ エイチツーオー D",
@@ -462,7 +462,7 @@ fun sampleItemList() = listOf(
             "40127",
             "40402"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ザ クレンジングバーム ブラックリペア",
@@ -492,7 +492,7 @@ fun sampleItemList() = listOf(
             "40295",
             "40459"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "フレッシュ クリア サクラ クレンジング オイル",
@@ -517,7 +517,7 @@ fun sampleItemList() = listOf(
             "40176",
             "40403"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "メイク キープ ミスト EX",
@@ -549,7 +549,7 @@ fun sampleItemList() = listOf(
             "40298",
             "40387"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リポソーム アドバンスト リペアセラム",
@@ -578,7 +578,7 @@ fun sampleItemList() = listOf(
             "40186",
             "40215"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ザ・タイムR アクア",
@@ -619,7 +619,7 @@ fun sampleItemList() = listOf(
             "40218",
             "40093"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ブライトニング ローション WT II",
@@ -645,7 +645,7 @@ fun sampleItemList() = listOf(
             "40455",
             "40457"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "タカミスキンピール",
@@ -689,7 +689,7 @@ fun sampleItemList() = listOf(
             "40110",
             "40389"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ルルルン ハイドラ V マスク",
@@ -709,7 +709,7 @@ fun sampleItemList() = listOf(
             "40268",
             "40297"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "スーパーVC100マスク ",
@@ -745,7 +745,7 @@ fun sampleItemList() = listOf(
             "40137",
             "40010"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/2.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/2.jpg"
     ),
     mapOf<String, Any>(
         "name" to "シカデイリースージングマスク",
@@ -766,7 +766,7 @@ fun sampleItemList() = listOf(
             "40265",
             "40144"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "3番すべすべキメケアシートマスク",
@@ -785,7 +785,7 @@ fun sampleItemList() = listOf(
             "40006",
             "40205"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "レチビタエッセンスマスク",
@@ -806,7 +806,7 @@ fun sampleItemList() = listOf(
             "40060",
             "40300"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ディオール アディクト リップ マキシマイザー ",
@@ -847,7 +847,7 @@ fun sampleItemList() = listOf(
             "40383",
             "40428"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "エッセンス リッププランパー",
@@ -866,7 +866,7 @@ fun sampleItemList() = listOf(
             "40244",
             "40298"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ラッシュジェリードロップ EX",
@@ -891,7 +891,7 @@ fun sampleItemList() = listOf(
             "40114",
             "40308"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リポソーム アドバンスト リペアアイセラム",
@@ -927,7 +927,7 @@ fun sampleItemList() = listOf(
             "40084",
             "40098"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "グラスティングメルティングバーム",
@@ -952,7 +952,7 @@ fun sampleItemList() = listOf(
             "40006",
             "40174"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ブライトニング スキンケアパウダー A ",
@@ -980,7 +980,7 @@ fun sampleItemList() = listOf(
             "40214",
             "40336"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "【レフィル】スキンケアUV タッチアップ クッション",
@@ -1013,7 +1013,7 @@ fun sampleItemList() = listOf(
             "40376",
             "40135"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "スキンケアパウダー",
@@ -1043,7 +1043,7 @@ fun sampleItemList() = listOf(
             "40374",
             "40195"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ホワイトルーセント ブライトニング スキンケアパウダー N",
@@ -1067,7 +1067,7 @@ fun sampleItemList() = listOf(
             "40195",
             "40416"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "SHISEIDO(シセイドウ)ベビーパウダー(プレスド)",
@@ -1087,7 +1087,7 @@ fun sampleItemList() = listOf(
             "40428",
             ""
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "サンシェルター マルチ プロテクション トーンアップCC",
@@ -1107,7 +1107,7 @@ fun sampleItemList() = listOf(
             "40372",
             "40226"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ニベアUV ディープ プロテクト&ケア ジェル",
@@ -1152,7 +1152,7 @@ fun sampleItemList() = listOf(
             "40212",
             "40091"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/3.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/3.jpg"
     ),
     mapOf<String, Any>(
         "name" to "UVイデア XL プロテクショントーンアップ ローズ",
@@ -1184,7 +1184,7 @@ fun sampleItemList() = listOf(
             "40468",
             "40042"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "パーフェクトUV スキンケアミルク",
@@ -1224,7 +1224,7 @@ fun sampleItemList() = listOf(
             "40157",
             "40413"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "クロノビューティ ジェルUV EX",
@@ -1252,7 +1252,7 @@ fun sampleItemList() = listOf(
             "40183",
             "40267"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リップモンスター",
@@ -1275,7 +1275,7 @@ fun sampleItemList() = listOf(
             "40354",
             "40453"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ネンマクフェイク ルージュ",
@@ -1294,7 +1294,7 @@ fun sampleItemList() = listOf(
             "40313",
             "40071"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "エッセンス リッププランパー ",
@@ -1313,7 +1313,7 @@ fun sampleItemList() = listOf(
             "40244",
             "40298"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リップカラーシールド",
@@ -1334,7 +1334,7 @@ fun sampleItemList() = listOf(
             "40252",
             "40432"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "フジコ ニュアンスラップティント ",
@@ -1355,7 +1355,7 @@ fun sampleItemList() = listOf(
             "40070",
             "40331"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "チークブラッシュ",
@@ -1376,7 +1376,7 @@ fun sampleItemList() = listOf(
             "40244",
             "40191"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "パールグロウハイライト",
@@ -1396,7 +1396,7 @@ fun sampleItemList() = listOf(
             "40315",
             "40275"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "フェイスグロウカラー ",
@@ -1420,7 +1420,7 @@ fun sampleItemList() = listOf(
             "40284",
             "40191"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "クリームチーク(パールタイプ)",
@@ -1440,7 +1440,7 @@ fun sampleItemList() = listOf(
             "40115",
             "40354"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "シームレストーン ブラッシュ",
@@ -1467,7 +1467,7 @@ fun sampleItemList() = listOf(
             "40213",
             "40191"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "タンイドル ウルトラ ウェア リキッド",
@@ -1502,7 +1502,7 @@ fun sampleItemList() = listOf(
             "40023",
             "40274"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/4.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/4.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ゼン ウェア フルイド",
@@ -1525,7 +1525,7 @@ fun sampleItemList() = listOf(
             "40187",
             "40049"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "コンフォートスキン ウェア",
@@ -1571,7 +1571,7 @@ fun sampleItemList() = listOf(
             "40135",
             "40208"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ダブル ウェア ステイ イン プレイス メークアップ",
@@ -1628,7 +1628,7 @@ fun sampleItemList() = listOf(
             "40352",
             "40396"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ザ ファンデーション リフトグロウ",
@@ -1663,7 +1663,7 @@ fun sampleItemList() = listOf(
             "40377",
             "40252"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ヴォワールコレクチュールn",
@@ -1703,7 +1703,7 @@ fun sampleItemList() = listOf(
             "40378",
             "40269"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ドラマティックスキンセンサーベース NEO ",
@@ -1729,7 +1729,7 @@ fun sampleItemList() = listOf(
             "40434",
             "40010"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "トーンパーフェクティング パレット",
@@ -1752,7 +1752,7 @@ fun sampleItemList() = listOf(
             "40432",
             "40284"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "CPチップコンシーラー",
@@ -1778,7 +1778,7 @@ fun sampleItemList() = listOf(
             "40023",
             "40415"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "カネボウ デザイニングカラーリクイド",
@@ -1803,7 +1803,7 @@ fun sampleItemList() = listOf(
             "40452",
             "40167"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ライトリフレクティングセッティングパウダー プレスト N",
@@ -1826,7 +1826,7 @@ fun sampleItemList() = listOf(
             "40090",
             "40245"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ソフトマット アドバンスト パーフェクティングパウダー",
@@ -1851,7 +1851,7 @@ fun sampleItemList() = listOf(
             "40112",
             "40206"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ル・レオスールデクラ",
@@ -1872,7 +1872,7 @@ fun sampleItemList() = listOf(
             "40061",
             "40102"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "マシュマロフィニッシュパウダー",
@@ -1900,7 +1900,7 @@ fun sampleItemList() = listOf(
             "40193",
             "40373"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "フィニッシングパウダー マット",
@@ -1925,7 +1925,7 @@ fun sampleItemList() = listOf(
             "40240",
             "40104"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/5.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/5.jpg"
     ),
     mapOf<String, Any>(
         "name" to "エッセンスインヘアミルク",
@@ -1960,7 +1960,7 @@ fun sampleItemList() = listOf(
             "40358",
             "40062"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ReFa LOCK OIL",
@@ -1995,7 +1995,7 @@ fun sampleItemList() = listOf(
             "40319",
             "40357"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ザビューティ 髪のキメ美容ウォータートリートメント",
@@ -2022,7 +2022,7 @@ fun sampleItemList() = listOf(
             "40344",
             "40315"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "AQ ブースティング トリートメント ヘアセラム ",
@@ -2049,7 +2049,7 @@ fun sampleItemList() = listOf(
             "40114",
             "40146"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "トリートメントヘアウォーター",
@@ -2081,7 +2081,7 @@ fun sampleItemList() = listOf(
             "40322",
             "40474"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ハトムギ化粧水",
@@ -2103,7 +2103,7 @@ fun sampleItemList() = listOf(
             "40132",
             "40373"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ディープモイスチャースプレー",
@@ -2136,7 +2136,7 @@ fun sampleItemList() = listOf(
             "40201",
             "40037"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ボディ スムーザー AC",
@@ -2159,7 +2159,7 @@ fun sampleItemList() = listOf(
             "40140",
             "40419"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "爽快洗口液オクチレモン",
@@ -2180,7 +2180,7 @@ fun sampleItemList() = listOf(
             "40405",
             "40382"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ボディミルク ブライトニング&エイジングケア",
@@ -2202,7 +2202,7 @@ fun sampleItemList() = listOf(
             "40439",
             "40254"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リポソーム アドバンスト リペアセラム",
@@ -2229,7 +2229,7 @@ fun sampleItemList() = listOf(
             "40186",
             "40215"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リポソーム アドバンスト リペアクリーム",
@@ -2255,7 +2255,7 @@ fun sampleItemList() = listOf(
             "40054",
             "40062"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "カプチュール トータル ル セラム",
@@ -2290,7 +2290,7 @@ fun sampleItemList() = listOf(
             "40400",
             "40331"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "レネルジー HPN クリーム",
@@ -2320,7 +2320,7 @@ fun sampleItemList() = listOf(
             "40196",
             "40194"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "カネボウ クリーム イン デイ",
@@ -2353,7 +2353,7 @@ fun sampleItemList() = listOf(
             "40191",
             "40250"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "セラム シールド",
@@ -2373,7 +2373,7 @@ fun sampleItemList() = listOf(
             "40056",
             "40335"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "薬用クリアバーム",
@@ -2395,7 +2395,7 @@ fun sampleItemList() = listOf(
             "40284",
             "40034"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/6.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/6.jpg"
     ),
     mapOf<String, Any>(
         "name" to "RMK Wトリートメントオイル",
@@ -2419,7 +2419,7 @@ fun sampleItemList() = listOf(
             "40085",
             "40010"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "薬用ナイトパック",
@@ -2442,7 +2442,7 @@ fun sampleItemList() = listOf(
             "40182",
             "40008"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アミノモイスト エイジングケア オイル ",
@@ -2477,7 +2477,7 @@ fun sampleItemList() = listOf(
             "40010",
             "40059"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "オイデルミン エッセンスローション",
@@ -2501,7 +2501,7 @@ fun sampleItemList() = listOf(
             "40030",
             "40180"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "メラノフォーカスEV",
@@ -2527,7 +2527,7 @@ fun sampleItemList() = listOf(
             "40101",
             "40079"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アドバンス ナイト リペア SMR コンプレックス",
@@ -2564,7 +2564,7 @@ fun sampleItemList() = listOf(
             "40010",
             "40135"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "カネボウ ヴェイル オブ デイ",
@@ -2588,7 +2588,7 @@ fun sampleItemList() = listOf(
             "40010",
             "40302"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リードルショット100",
@@ -2610,7 +2610,7 @@ fun sampleItemList() = listOf(
             "40337",
             "40187"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "スペシャルジェルクリーム EX (ブライトニング)",
@@ -2633,7 +2633,7 @@ fun sampleItemList() = listOf(
             "40455",
             "40052"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ハトムギ保湿ジェル",
@@ -2664,7 +2664,7 @@ fun sampleItemList() = listOf(
             "40024",
             "40447"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アスタリフト オプミー ",
@@ -2699,7 +2699,7 @@ fun sampleItemList() = listOf(
             "40148",
             "40291"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "プレミアリフト",
@@ -2730,7 +2730,7 @@ fun sampleItemList() = listOf(
             "40281",
             "40084"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "パーフェクトエッセンス",
@@ -2752,7 +2752,7 @@ fun sampleItemList() = listOf(
             "40456",
             "40045"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "エファクラ ピールケア セラム",
@@ -2790,7 +2790,7 @@ fun sampleItemList() = listOf(
             "40307",
             "40465"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リセットクリア N ",
@@ -2825,7 +2825,7 @@ fun sampleItemList() = listOf(
             "40241",
             "40113"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ネクターデルミエール アクティベーターオイルウォーター",
@@ -2852,7 +2852,7 @@ fun sampleItemList() = listOf(
             "40388",
             "40311"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "ビューティクリア ブラックスクラブウォッシュ",
@@ -2881,7 +2881,7 @@ fun sampleItemList() = listOf(
             "40393",
             "40197"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "フェイススクラブ",
@@ -2913,7 +2913,7 @@ fun sampleItemList() = listOf(
             "40149",
             "40203"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "キス シュガー スクラブ",
@@ -2945,7 +2945,7 @@ fun sampleItemList() = listOf(
             "40188",
             "40338"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "グラスティングメルティングバーム",
@@ -2970,7 +2970,7 @@ fun sampleItemList() = listOf(
             "40006",
             "40174"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "プランプリップケアスクラブ",
@@ -2994,7 +2994,7 @@ fun sampleItemList() = listOf(
             "40184",
             "40129"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "リップスリーピングマスク",
@@ -3028,7 +3028,7 @@ fun sampleItemList() = listOf(
             "40126",
             "40156"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "タカミリップ",
@@ -3050,7 +3050,7 @@ fun sampleItemList() = listOf(
             "40060",
             "40145"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アロマボディシート",
@@ -3071,7 +3071,7 @@ fun sampleItemList() = listOf(
             "40131",
             "40132"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "薬用ソフトストーンW",
@@ -3098,7 +3098,7 @@ fun sampleItemList() = listOf(
             "40464",
             "40475"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "アンティ パースパイラント デオドラント ロールオン",
@@ -3125,7 +3125,7 @@ fun sampleItemList() = listOf(
             "40181",
             "40476"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "薬用足指さらさらクリーム",
@@ -3153,7 +3153,7 @@ fun sampleItemList() = listOf(
             "40374",
             "40477"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
     mapOf<String, Any>(
         "name" to "パウダースプレー(無香性) ",
@@ -3181,6 +3181,6 @@ fun sampleItemList() = listOf(
             "40226",
             "40374"
         ),
-        "imageURL" to "https://storage.cloud.google.com/purelab/7.jpg"
+        "imageURL" to "https://storage.googleapis.com/pure_lab/7.jpg"
     ),
 )
