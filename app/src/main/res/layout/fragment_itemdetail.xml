@@ -90,13 +90,40 @@
                 android:src="@drawable/home_image" />
 
             <TextView
-                android:id="@+id/item_detail_text"
+                android:id="@+id/item_detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="15dp"
                 android:textSize="15sp"
-                tools:text="商品詳細" />
+                android:text="《 商品詳細 》" />
+
+            <TextView
+                android:id="@+id/item_detail_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="15dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/item_detail_ingredients_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="15dp"
+                android:textSize="15sp"
+                android:text="《 成分 》" />
+
+            <LinearLayout
+                android:id="@+id/item_detail_ingredients_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp">
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </layout>

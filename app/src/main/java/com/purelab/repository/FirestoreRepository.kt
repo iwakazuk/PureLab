@@ -87,9 +87,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                     val itemId = document.id
                     val itemName = document.getString("name") ?: ""
                     val brandId = document.getString("brandId") ?: ""
-                    val ingredientIds =
-                        document.get("ingredientIds") as? List<String> ?: emptyList()
-
+                    val ingredientIds = document.get("ingredientIds") as? List<String> ?: emptyList()
 
                     loadBrandName(brandId) { brandName ->
                         loadIngredientNames(ingredientIds) { ingredientNames ->
@@ -98,6 +96,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                                 name = itemName,
                                 brand = brandName,
                                 category = category?.name,
+                                description = document.getString("description")?.replace("\"", "") ?: "",
                                 ingredients = ingredientNames,
                                 image = document.getString("imageURL") ?: ""
                             )
@@ -204,7 +203,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
         result: (List<String>?) -> Unit
     ) {
         loadData(
-            collectionPath = COLLECTION_CATEGORIES,
+            collectionPath = COLLECTION_INGREDIENTS,
             onSuccess = { querySnapshot ->
                 val ingredientNames = querySnapshot.documents
                     .filter { it.id in ingredientIds }

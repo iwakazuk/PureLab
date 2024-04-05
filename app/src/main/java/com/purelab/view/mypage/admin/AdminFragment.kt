@@ -18,6 +18,8 @@ import com.purelab.R
 import com.purelab.databinding.AdminInputSectionBinding
 import com.purelab.databinding.FragmentAdminBinding
 import com.purelab.utils.CustomSnackbar
+import com.purelab.utils.sampleIngredientsList
+import com.purelab.utils.sampleItemList
 import com.purelab.view.BaseDataBindingFragment
 
 class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
@@ -145,6 +147,7 @@ class AdminFragment : BaseDataBindingFragment<FragmentAdminBinding>() {
                 "ingredientIDs" to ingredientIDs
             )
             vm.saveItem(product)
+//            vm.saveItems(sampleIngredientsList())
 
             // 保存完了のsnackbarを表示
             CustomSnackbar.showSnackBar(v, "商品を保存しました")

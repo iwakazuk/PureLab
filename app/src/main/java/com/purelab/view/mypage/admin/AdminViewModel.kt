@@ -53,18 +53,18 @@ class AdminViewModel(
         )
     }
 
-//    fun saveItems(item: List<Map<String, Any>>) {
-//        var itemId = 10000
-//
-//        item.forEach {
-//            itemId += 1
-//            firestoreRepository.saveData(
-//                FirestoreRepository.COLLECTION_INGREDIENTS,
-//                itemId.toString(),
-//                it
-//            )
-//        }
-//    }
+    fun saveItems(item: List<Map<String, Any>>) {
+        var itemId = 40000
+
+        item.forEach {
+            itemId += 1
+            firestoreRepository.saveData(
+                FirestoreRepository.COLLECTION_INGREDIENTS,
+                itemId.toString(),
+                it
+            )
+        }
+    }
 
     fun saveBrand(brand: Map<String, String>) {
         val brandId = brands.value?.map { it.id }?.last()?.toInt()?.plus(1)?.toString()

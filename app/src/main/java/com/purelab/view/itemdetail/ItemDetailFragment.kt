@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.purelab.R
 import com.purelab.app.ViewModelFactory
@@ -47,6 +48,18 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             binding.itemDetailBrand.text = data.brand
             binding.itemDetailName.text = data.name
             binding.itemDetailText.text = data.description
+            // 成分リストをループしてTextViewを追加
+            data.ingredients?.forEach { ingredient ->
+                val textView = TextView(context).apply {
+                    text = "・" + ingredient
+                    textSize = 15f
+                    layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                }
+                binding.itemDetailIngredientsContainer.addView(textView)
+            }
 
             val imageView: ImageView = binding.itemDetailIcon
             val imageUrl = data.image
