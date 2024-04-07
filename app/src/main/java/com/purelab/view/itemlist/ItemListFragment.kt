@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.databinding.FragmentItemlistBinding
 import com.purelab.models.Category
+import com.purelab.models.Ingredient
 import com.purelab.models.Item
 import com.purelab.models.mockItem
 import com.purelab.view.BaseDataBindingFragment
@@ -24,12 +25,20 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val category: Category = arguments?.getParcelable("category") ?: Category()
+        val category: Category? = arguments?.getParcelable("category")
+        val ingredient: Ingredient? = arguments?.getParcelable("ingredient")
 
-        // ViewModelへのカテゴリ設定
-        vm.setCategory(category)
-
-        vm.fetchItems()
+        if (category !=null) {
+            // ViewModelへのカテゴリ設定
+            vm.isCategory = true
+            vm.setCategory(category)
+            vm.fetchItemsByCategory()
+        } else if (ingredient != null){
+            // ViewModelへのカテゴリ設定
+            vm.isCategory = false
+            vm.setIngredient(ingredient)
+            vm.fetchItemsByIngredient()
+        }
     }
 
     override fun onCreateView(
@@ -42,6 +51,9 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
 
         vm.category.observe(viewLifecycleOwner) { category ->
             binding.categoryTitle.text = category.name
+        }
+        vm.ingredient.observe(viewLifecycleOwner) { ingredient ->
+            binding.categoryTitle.text = ingredient.name
         }
 
         vm.items.observe(viewLifecycleOwner) { itemList ->

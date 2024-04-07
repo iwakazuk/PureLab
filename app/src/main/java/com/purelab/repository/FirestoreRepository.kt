@@ -115,6 +115,49 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
             }
     }
 
+    fun fetchItemsByIngredient(ingredient: Ingredient?, result: (List<Item>?) -> Unit) {
+        val itemsCollection = db.collection(COLLECTION_ITEMS)
+        itemsCollection.get()
+            .addOnSuccessListener { querySnapshot ->
+                val items = mutableListOf<Item>()
+                val ingredientId = ingredient?.id ?: return@addOnSuccessListener
+                val documents = querySnapshot.documents.filter {
+                    val ingredientIds = it.get("ingredientIds") as? List<String> ?: return@filter false
+                    return@filter ingredientIds.contains(ingredientId)
+                }
+
+                documents.forEach { document ->
+                    val itemId = document.id
+                    val itemName = document.getString("name") ?: ""
+                    val brandId = document.getString("brandId") ?: ""
+                    val categoryId = document.getString("categoryId")  ?: ""
+
+                    loadBrandName(brandId) { brandName ->
+                        loadCategoryName(categoryId) { categoryName ->
+                            val item = Item(
+                                id = itemId,
+                                name = itemName,
+                                brand = brandName,
+                                category = categoryName,
+                                description = document.getString("description")?.replace("\"", "") ?: "",
+                                ingredients = listOf(ingredient?.name),
+                                image = document.getString("imageURL") ?: ""
+                            )
+                            items.add(item)
+
+                            if (items.size == documents.size) {
+                                result(items)
+                            }
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                errorMessage.value = exception.localizedMessage
+                result(null)
+            }
+    }
+
     fun fetchNewItems(result: (List<Item>?) -> Unit) {
         val itemsCollection = db.collection(COLLECTION_NEW)
         itemsCollection.get()
