@@ -25,14 +25,17 @@ class ItemDetailViewModel(
      * お気に入り登録機能
      */
     private val realm: Realm = Realm.getDefaultInstance()
+    private var favoriteList: List<Favorite>? = null
     private val favoriteLiveData: MutableLiveData<Favorite> = MutableLiveData()
 
     /** 新しいデータを取得 */
     fun loadFavorite() {
-        val currentItemId = item.value?.id ?: return
+        val itemId = item.value?.id ?: return
 
         val favorites: List<Favorite>? = realmRepository.getFavorites()
-        val matchingFavorite = favorites?.firstOrNull { it.itemId == currentItemId }
+        favoriteList = favorites
+
+        val matchingFavorite = favorites?.firstOrNull { it.itemId == itemId }
 
         matchingFavorite?.let {
             favoriteLiveData.postValue(it)
@@ -42,8 +45,9 @@ class ItemDetailViewModel(
 
     /** 新しいデータを追加 */
     fun saveFavorite() {
-        val currentItemId = item.value?.id ?: return
-        realmRepository.saveFavorite(Favorite("favorite" ,currentItemId))
+        val itemId = item.value?.id ?: return
+        val favoriteId = (favoriteList?.count() ?: "0").toString()
+        realmRepository.saveFavorite(Favorite(favoriteId ,itemId))
     }
 
     /** データを削除 */

@@ -15,14 +15,14 @@ class FavoriteViewModel(
     private val realmRepository: RealmRepository
 ) : AndroidViewModel(application) {
     private val firestoreRepository = FirestoreRepository(FirebaseFirestore.getInstance())
-    private var favoriteResults = MutableLiveData<List<Item>>()
+    var favoriteResults = MutableLiveData<List<Item>>()
     val data: LiveData<List<Item>> = MutableLiveData<List<Item>>()
 
     fun loadFavorite() {
         val favorites: List<Favorite>? = realmRepository.getFavorites()
 
         val ids = favorites?.map { it.itemId } ?: return
-        firestoreRepository.fetchNewItemsById(ids) {
+        firestoreRepository.fetchItemsByIds(ids) {
             favoriteResults.postValue(it)
         }
     }
