@@ -13,19 +13,36 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.purelab.R
+import com.purelab.app.ViewModelFactory
 import com.purelab.databinding.FragmentSettingBinding
 import com.purelab.enums.user.Sex
 import com.purelab.enums.user.SkinType
 import com.purelab.models.User
+import com.purelab.repository.RealmRepository
 import com.purelab.utils.CustomSnackbar
 import com.purelab.utils.getEnumIndex
 import com.purelab.utils.hideKeyboard
 import com.purelab.utils.toEnumString
 import com.purelab.view.BaseDataBindingFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
+    private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
+
     override fun getLayoutRes(): Int = R.layout.fragment_setting
-    private val vm: SettingViewModel by viewModels()
+
+    private val viewModelFactory: ViewModelFactory by lazy {
+        ViewModelFactory(
+            requireActivity().application,
+            RealmRepository()
+        )
+    }
+
+    private val vm: SettingViewModel by viewModels{ viewModelFactory }
     private lateinit var binding: FragmentSettingBinding
 
     override fun onCreateView(
@@ -50,9 +67,6 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
             val skinTypeIndex = getEnumIndex(user?.skinType, SkinType.values(), context)
             binding.userSkinType.setSelection(skinTypeIndex)
         }
-
-        // ここでデータをロードする
-        vm.loadUser() // desiredUserIdには取得したいユーザーのIDを指定
 
         return binding.root
     }
@@ -126,5 +140,18 @@ class SettingFragment : BaseDataBindingFragment<FragmentSettingBinding>() {
         val screenHeight = rootView.height
         val keypadHeight = screenHeight - r.bottom
         return keypadHeight > softKeyboardHeight
+    }
+
+    override fun onResume() {
+        super.onResume()
+        coroutineScope.launch {
+            // 必要に応じてデータを取得
+            vm.loadUser()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        coroutineScope.cancel()
     }
 }
