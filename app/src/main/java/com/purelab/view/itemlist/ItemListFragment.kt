@@ -50,10 +50,14 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
         val binding = dataBinding!!
 
         vm.category.observe(viewLifecycleOwner) { category ->
-            binding.categoryTitle.text = category.name
+            if (vm.isCategory) {
+                binding.categoryTitle.text = category.name
+            }
         }
         vm.ingredient.observe(viewLifecycleOwner) { ingredient ->
-            binding.categoryTitle.text = ingredient.name
+            if (!vm.isCategory) {
+                binding.categoryTitle.text = ingredient.name
+            }
         }
 
         vm.items.observe(viewLifecycleOwner) { itemList ->

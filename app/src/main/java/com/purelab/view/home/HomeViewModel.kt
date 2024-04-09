@@ -16,8 +16,8 @@ class HomeViewModel(
     private val realmRepository: RealmRepository
 ) : AndroidViewModel(application) {
     private val firestoreRepository = FirestoreRepository(FirebaseFirestore.getInstance())
-    private var favoriteResults = MutableLiveData<List<Item>>()
-    val data: LiveData<List<Item>> = MutableLiveData<List<Item>>()
+
+    var favoriteResults = MutableLiveData<List<Item>>()
 
     val newResult = MutableLiveData<List<Item>>()
     val isLoaded = MutableLiveData<Boolean>()
@@ -34,9 +34,17 @@ class HomeViewModel(
         val favorites: List<Favorite>? = realmRepository.getFavorites()
 
         val ids = favorites?.map { it.itemId } ?: return
-        firestoreRepository.fetchNewItemsById(ids) {
+        firestoreRepository.fetchItemsByIds(ids) {
             favoriteResults.postValue(it)
         }
     }
 
+    fun savedFavorite(favorite: Favorite) {
+        realmRepository.saveFavorite(favorite)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        realmRepository.close()
+    }
 }

@@ -12,13 +12,18 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/mydata_title"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:text="成分名"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/mydata_title"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="成分名"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="15sp" />
 
     <!-- 横線のゲージ（プログレスバー） -->
     <ProgressBar

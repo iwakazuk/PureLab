@@ -4,13 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 
 /** ホーム-マイデータ(成分バー用)アダプタ */
-class MyDataIngredientListAdapter(private val progressList: List<Int>) : RecyclerView.Adapter<MyDataIngredientListAdapter.ViewHolder>() {
+class MyDataIngredientListAdapter(private val progressList: List<Pair<String, Int>>) : RecyclerView.Adapter<MyDataIngredientListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val title: TextView = view.findViewById(R.id.mydata_title)
         val progressBar: ProgressBar = view.findViewById(R.id.mydata_progress_bar)
     }
 
@@ -21,7 +23,9 @@ class MyDataIngredientListAdapter(private val progressList: List<Int>) : Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.progressBar.progress = progressList[position]
+        val item = progressList[position]
+        holder.title.text = item.first
+        holder.progressBar.progress = item.second
     }
 
     override fun getItemCount(): Int = progressList.size
