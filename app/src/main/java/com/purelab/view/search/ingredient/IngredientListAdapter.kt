@@ -35,12 +35,12 @@ class IngredientListAdapter (
     }
 
     override fun onBindViewHolder(holder: IngredientListRecyclerViewHolder, position: Int) {
-        val category = ingredientListData[position]
+        val ingredient = ingredientListData[position]
 
-        holder.ingredientName.text = category.name
+        holder.ingredientName.text = ingredient.name
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(category)
+            listener.onItemClick(ingredient)
         }
     }
 

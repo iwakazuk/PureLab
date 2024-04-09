@@ -1,12 +1,12 @@
 package com.purelab.view.itemdetail
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.setFragmentResultListener
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.purelab.R
 import com.purelab.app.ViewModelFactory
@@ -15,10 +15,7 @@ import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
 import com.purelab.utils.CustomSnackbar
 import com.purelab.view.BaseDataBindingFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.launch
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 /** 商品詳細画面 */
@@ -51,13 +48,33 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             binding.itemDetailBrand.text = data.brand
             binding.itemDetailName.text = data.name
             binding.itemDetailText.text = data.description
+            // 成分リストをループしてTextViewを追加
+            data.ingredients?.forEach { ingredient ->
+                val textView = TextView(context).apply {
+                    text = "・" + ingredient
+                    textSize = 15f
+                    layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                }
+                binding.itemDetailIngredientsContainer.addView(textView)
+            }
 
             val imageView: ImageView = binding.itemDetailIcon
             val imageUrl = data.image
+
+            imageView.setImageResource(R.drawable.loading_image)
+
             Picasso.get()
                 .load(imageUrl)
-                .into(imageView)
-
+                .error(R.drawable.home_image) // エラー時のデフォルト画像
+                .into(imageView, object : Callback {
+                    override fun onSuccess() {}
+                    override fun onError(e: Exception?) {
+                        Log.e("PicassoError", "Failed to load image: " + data.image, e)
+                    }
+                })
         }
 
         // お気に入り登録/解除ボタンの変更を監視
@@ -93,5 +110,5 @@ class ItemDetailFragment : BaseDataBindingFragment<FragmentItemdetailBinding>() 
             vm.toggleFavorite()
         }
     }
-    }
+}
 

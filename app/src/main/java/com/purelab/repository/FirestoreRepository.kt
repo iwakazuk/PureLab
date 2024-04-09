@@ -31,13 +31,17 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
         )
     }
 
-    fun fetchNewItemsById(id: List<String>, result: (List<Item>?) -> Unit) {
-        val itemsCollection = db.collection(COLLECTION_NEW)
+    fun fetchItemsByIds(ids: List<String>, result: (List<Item>?) -> Unit) {
+        val itemsCollection = db.collection(COLLECTION_ITEMS)
         itemsCollection.get()
             .addOnSuccessListener { querySnapshot ->
                 val items = mutableListOf<Item>()
-                querySnapshot.documents.forEach { document ->
-                    if (!id.contains(document.id)) {
+                val documents = querySnapshot.documents.filter {
+                    return@filter ids.contains(it.id)
+                }
+
+                documents.forEach { document ->
+                    if (!ids.contains(document.id)) {
                         return@forEach
                     }
                     val itemId = document.id
@@ -59,7 +63,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                                 )
                                 items.add(item)
 
-                                if (items.size == querySnapshot.size()) {
+                                if (items.size == documents.size) {
                                     result(items)
                                 }
                             }
@@ -90,7 +94,6 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                     val ingredientIds =
                         document.get("ingredientIds") as? List<String> ?: emptyList()
 
-
                     loadBrandName(brandId) { brandName ->
                         loadIngredientNames(ingredientIds) { ingredientNames ->
                             val item = Item(
@@ -98,7 +101,54 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                                 name = itemName,
                                 brand = brandName,
                                 category = category?.name,
+                                description = document.getString("description")?.replace("\"", "")
+                                    ?: "",
                                 ingredients = ingredientNames,
+                                image = document.getString("imageURL") ?: ""
+                            )
+                            items.add(item)
+
+                            if (items.size == documents.size) {
+                                result(items)
+                            }
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                errorMessage.value = exception.localizedMessage
+                result(null)
+            }
+    }
+
+    fun fetchItemsByIngredient(ingredient: Ingredient?, result: (List<Item>?) -> Unit) {
+        val itemsCollection = db.collection(COLLECTION_ITEMS)
+        itemsCollection.get()
+            .addOnSuccessListener { querySnapshot ->
+                val items = mutableListOf<Item>()
+                val ingredientId = ingredient?.id ?: return@addOnSuccessListener
+                val documents = querySnapshot.documents.filter {
+                    val ingredientIds =
+                        it.get("ingredientIds") as? List<String> ?: return@filter false
+                    return@filter ingredientIds.contains(ingredientId)
+                }
+
+                documents.forEach { document ->
+                    val itemId = document.id
+                    val itemName = document.getString("name") ?: ""
+                    val brandId = document.getString("brandId") ?: ""
+                    val categoryId = document.getString("categoryId") ?: ""
+
+                    loadBrandName(brandId) { brandName ->
+                        loadCategoryName(categoryId) { categoryName ->
+                            val item = Item(
+                                id = itemId,
+                                name = itemName,
+                                brand = brandName,
+                                category = categoryName,
+                                description = document.getString("description")?.replace("\"", "")
+                                    ?: "",
+                                ingredients = listOf(ingredient?.name),
                                 image = document.getString("imageURL") ?: ""
                             )
                             items.add(item)
@@ -204,7 +254,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
         result: (List<String>?) -> Unit
     ) {
         loadData(
-            collectionPath = COLLECTION_CATEGORIES,
+            collectionPath = COLLECTION_INGREDIENTS,
             onSuccess = { querySnapshot ->
                 val ingredientNames = querySnapshot.documents
                     .filter { it.id in ingredientIds }

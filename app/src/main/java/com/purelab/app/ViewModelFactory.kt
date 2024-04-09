@@ -7,6 +7,7 @@ import com.purelab.repository.RealmRepository
 import com.purelab.view.mypage.favorite.FavoriteViewModel
 import com.purelab.view.itemdetail.ItemDetailViewModel
 import com.purelab.view.mypage.MyPageViewModel
+import com.purelab.view.mypage.setting.SettingViewModel
 
 class ViewModelFactory(
     private val application: Application,
@@ -16,6 +17,9 @@ class ViewModelFactory(
         if (modelClass.isAssignableFrom(MyPageViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return MyPageViewModel(application, realmRepository) as T
+        } else if (modelClass.isAssignableFrom(SettingViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return SettingViewModel(application, realmRepository) as T
         } else if (modelClass.isAssignableFrom(FavoriteViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return FavoriteViewModel(application, realmRepository) as T

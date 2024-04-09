@@ -35,7 +35,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         )
     }
 
-    private val favoriteVm: FavoriteViewModel by viewModels { viewModelFactory }
+    private val vm: FavoriteViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -75,7 +75,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         )
 
         // ViewModelのdataを観察
-        favoriteVm.data.observe(viewLifecycleOwner) { data ->
+        vm.favoriteResults.observe(viewLifecycleOwner) { data ->
             // アダプターをセット
             adapter.updateData(data)
         }
@@ -87,7 +87,7 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         super.onResume()
         coroutineScope.launch {
             // 必要に応じてデータを取得
-            favoriteVm.loadFavorite()
+            vm.loadFavorite()
         }
     }
 
