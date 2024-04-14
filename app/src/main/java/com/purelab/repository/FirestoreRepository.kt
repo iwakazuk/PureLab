@@ -177,8 +177,7 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                     val itemName = document.getString("name") ?: ""
                     val brandId = document.getString("brandId") ?: ""
                     val categoryId = document.getString("categoryId") ?: ""
-                    val ingredientIds =
-                        document.get("ingredientIds") as? List<String> ?: emptyList()
+                    val ingredientIds = document.get("ingredientIds") as? List<String> ?: emptyList()
 
                     loadBrandName(brandId) { brandName ->
                         loadCategoryName(categoryId) { categoryName ->
@@ -188,7 +187,9 @@ class FirestoreRepository(private val db: FirebaseFirestore) {
                                     name = itemName,
                                     brand = brandName,
                                     category = categoryName,
-                                    ingredients = ingredientNames
+                                    ingredients = ingredientNames,
+                                    description = document.getString("description")?.replace("\"", "") ?: "",
+                                    image = document.getString("imageURL") ?: ""
                                 )
                                 items.add(item)
 

@@ -17,6 +17,7 @@ import com.purelab.databinding.FragmentHomeBinding
 import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
+import com.purelab.view.itemlist.ItemListFragmentDirections
 import com.purelab.view.mypage.favorite.FavoriteViewModel
 import kotlinx.coroutines.*
 
@@ -129,14 +130,11 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding>() {
             // BookListRecyclerViewAdapterで定義した抽象メソッドを実装
             // 再利用をしないため object式でインターフェースを実装
             object : ItemCardListAdapter.OnItemClickListener {
-                override fun onItemClick(itemId: String?) {
-                    setFragmentResult(
-                        "request_key",
-                        bundleOf("itemId" to itemId)
-                    )
-                    findNavController().navigate(
-                        R.id.action_homeFragment1_to_homeFragment2
-                    )
+                override fun onItemClick(item: Item?) {
+                    item?.let {
+                        val action = HomeFragmentDirections.actionHomeFragmentToItemDetail(it)
+                        findNavController().navigate(action)
+                    }
                 }
             }
         )

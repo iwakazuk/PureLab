@@ -12,27 +12,18 @@
         android:label="PureLab"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment1_to_homeFragment2"
-            app:destination="@id/itemDetailFragment" />
+            android:id="@+id/action_homeFragment_to_itemDetail"
+            app:destination="@id/itemDetailFragment">
+            <argument
+                android:name="item"
+                app:argType="com.purelab.models.Item"
+                app:nullable="true" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.purelab.view.itemdetail.ItemDetailFragment"
-        android:label="ItemDetailFragment"
-        tools:layout="@layout/fragment_itemdetail">
-    </fragment>
-
-    <!-- gallery dynamic feature module-->
-    <include-dynamic
-        android:id="@+id/nav_graph_gallery"
-        android:name="com.smarttoolfactory.gallery"
-        app:graphResName="nav_graph_gallery"
-        app:moduleName="gallery">
-        <argument
-            android:name="count"
-            android:defaultValue="0"
-            app:argType="integer" />
-    </include-dynamic>
-
+        android:label="商品詳細"
+        tools:layout="@layout/fragment_itemdetail" />
 </navigation>

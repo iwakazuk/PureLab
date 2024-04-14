@@ -11,12 +11,13 @@ import com.purelab.R
 import com.purelab.models.Item
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import java.lang.ref.WeakReference
 
 class ItemListAdapter(
     private var data: List<Item>
 ) : RecyclerView.Adapter<ItemListAdapter.ItemListRecyclerViewHolder>() {
     // リスナを格納する変数を定義（インターフェースの型）
-    private lateinit var listener: OnItemClickListener
+    private var listener: WeakReference<OnItemClickListener>? = null
 
     // クリックイベントリスナのインターフェースを定義
     interface OnItemClickListener {
@@ -25,7 +26,7 @@ class ItemListAdapter(
 
     // リスナをセット
     fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
+        this.listener = WeakReference(listener)
     }
 
     override fun onCreateViewHolder(
@@ -57,7 +58,7 @@ class ItemListAdapter(
             })
 
         holder.itemView.setOnClickListener {
-            listener.onItemClick(item)
+            listener?.get()?.onItemClick(item)
         }
     }
 
