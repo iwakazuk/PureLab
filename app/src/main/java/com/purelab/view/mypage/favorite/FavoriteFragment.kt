@@ -17,6 +17,7 @@ import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.app.ViewModelFactory
+import com.purelab.view.itemlist.ItemListFragmentDirections
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -48,7 +49,6 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         // アダプターをセット
         val linearLayoutManager = LinearLayoutManager(requireActivity())
         val adapter = ItemListAdapter(emptyList())
-
         val recyclerView = binding.mypageItemListView
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
@@ -63,13 +63,10 @@ class FavoriteFragment : BaseDataBindingFragment<FragmentFavoriteBinding>() {
         adapter.setOnItemClickListener(
             object : ItemListAdapter.OnItemClickListener {
                 override fun onItemClick(item: Item?) {
-                    setFragmentResult(
-                        "request_key",
-                        bundleOf("item" to item)
-                    )
-                    findNavController().navigate(
-                        R.id.action_itemList_to_itemDetail
-                    )
+                    item?.let {
+                        val action = FavoriteFragmentDirections.actionFavoriteToItemDetail(it)
+                        findNavController().navigate(action)
+                    }
                 }
             }
         )

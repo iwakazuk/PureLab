@@ -28,7 +28,21 @@
         android:name="com.purelab.view.mypage.favorite.FavoriteFragment"
         android:label="お気に入り"
         tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favorite_to_itemDetail"
+            app:destination="@id/itemDetailFragment">
+            <argument
+                android:name="item"
+                app:argType="com.purelab.models.Item"
+                app:nullable="true" />
+        </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.purelab.view.itemdetail.ItemDetailFragment"
+        android:label="商品詳細"
+        tools:layout="@layout/fragment_itemdetail" />
 
     <fragment
         android:id="@+id/settingFragment"
