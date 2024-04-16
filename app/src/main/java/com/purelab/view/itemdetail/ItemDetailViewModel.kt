@@ -21,10 +21,7 @@ class ItemDetailViewModel(
     /** 商品詳細 */
     val item = MutableLiveData(Item())
 
-    /**
-     * お気に入り登録機能
-     */
-    private val realm: Realm = Realm.getDefaultInstance()
+    /** お気に入りデータ */
     private var favoriteList: List<Favorite>? = null
     private val favoriteLiveData: MutableLiveData<Favorite> = MutableLiveData()
 
@@ -46,35 +43,20 @@ class ItemDetailViewModel(
     /** 新しいデータを追加 */
     fun saveFavorite() {
         val itemId = item.value?.id ?: return
-        val favoriteId = (favoriteList?.count() ?: "0").toString()
+        val favoriteId = (favoriteList?.count() ?: "1").toString()
         realmRepository.saveFavorite(Favorite(favoriteId ,itemId))
     }
 
     /** データを削除 */
     fun deleteFavorite() {
-        val currentItemId = item.value?.id ?: return
-        val realm = Realm.getDefaultInstance()
-
-        // トランザクションを開始
-        realm.beginTransaction()
-
-        // `itemId`に一致するオブジェクトをクエリで取得
-        val favoriteToDelete = realm.where(Favorite::class.java).equalTo("itemId", currentItemId).findFirst()
-
-        // オブジェクトを削除
-        favoriteToDelete?.deleteFromRealm()
-
-        // トランザクションをコミット
-        realm.commitTransaction()
-
-        // Realmインスタンスを閉じる
-        realm.close()
+        val favoriteId = favoriteLiveData.value?.favoriteId ?: return
+        realmRepository.deleteFavorite(favoriteId)
     }
 
     /** インスタンスを閉じる */
     override fun onCleared() {
         super.onCleared()
-        realm.close()
+        realmRepository.close()
     }
 
     /**

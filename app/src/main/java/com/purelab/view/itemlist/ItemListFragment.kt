@@ -14,7 +14,6 @@ import com.purelab.databinding.FragmentItemlistBinding
 import com.purelab.models.Category
 import com.purelab.models.Ingredient
 import com.purelab.models.Item
-import com.purelab.models.mockItem
 import com.purelab.view.BaseDataBindingFragment
 
 /** 商品一覧画面 */

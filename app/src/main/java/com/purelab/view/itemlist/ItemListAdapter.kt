@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.models.Item
+import com.purelab.view.home.ItemCardListAdapter
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.lang.ref.WeakReference
@@ -17,7 +18,7 @@ class ItemListAdapter(
     private var data: List<Item>
 ) : RecyclerView.Adapter<ItemListAdapter.ItemListRecyclerViewHolder>() {
     // リスナを格納する変数を定義（インターフェースの型）
-    private var listener: WeakReference<OnItemClickListener>? = null
+    private lateinit var listener: OnItemClickListener
 
     // クリックイベントリスナのインターフェースを定義
     interface OnItemClickListener {
@@ -26,7 +27,7 @@ class ItemListAdapter(
 
     // リスナをセット
     fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = WeakReference(listener)
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(
@@ -58,7 +59,7 @@ class ItemListAdapter(
             })
 
         holder.itemView.setOnClickListener {
-            listener?.get()?.onItemClick(item)
+            listener.onItemClick(item)
         }
     }
 
