@@ -12,7 +12,7 @@ import com.purelab.R
 import com.purelab.adapters.ActivityFragmentStateAdapter
 import com.purelab.databinding.ActivityMainBinding
 import com.purelab.util.Event
-import com.purelab.viewmodel.NavControllerViewModel
+import com.purelab.view.NavControllerViewModel
 
 class MainActivity : AppCompatActivity() {
 

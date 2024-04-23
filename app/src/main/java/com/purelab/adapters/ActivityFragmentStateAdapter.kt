@@ -11,7 +11,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter.FragmentTransactionCallb
 import com.purelab.view.search.SearchNavHostFragment
 import com.purelab.view.home.HomeNavHostFragment
 import com.purelab.view.mypage.MyPageNavHostFragment
-import com.purelab.viewmodel.NavControllerViewModel
+import com.purelab.view.NavControllerViewModel
 
 
 /**

@@ -14,7 +14,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.purelab.util.Event
-import com.purelab.viewmodel.NavControllerViewModel
 import kotlin.reflect.KProperty
 
 /**
