@@ -9,7 +9,7 @@ import com.purelab.R
 import com.purelab.databinding.FragmentNavhostSearchBinding
 import com.purelab.view.BaseDataBindingFragment
 import com.purelab.util.Event
-import com.purelab.viewmodel.NavControllerViewModel
+import com.purelab.view.NavControllerViewModel
 
 
 class SearchNavHostFragment : BaseDataBindingFragment<FragmentNavhostSearchBinding>() {

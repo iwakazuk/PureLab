@@ -1,4 +1,4 @@
-package com.purelab.viewmodel
+package com.purelab.view
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
