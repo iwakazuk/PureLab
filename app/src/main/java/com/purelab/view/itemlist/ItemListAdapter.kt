@@ -9,10 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.purelab.R
 import com.purelab.models.Item
-import com.purelab.view.home.ItemCardListAdapter
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import java.lang.ref.WeakReference
 
 class ItemListAdapter(
     private var data: List<Item>

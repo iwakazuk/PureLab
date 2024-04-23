@@ -27,12 +27,12 @@ class ItemListFragment : BaseDataBindingFragment<FragmentItemlistBinding>() {
         val category: Category? = arguments?.getParcelable("category")
         val ingredient: Ingredient? = arguments?.getParcelable("ingredient")
 
-        if (category !=null) {
+        if (category != null) {
             // ViewModelへのカテゴリ設定
             vm.isCategory = true
             vm.setCategory(category)
             vm.fetchItemsByCategory()
-        } else if (ingredient != null){
+        } else if (ingredient != null) {
             // ViewModelへのカテゴリ設定
             vm.isCategory = false
             vm.setIngredient(ingredient)

@@ -53,7 +53,8 @@ class RealmRepository : RealmRepositoryImp {
 
     override fun deleteFavorite(favoriteId: String) {
         realm.executeTransactionAsync { bgRealm ->
-            bgRealm.where(Favorite::class.java).equalTo("favoriteId", favoriteId).findFirst()?.deleteFromRealm()
+            bgRealm.where(Favorite::class.java).equalTo("favoriteId", favoriteId).findFirst()
+                ?.deleteFromRealm()
         }
     }
 
@@ -72,7 +73,8 @@ class RealmRepository : RealmRepositoryImp {
 
     override fun deleteRegister(registerId: String) {
         realm.executeTransactionAsync { bgRealm ->
-            bgRealm.where(Register::class.java).equalTo("registerId", registerId).findFirst()?.deleteFromRealm()
+            bgRealm.where(Register::class.java).equalTo("registerId", registerId).findFirst()
+                ?.deleteFromRealm()
         }
     }
 

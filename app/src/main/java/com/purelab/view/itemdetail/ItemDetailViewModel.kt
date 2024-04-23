@@ -1,15 +1,12 @@
 package com.purelab.view.itemdetail
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.purelab.models.Favorite
 import com.purelab.models.Item
 import com.purelab.repository.RealmRepository
-import io.realm.Realm
 
 class ItemDetailViewModel(
     application: Application,
@@ -44,7 +41,7 @@ class ItemDetailViewModel(
     fun saveFavorite() {
         val itemId = item.value?.id ?: return
         val favoriteId = (favoriteList?.count() ?: "1").toString()
-        realmRepository.saveFavorite(Favorite(favoriteId ,itemId))
+        realmRepository.saveFavorite(Favorite(favoriteId, itemId))
     }
 
     /** データを削除 */
